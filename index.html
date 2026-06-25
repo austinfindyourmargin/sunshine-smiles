@@ -20,30 +20,40 @@
   body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
   img{ max-width:100%; display:block; }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
-  iframe{ max-width:100%; }
-  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  @keyframes ssSpin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
-  #mobilecta{ display:none; }
-  #hamburger{ display:none; }
-  @media (max-width:860px){
+	  iframe{ max-width:100%; }
+	  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+	  @keyframes ssSpin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+	  @keyframes ssPanelIn{ from{ opacity:.72; transform:translateY(8px); } to{ opacity:1; transform:translateY(0); } }
+	  .ss-choice, .ss-program-card, .ss-softlink{ transition:transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s cubic-bezier(.22,1,.36,1), border-color .22s ease, background .22s ease; }
+	  .ss-choice:hover, .ss-program-card:hover, .ss-softlink:hover{ transform:translateY(-2px); }
+	  .ss-choice:active, .ss-softlink:active{ transform:translateY(0) scale(.98); }
+	  .ss-finder-panel{ animation:ssPanelIn .34s cubic-bezier(.22,1,.36,1); }
+	  #mobilecta{ display:none; }
+	  #hamburger{ display:none; }
+	  @media (max-width:860px){
     #navlinks{ display:none !important; }
     #hamburger{ display:flex !important; }
     #navcta{ display:none !important; }
     #mobilemenu[data-open="true"]{ display:flex !important; }
     #mobilecta{ display:flex !important; }
-    .ss-grid2{ grid-template-columns:1fr !important; }
-    .ss-grid3{ grid-template-columns:1fr !important; }
-    .ss-progrid{ grid-template-columns:1fr !important; }
-    .ss-formrow{ grid-template-columns:1fr !important; }
-    .ss-h1{ font-size:44px !important; }
+	    .ss-grid2{ grid-template-columns:1fr !important; }
+	    .ss-grid3{ grid-template-columns:1fr !important; }
+	    .ss-progrid{ grid-template-columns:1fr !important; }
+	    .ss-finder{ grid-template-columns:1fr !important; padding:20px !important; }
+	    .ss-finder-panel{ grid-template-columns:1fr !important; }
+	    .ss-formrow{ grid-template-columns:1fr !important; }
+	    .ss-h1{ font-size:44px !important; }
     .ss-sec{ padding:60px 22px !important; }
     .ss-herostat{ flex-wrap:wrap; gap:18px !important; }
     .ss-heroimg{ width:100% !important; height:320px !important; }
     body{ padding-bottom:74px; }
     .ss-grid2 > *, .ss-grid3 > *, .ss-progrid > *, .ss-formrow > *, .ss-footergrid > *{ min-width:0 !important; }
-    .ss-footergrid{ grid-template-columns:1fr !important; }
-  }
-</style>
+	    .ss-footergrid{ grid-template-columns:1fr !important; }
+	  }
+	  @media (prefers-reduced-motion:reduce){
+	    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+	  }
+	</style>
 </helmet>
 
 <div style="font-family:Mulish,sans-serif; color:#2E2A24;">
@@ -124,16 +134,43 @@
 
   <section id="programs" class="ss-sec" style="padding:80px 32px;">
     <div style="max-width:1200px; margin:0 auto;">
-      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
-        <div style="max-width:30em;">
-          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5BA7D6;">Six classrooms, one happy hallway</div>
-          <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Find the right room for your child.</h2>
-        </div>
-        <a href="programs.html" style="text-decoration:none; font-weight:700; font-size:15px; color:#2E2A24; border:1.5px solid #E7DCC6; padding:13px 22px; border-radius:8px;">View all programs &rarr;</a>
-      </div>
-      <div class="ss-progrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
-        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
-          <a href="programs.html" style="text-decoration:none; color:inherit; background:#fff; border:1px solid #F0E9DA; border-radius:22px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4); display:block;">
+	      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
+	        <div style="max-width:30em;">
+	          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5BA7D6;">Six classrooms, one happy hallway</div>
+	          <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Find the right room for your child.</h2>
+	        </div>
+	        <a href="programs.html" style="text-decoration:none; font-weight:700; font-size:15px; color:#2E2A24; border:1.5px solid #E7DCC6; padding:13px 22px; border-radius:8px;">View all programs &rarr;</a>
+	      </div>
+	      <div class="ss-finder" style="display:grid; grid-template-columns:.86fr 1.14fr; gap:22px; align-items:stretch; background:#FFF6E4; border:1px solid #F0E9DA; border-radius:24px; padding:24px; margin-bottom:30px;">
+	        <div style="padding:4px;">
+	          <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#9A6B12;">Classroom finder</div>
+	          <h3 style="font-family:Spectral,serif; font-weight:500; font-size:30px; line-height:1.12; margin:10px 0 0; color:#2E2A24;">Choose your child&rsquo;s age.</h3>
+	          <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:12px 0 0;">Tap an age to preview the room families usually start with. We&rsquo;ll always confirm the best fit with you during a tour.</p>
+	          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;">
+	            <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+	              <button class="ss-choice" onClick="{{ p.pick }}" aria-pressed="{{ p.selected }}" style="font-family:inherit; cursor:pointer; border:1.5px solid {{ p.choiceBorder }}; background:{{ p.choiceBg }}; color:{{ p.choiceText }}; font-weight:800; font-size:13px; padding:10px 13px; border-radius:999px;">{{ p.agesShort }}</button>
+	            </sc-for>
+	          </div>
+	        </div>
+	        <div class="ss-finder-panel" style="display:grid; grid-template-columns:minmax(150px,.8fr) 1.2fr; gap:18px; align-items:center; background:#fff; border:1px solid #F0E9DA; border-radius:20px; padding:18px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
+	          <div style="border-radius:16px; overflow:hidden; background:{{ activeProgram.tint }}; min-height:190px;">
+	            <img src="{{ activeProgram.image }}" alt="{{ activeProgram.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; min-height:190px; object-fit:cover; object-position:center;">
+	          </div>
+	          <div>
+	            <div style="display:inline-flex; align-items:center; gap:8px; background:{{ activeProgram.tint }}; color:{{ activeProgram.deep }}; font-weight:800; font-size:12px; padding:7px 12px; border-radius:999px;">{{ activeProgram.ages }}</div>
+	            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:28px; line-height:1.08; margin:12px 0 0; color:#2E2A24;">{{ activeProgram.name }}</h3>
+	            <div style="font-size:14px; font-weight:800; color:{{ activeProgram.accent }}; margin-top:3px;">{{ activeProgram.place }}</div>
+	            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:12px 0 0;">{{ activeProgram.finderCopy }}</p>
+	            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:18px;">
+	              <a class="ss-softlink" href="{{ activeProgram.anchor }}" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:12px 18px; border-radius:8px;">See this room</a>
+	              <a href="contact.html" style="text-decoration:none; font-weight:800; font-size:14px; color:#E07B4F;">Schedule a tour &rarr;</a>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="ss-progrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+	        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
+	          <a class="ss-program-card" href="{{ p.anchor }}" style="text-decoration:none; color:inherit; background:#fff; border:1px solid #F0E9DA; border-radius:22px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4); display:block;">
             <img src="{{ p.image }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="width:100%; height:150px; object-fit:cover; object-position:center;">
             <div style="padding:24px;">
               <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:{{ p.accent }};">{{ p.ages }}</div>
@@ -317,8 +354,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, formSent: false };
+  state = { menuOpen: false, formSent: false, activeProgram: "twos" };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  selectProgram = (id) => this.setState({ activeProgram: id });
   submitForm = (event) => {
     const scope = event?.currentTarget?.closest("section") || document;
     const fields = Array.from(scope.querySelectorAll("input, textarea")).map((field) => {
@@ -329,6 +367,23 @@ class Component extends DCLogic {
     this.setState({ formSent: true });
   };
   renderVals() {
+    const programData = [
+      { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", emoji: "🍼", tint: "#CDE9F7", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home." },
+      { id:"waddlers", anchor:"programs.html#waddlers", name: "Waddlers", place: "Tender Terrace", agesShort: "12-18mo", ages: "12 - 18 months", emoji: "🧸", tint: "#D4ECDB", deep: "#3F7E5A", accent: "#5FA873", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by.", finderCopy: "A safe, cheerful room for new walkers who are ready to move, explore, and build confidence one brave step at a time." },
+      { id:"toddlers", anchor:"programs.html#toddlers", name: "Toddlers", place: "Huggable Hills", agesShort: "18-24mo", ages: "18 - 24 months", emoji: "🪁", tint: "#FFE7A8", deep: "#9A6B12", accent: "#D9A21B", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines.", finderCopy: "A hands-on classroom for big toddler curiosity, early words, simple routines, and the kind of play that builds security." },
+      { id:"twos", anchor:"programs.html#twos", name: "Twos", place: "Explorers Expressway", agesShort: "2 years", ages: "2 years", emoji: "🚂", tint: "#FFD7CC", deep: "#C25A36", accent: "#E07B4F", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play.", finderCopy: "A warm next step for language bursts, first friendships, potty-training support, and growing independence." },
+      { id:"threes", anchor:"programs.html#threes", name: "Threes", place: "Adventure Avenue", agesShort: "3 years", ages: "3 years", emoji: "🎨", tint: "#EAF4EC", deep: "#3F7E5A", accent: "#5FA873", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures.", finderCopy: "A bright preschool room for imaginative play, early letters and numbers, listening skills, and growing friendships." },
+      { id:"prek", anchor:"programs.html#prek", name: "Pre-Kindergarten", place: "Discovery Drive", agesShort: "4-5 years", ages: "4 - 5 years", emoji: "🎒", tint: "#E5F2FA", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start.", finderCopy: "A confident send-off toward kindergarten with early literacy, math, independence, and social-emotional readiness." },
+    ];
+    const activeProgram = programData.find((program) => program.id === this.state.activeProgram) || programData[0];
+    const programs = programData.map((program) => ({
+      ...program,
+      selected: program.id === activeProgram.id,
+      pick: () => this.selectProgram(program.id),
+      choiceBg: program.id === activeProgram.id ? program.tint : "#fff",
+      choiceText: program.id === activeProgram.id ? program.deep : "#2E2A24",
+      choiceBorder: program.id === activeProgram.id ? program.accent : "#E7DCC6",
+    }));
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
@@ -350,14 +405,8 @@ class Component extends DCLogic {
         { icon: "🤝", label: "Sharing & social skills" },
         { icon: "🎒", label: "Kindergarten readiness" },
       ],
-      programs: [
-        { name: "Infants", place: "Lullaby Lane", ages: "6 weeks - 12 months", emoji: "🍼", tint: "#CDE9F7", accent: "#5BA7D6", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms." },
-        { name: "Waddlers", place: "Tender Terrace", ages: "12 - 18 months", emoji: "🧸", tint: "#D4ECDB", accent: "#5FA873", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by." },
-        { name: "Toddlers", place: "Huggable Hills", ages: "18 - 24 months", emoji: "🪁", tint: "#FFE7A8", accent: "#D9A21B", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines." },
-        { name: "Twos", place: "Explorers Expressway", ages: "2 years", emoji: "🚂", tint: "#FFD7CC", accent: "#E07B4F", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play." },
-        { name: "Threes", place: "Adventure Avenue", ages: "3 years", emoji: "🎨", tint: "#EAF4EC", accent: "#5FA873", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures." },
-        { name: "Pre-Kindergarten", place: "Discovery Drive", ages: "4 - 5 years", emoji: "🎒", tint: "#E5F2FA", accent: "#5BA7D6", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start." },
-      ],
+      programs,
+      activeProgram,
       staff: [
         { name: "Erika Byrd", role: "Owner & Director", room: "Leadership", since: "Since 2008", badge: "Founder", tint: "#FFE7A8", image: "images/sunshine-staff/erika_orig.jpg", alt: "Erika Byrd smiling outdoors.", crop: "center 24%" },
         { name: "Madison Oakley", role: "Classroom Team", room: "Preschool", since: "Joy", badge: "Preschool", tint: "#D4ECDB", image: "images/sunshine-staff/Madison-Oakley.jpg", alt: "Madison Oakley smiling outdoors.", crop: "center 34%" },

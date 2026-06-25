@@ -18,11 +18,15 @@
 <style>
   *{ box-sizing:border-box; }
   body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-  img{ max-width:100%; display:block; }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
-  iframe{ max-width:100%; }
-  #mobilecta{ display:none; }
-  #hamburger{ display:none; }
+	  img{ max-width:100%; display:block; }
+	  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
+	  iframe{ max-width:100%; }
+	  @keyframes ssFaqIn{ from{ opacity:.72; transform:translateY(-4px); } to{ opacity:1; transform:translateY(0); } }
+	  .ss-contact-card, .ss-faq-button{ transition:transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s cubic-bezier(.22,1,.36,1), border-color .22s ease, background .22s ease; }
+	  .ss-contact-card:hover, .ss-faq-button:hover{ transform:translateY(-2px); }
+	  .ss-faq-answer{ animation:ssFaqIn .24s cubic-bezier(.22,1,.36,1); }
+	  #mobilecta{ display:none; }
+	  #hamburger{ display:none; }
   @media (max-width:860px){
     #navlinks{ display:none !important; }
     #hamburger{ display:flex !important; }
@@ -35,9 +39,12 @@
     .ss-sec{ padding:54px 22px !important; }
     body{ padding-bottom:74px; }
     .ss-grid2 > *, .ss-formrow > *, .ss-footergrid > *{ min-width:0 !important; }
-    .ss-footergrid{ grid-template-columns:1fr !important; }
-  }
-</style>
+	    .ss-footergrid{ grid-template-columns:1fr !important; }
+	  }
+	  @media (prefers-reduced-motion:reduce){
+	    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+	  }
+	</style>
 </helmet>
 
 <div style="font-family:Mulish,sans-serif; color:#2E2A24;">
@@ -78,11 +85,11 @@
     <div class="ss-grid2" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:36px; align-items:start;">
 
       <div style="display:flex; flex-direction:column; gap:16px;">
-        <a href="tel:9193171500" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
+	        <a class="ss-contact-card" href="tel:9193171500" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
           <span style="width:48px; height:48px; border-radius:14px; background:#FFD7CC; display:flex; align-items:center; justify-content:center; font-size:22px;">📞</span>
           <div><div style="font-weight:800; font-size:13px; color:#8A8077; text-transform:uppercase; letter-spacing:.06em;">Call us</div><div style="font-family:Spectral,serif; font-size:24px; color:#2E2A24;">919.317.1500</div></div>
         </a>
-        <a href="mailto:erika.byrd3@gmail.com" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
+	        <a class="ss-contact-card" href="mailto:erika.byrd3@gmail.com" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
           <span style="width:48px; height:48px; border-radius:14px; background:#CDE9F7; display:flex; align-items:center; justify-content:center; font-size:22px;">✉️</span>
           <div><div style="font-weight:800; font-size:13px; color:#8A8077; text-transform:uppercase; letter-spacing:.06em;">Email us</div><div style="font-weight:700; font-size:16px; color:#2E2A24;">erika.byrd3@gmail.com</div></div>
         </a>
@@ -133,12 +140,19 @@
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:34px; margin:10px 0 0; color:#2E2A24;">Common questions from families</h2>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
-          <div style="background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:22px 26px; box-shadow:0 14px 30px -28px rgba(80,70,40,.45);">
-            <div style="font-family:Spectral,serif; font-weight:500; font-size:19px; color:#2E2A24;">{{ f.q }}</div>
-            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:8px 0 0;">{{ f.a }}</p>
-          </div>
-        </sc-for>
+	        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+	          <div style="background:#fff; border:1px solid #F0E9DA; border-radius:18px; overflow:hidden; box-shadow:0 14px 30px -28px rgba(80,70,40,.45);">
+	            <button class="ss-faq-button" onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" aria-controls="{{ f.panelId }}" style="font-family:inherit; cursor:pointer; width:100%; border:0; background:{{ f.bg }}; color:#2E2A24; display:flex; align-items:center; justify-content:space-between; gap:18px; text-align:left; padding:21px 24px;">
+	              <span style="font-family:Spectral,serif; font-weight:500; font-size:19px; line-height:1.25;">{{ f.q }}</span>
+	              <span aria-hidden="true" style="width:32px; height:32px; flex:0 0 32px; border-radius:50%; background:#FFF3D6; color:#9A6B12; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:20px;">{{ f.icon }}</span>
+	            </button>
+	            <sc-if value="{{ f.open }}">
+	              <div id="{{ f.panelId }}" class="ss-faq-answer" style="padding:0 24px 22px;">
+	                <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:0;">{{ f.a }}</p>
+	              </div>
+	            </sc-if>
+	          </div>
+	        </sc-for>
       </div>
     </div>
   </section>
@@ -175,8 +189,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, formSent: false };
+  state = { menuOpen: false, formSent: false, openFaq: 0 };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  toggleFaq = (index) => this.setState((state) => ({ openFaq: state.openFaq === index ? -1 : index }));
   submitForm = (event) => {
     const scope = event?.currentTarget?.closest("section") || document;
     const fields = Array.from(scope.querySelectorAll("input, textarea")).map((field) => {
@@ -187,20 +202,29 @@ class Component extends DCLogic {
     this.setState({ formSent: true });
   };
   renderVals() {
+    const faqData = [
+      { q:"What ages do you care for?", a:"We welcome children from 6 weeks old through pre-kindergarten (age 5), across six age-based classrooms." },
+      { q:"What are your hours?", a:"We're open Monday through Friday, 6:30 am to 5:30 pm — designed to fit a busy working family's day with easy drop-off and pickup." },
+      { q:"Can I tour before enrolling?", a:"Absolutely — and we encourage it. A guided tour is the best way to meet our teachers and feel the warmth for yourself. It's the first step we recommend for every family." },
+      { q:"How do you keep children safe?", a:"Secure keypad entry, careful sign-in and sign-out, background-checked staff, and daily-sanitized classrooms keep every child protected throughout the day." },
+      { q:"How will I know how my child's day went?", a:"You'll get daily updates, photos, and real conversations at pickup. For infants, that includes feeding, diaper, and nap logs so you're never left wondering." },
+      { q:"Is there a waitlist?", a:"Availability varies by classroom and season. Reach out early — we'll let you know current openings for your child's age and help you plan your start date." },
+    ];
+    const faqs = faqData.map((faq, index) => ({
+      ...faq,
+      open: this.state.openFaq === index,
+      icon: this.state.openFaq === index ? "−" : "+",
+      bg: this.state.openFaq === index ? "#FFF6E4" : "#fff",
+      panelId: `faq-panel-${index}`,
+      toggle: () => this.toggleFaq(index),
+    }));
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
       formSent: this.state.formSent,
       formOpen: !this.state.formSent,
       submitForm: this.submitForm,
-      faqs: [
-        { q:"What ages do you care for?", a:"We welcome children from 6 weeks old through pre-kindergarten (age 5), across six age-based classrooms." },
-        { q:"What are your hours?", a:"We're open Monday through Friday, 6:30 am to 5:30 pm — designed to fit a busy working family's day with easy drop-off and pickup." },
-        { q:"Can I tour before enrolling?", a:"Absolutely — and we encourage it. A guided tour is the best way to meet our teachers and feel the warmth for yourself. It's the first step we recommend for every family." },
-        { q:"How do you keep children safe?", a:"Secure keypad entry, careful sign-in and sign-out, background-checked staff, and daily-sanitized classrooms keep every child protected throughout the day." },
-        { q:"How will I know how my child's day went?", a:"You'll get daily updates, photos, and real conversations at pickup. For infants, that includes feeding, diaper, and nap logs so you're never left wondering." },
-        { q:"Is there a waitlist?", a:"Availability varies by classroom and season. Reach out early — we'll let you know current openings for your child's age and help you plan your start date." },
-      ],
+      faqs,
     };
   }
 }

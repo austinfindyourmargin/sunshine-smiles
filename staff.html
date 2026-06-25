@@ -19,11 +19,16 @@
   *{ box-sizing:border-box; }
   body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
   img{ max-width:100%; display:block; }
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
-  iframe{ max-width:100%; }
-  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  #mobilecta{ display:none; }
-  #hamburger{ display:none; }
+	  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
+	  iframe{ max-width:100%; }
+	  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+	  @keyframes ssModalIn{ from{ opacity:.78; transform:translateY(14px) scale(.98); } to{ opacity:1; transform:translateY(0) scale(1); } }
+	  .ss-staffcard, .ss-profile-btn{ transition:transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s cubic-bezier(.22,1,.36,1), border-color .22s ease, background .22s ease; }
+	  .ss-staffcard:hover{ transform:translateY(-3px); box-shadow:0 20px 42px -28px rgba(80,70,40,.5) !important; }
+	  .ss-profile-btn:hover{ transform:translateY(-1px); background:#2E2A24 !important; color:#fff !important; }
+	  .ss-profile-modal{ animation:ssModalIn .32s cubic-bezier(.22,1,.36,1); }
+	  #mobilecta{ display:none; }
+	  #hamburger{ display:none; }
   @media (max-width:860px){
     #navlinks{ display:none !important; }
     #hamburger{ display:flex !important; }
@@ -35,11 +40,15 @@
     .ss-h1{ font-size:42px !important; }
     .ss-sec{ padding:56px 22px !important; }
     body{ padding-bottom:74px; }
-    .ss-grid2 > *, .ss-staffgrid > *, .ss-footergrid > *{ min-width:0 !important; }
-    .ss-footergrid{ grid-template-columns:1fr !important; }
-  }
-  @media (max-width:560px){ .ss-staffgrid{ grid-template-columns:1fr !important; } }
-</style>
+	    .ss-grid2 > *, .ss-staffgrid > *, .ss-footergrid > *{ min-width:0 !important; }
+	    .ss-footergrid{ grid-template-columns:1fr !important; }
+	    .ss-profile-modal{ grid-template-columns:1fr !important; max-height:86vh !important; overflow:auto !important; }
+	  }
+	  @media (max-width:560px){ .ss-staffgrid{ grid-template-columns:1fr !important; } }
+	  @media (prefers-reduced-motion:reduce){
+	    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+	  }
+	</style>
 </helmet>
 
 <div style="font-family:Mulish,sans-serif; color:#2E2A24;">
@@ -102,27 +111,49 @@
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:36px; color:#2E2A24; margin:0;">Our teaching team</h2>
         <p style="font-size:16px; color:#8A8077; margin:8px 0 0;">The warm, familiar faces your child will see every day.</p>
       </div>
-      <div class="ss-staffgrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
-        <sc-for list="{{ team }}" as="s" hint-placeholder-count="8">
-          <div style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -26px rgba(80,70,40,.4);">
-            <div style="height:260px; background:{{ s.tint }}; position:relative; overflow:hidden;">
-              <img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:{{ s.crop }};">
-              <span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,.9); font-size:11px; font-weight:800; color:#5C544B; padding:5px 10px; border-radius:16px;">{{ s.badge }}</span>
+	      <div class="ss-staffgrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+	        <sc-for list="{{ team }}" as="s" hint-placeholder-count="8">
+	          <div class="ss-staffcard" style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -26px rgba(80,70,40,.4);">
+	            <div style="height:260px; background:{{ s.tint }}; position:relative; overflow:hidden;">
+	              <img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:{{ s.crop }};">
+	              <span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,.9); font-size:11px; font-weight:800; color:#5C544B; padding:5px 10px; border-radius:16px;">{{ s.badge }}</span>
             </div>
             <div style="padding:18px 20px 22px;">
               <h3 style="font-family:Spectral,serif; font-weight:500; font-size:20px; margin:0; color:#2E2A24;">{{ s.name }}</h3>
               <div style="font-size:14px; font-weight:700; color:#6B635A; margin-top:3px;">{{ s.role }}</div>
               <div style="font-size:13px; color:#8A8077; margin-top:10px; line-height:1.45;">{{ s.note }}</div>
               <div style="display:flex; align-items:center; gap:8px; margin-top:14px; flex-wrap:wrap;">
-                <span style="font-size:11px; font-weight:700; background:#EAF4EC; color:#5FA873; padding:5px 10px; border-radius:18px;">{{ s.room }}</span>
-                <span style="font-size:11px; font-weight:700; background:#FFF3D6; color:#9A6B12; padding:5px 10px; border-radius:18px;">{{ s.since }}</span>
-              </div>
-            </div>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </section>
+	                <span style="font-size:11px; font-weight:700; background:#EAF4EC; color:#5FA873; padding:5px 10px; border-radius:18px;">{{ s.room }}</span>
+	                <span style="font-size:11px; font-weight:700; background:#FFF3D6; color:#9A6B12; padding:5px 10px; border-radius:18px;">{{ s.since }}</span>
+	              </div>
+	              <button class="ss-profile-btn" onClick="{{ s.open }}" aria-label="{{ s.actionLabel }}" style="font-family:inherit; cursor:pointer; width:100%; margin-top:16px; border:1.5px solid #E7DCC6; background:#FCFBF6; color:#2E2A24; font-weight:800; font-size:13px; padding:11px 12px; border-radius:8px;">View profile</button>
+	            </div>
+	          </div>
+	        </sc-for>
+	      </div>
+	      <sc-if value="{{ hasActiveStaff }}">
+	        <div onClick="{{ closeStaff }}" style="position:fixed; inset:0; z-index:80; background:rgba(35,31,26,.58); display:flex; align-items:center; justify-content:center; padding:24px;">
+	          <div class="ss-profile-modal" onClick="{{ stopClick }}" role="dialog" aria-modal="true" aria-label="{{ modalLabel }}" style="width:min(880px,100%); max-height:90vh; overflow:hidden; display:grid; grid-template-columns:.9fr 1.1fr; background:#fff; border-radius:22px; box-shadow:0 34px 80px -24px rgba(0,0,0,.55);">
+	            <div style="min-height:360px; background:{{ activeStaff.tint }}; overflow:hidden;">
+	              <img src="{{ activeStaff.image }}" alt="{{ activeStaff.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; min-height:360px; object-fit:cover; object-position:{{ activeStaff.crop }};">
+	            </div>
+	            <div style="padding:34px; position:relative;">
+	              <button onClick="{{ closeStaff }}" aria-label="Close profile" style="position:absolute; top:16px; right:16px; width:40px; height:40px; border:1px solid #E7DCC6; background:#FCFBF6; border-radius:50%; cursor:pointer; font-size:24px; line-height:1; color:#2E2A24;">&times;</button>
+	              <div style="display:inline-flex; align-items:center; gap:8px; background:#FFF3D6; color:#9A6B12; font-weight:800; font-size:12px; padding:7px 13px; border-radius:999px;">{{ activeStaff.badge }}</div>
+	              <h3 style="font-family:Spectral,serif; font-weight:500; font-size:34px; line-height:1.08; margin:16px 44px 0 0; color:#2E2A24;">{{ activeStaff.name }}</h3>
+	              <div style="font-weight:800; font-size:15px; color:#FF8E72; margin-top:5px;">{{ activeStaff.role }}</div>
+	              <p style="font-size:17px; line-height:1.65; color:#6B635A; margin:18px 0 0;">{{ activeStaff.note }}</p>
+	              <div style="display:flex; gap:9px; flex-wrap:wrap; margin-top:22px;">
+	                <span style="font-size:12px; font-weight:800; background:#EAF4EC; color:#5FA873; padding:7px 12px; border-radius:999px;">{{ activeStaff.room }}</span>
+	                <span style="font-size:12px; font-weight:800; background:#FFF3D6; color:#9A6B12; padding:7px 12px; border-radius:999px;">{{ activeStaff.since }}</span>
+	              </div>
+	              <a href="contact.html" style="text-decoration:none; display:inline-block; margin-top:26px; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:13px 20px; border-radius:8px;">Schedule a tour to meet us</a>
+	            </div>
+	          </div>
+	        </div>
+	      </sc-if>
+	    </div>
+	  </section>
 
   <section class="ss-sec" style="padding:0 32px 90px;">
     <div style="max-width:1100px; margin:0 auto; background:linear-gradient(135deg,#5FA873,#5BA7D6); border-radius:32px; padding:60px 48px; text-align:center; box-shadow:0 30px 70px -32px rgba(70,130,120,.7);">
@@ -167,13 +198,13 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false };
+  state = { menuOpen: false, activeStaff: null };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  openStaff = (person) => this.setState({ activeStaff: person });
+  closeStaff = () => this.setState({ activeStaff: null });
+  stopClick = (event) => event.stopPropagation();
   renderVals() {
-    return {
-      menuOpen: this.state.menuOpen,
-      toggleMenu: this.toggleMenu,
-      team: [
+    const teamData = [
         { name: "Erika Byrd", role: "Owner & Director", room: "Leadership", since: "Since 2008", badge: "Founder", tint: "#FFE7A8", image: "images/sunshine-staff/erika_orig.jpg", alt: "Erika Byrd smiling outdoors.", crop: "center 24%", note: "Care that feels personal from the first hello." },
         { name: "Veronica Hernandez Vazquez", role: "Classroom Team", room: "Infants", since: "Nurture", badge: "Infants", tint: "#CDE9F7", image: "images/sunshine-staff/veronica_orig-e1740498567959.jpg", alt: "Veronica Hernandez Vazquez smiling in a blue blouse.", crop: "center 32%", note: "A steady presence for routines, comfort, and connection." },
         { name: "Madison Oakley", role: "Classroom Team", room: "Preschool", since: "Joy", badge: "Preschool", tint: "#D4ECDB", image: "images/sunshine-staff/Madison-Oakley.jpg", alt: "Madison Oakley smiling outdoors.", crop: "center 34%", note: "Encouraging children through play, friendship, and independence." },
@@ -193,7 +224,21 @@ class Component extends DCLogic {
         { name: "Sandra Benites", role: "Classroom Team", room: "Classroom Team", since: "Nurture", badge: "Classroom Team", tint: "#D4ECDB", image: "images/sunshine-staff/Sandra-Benites.jpg", alt: "Sandra Benites smiling outdoors.", crop: "center 34%", note: "Supporting children through routines, play, and everyday care." },
         { name: "Hilda Rodriguez", role: "Classroom Team", room: "Early Learning", since: "Growth", badge: "Early Learning", tint: "#E5F2FA", image: "images/sunshine-staff/Hilda-Rodriguez-e1782224693352.jpg", alt: "Hilda Rodriguez smiling outdoors.", crop: "center 34%", note: "Creating a friendly classroom rhythm for growing children." },
 
-      ]
+      ];
+    const activeStaff = this.state.activeStaff;
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: this.toggleMenu,
+      activeStaff: activeStaff || {},
+      hasActiveStaff: Boolean(activeStaff),
+      modalLabel: activeStaff ? `${activeStaff.name}, ${activeStaff.role}` : "",
+      closeStaff: this.closeStaff,
+      stopClick: this.stopClick,
+      team: teamData.map((person) => ({
+        ...person,
+        actionLabel: `View ${person.name}'s profile`,
+        open: () => this.openStaff(person),
+      }))
     };
   }
 }
