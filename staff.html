@@ -20,6 +20,10 @@
 	  body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
 	  img{ max-width:100%; display:block; }
 	  .ss-svg{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
+	  .ss-brand{ text-decoration:none; color:inherit; font-family:Spectral,serif; font-weight:600; font-size:21px; line-height:1.05; letter-spacing:-.01em; display:flex; align-items:center; gap:11px; min-width:0; }
+	  .ss-brand-logo{ width:42px; height:42px; object-fit:contain; flex:0 0 42px; }
+	  .ss-footer-logo-wrap{ width:40px; height:40px; border-radius:50%; background:#FCFBF6; display:flex; align-items:center; justify-content:center; flex:0 0 40px; }
+	  .ss-footer-logo{ width:34px; height:34px; object-fit:contain; }
 	  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
 	  iframe{ max-width:100%; }
 	  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
@@ -45,6 +49,10 @@
 	    .ss-footergrid{ grid-template-columns:1fr !important; }
 	    .ss-profile-modal{ grid-template-columns:1fr !important; max-height:86vh !important; overflow:auto !important; }
 	  }
+	  @media (max-width:560px){
+	    .ss-brand{ font-size:17px; gap:9px; }
+	    .ss-brand-logo{ width:34px; height:34px; flex-basis:34px; }
+	  }
 	  @media (max-width:560px){ .ss-staffgrid{ grid-template-columns:1fr !important; } }
 	  @media (prefers-reduced-motion:reduce){
 	    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
@@ -56,7 +64,7 @@
 
   <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
     <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;">
-      <a href="index.html" style="text-decoration:none; color:inherit; font-family:Spectral,serif; font-weight:600; font-size:21px; letter-spacing:-.01em; display:flex; align-items:center; gap:11px;"><span style="width:13px; height:13px; border-radius:50%; background:#FFB23E; box-shadow:0 0 0 6px #FFEFC4;"></span>Sunshine Smiles Academy</a>
+      <a href="index.html" class="ss-brand"><img class="ss-brand-logo" src="images/home/untitled-design-20.png" alt="" loading="eager" decoding="async"><span>Sunshine Smiles Academy</span></a>
       <div id="navlinks" style="display:flex; align-items:center; gap:30px; font-weight:600; font-size:15px; color:#6B635A;">
         <a href="programs.html" style="text-decoration:none; color:inherit;">Programs</a>
         <a href="staff.html" style="text-decoration:none; color:#2E2A24; font-weight:800;">Our Team</a>
@@ -170,7 +178,7 @@
   <footer style="background:#231F1A; color:#B7AE9F; padding:54px 32px 90px;">
     <div class="ss-footergrid" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;">
       <div>
-        <div style="font-family:Spectral,serif; font-weight:600; font-size:20px; color:#fff; display:flex; align-items:center; gap:11px;"><span style="width:13px; height:13px; border-radius:50%; background:#FFB23E;"></span>Sunshine Smiles Academy</div>
+        <div style="font-family:Spectral,serif; font-weight:600; font-size:20px; color:#fff; display:flex; align-items:center; gap:11px;"><span class="ss-footer-logo-wrap"><img class="ss-footer-logo" src="images/home/untitled-design-20.png" alt="" loading="lazy" decoding="async"></span>Sunshine Smiles Academy</div>
         <p style="font-size:14px; line-height:1.6; margin:16px 0 0; max-width:24em;">Warm, family-owned childcare and early learning in North Durham, NC &mdash; caring for little ones since 2008.</p>
       </div>
       <div>
