@@ -517,7 +517,39 @@ class Component extends DCLogic {
 
   const waveState = new WeakMap();
   const activeWaves = new Set();
-  const basePath = "M0,38 Q36,8 72,38 T144,38 T216,38 T288,38 T360,38 T432,38 T504,38 T576,38 T648,38 T720,38 T792,38 T864,38 T936,38 T1008,38 T1080,38 T1152,38 T1224,38 T1296,38 T1368,38 T1440,38 L1440,60 L0,60 Z";
+  const waveBaseY = 38;
+  const waveTopY = 8;
+  const waveBottomY = 68;
+  const waveSegmentWidth = 72;
+  const waveTotalWidth = 1440;
+  const waveSegmentCount = 20;
+
+  function baseControlY(index) {
+    return index % 2 === 0 ? waveTopY : waveBottomY;
+  }
+
+  function buildWavePath(focus, strength) {
+    let d = `M0,${waveBaseY}`;
+
+    for (let index = 0; index < waveSegmentCount; index += 1) {
+      const cx = 36 + index * waveSegmentWidth;
+      const endX = (index + 1) * waveSegmentWidth;
+      const controlRatio = cx / waveTotalWidth;
+      const controlDistance = Math.abs(controlRatio - focus);
+      const controlFalloff = Math.exp(-Math.pow(controlDistance / 0.18, 2));
+      const crestDirection = index % 2 === 0 ? -1 : 1;
+      const ripple = Math.sin((controlRatio - focus) * Math.PI * 8);
+      const controlLift = crestDirection * controlFalloff * strength * 5;
+      const rippleLift = ripple * controlFalloff * strength * 1.5;
+      const controlY = Math.min(74, Math.max(2, baseControlY(index) + controlLift + rippleLift));
+
+      d += ` Q${cx.toFixed(1)},${controlY.toFixed(1)} ${endX.toFixed(1)},${waveBaseY}`;
+    }
+
+    return `${d} L1440,60 L0,60 Z`;
+  }
+
+  const basePath = buildWavePath(0.5, 0);
 
   function getState(svg) {
     let state = waveState.get(svg);
@@ -533,33 +565,6 @@ class Component extends DCLogic {
       waveState.set(svg, state);
     }
     return state;
-  }
-
-  function buildWavePath(focus, strength) {
-    const baseY = 38;
-    const controlY = 8;
-    const segmentWidth = 72;
-    const totalWidth = 1440;
-    let d = `M0,${baseY}`;
-
-    for (let index = 0; index < 20; index += 1) {
-      const cx = 36 + index * segmentWidth;
-      const endX = (index + 1) * segmentWidth;
-      const controlRatio = cx / totalWidth;
-      const endRatio = endX / totalWidth;
-      const controlDistance = Math.abs(controlRatio - focus);
-      const endDistance = Math.abs(endRatio - focus);
-      const controlFalloff = Math.exp(-Math.pow(controlDistance / 0.18, 2));
-      const endFalloff = Math.exp(-Math.pow(endDistance / 0.2, 2));
-      const ripple = Math.sin((controlRatio - focus) * Math.PI * 8);
-      const endRipple = Math.sin((endRatio - focus) * Math.PI * 8);
-      const liftedControlY = controlY - controlFalloff * strength * 9 + ripple * controlFalloff * strength * 4;
-      const liftedEndY = baseY + endRipple * endFalloff * strength * 3;
-
-      d += ` Q${cx.toFixed(1)},${liftedControlY.toFixed(1)} ${endX.toFixed(1)},${liftedEndY.toFixed(1)}`;
-    }
-
-    return `${d} L1440,60 L0,60 Z`;
   }
 
   function animateWave(svg) {
