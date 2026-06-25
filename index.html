@@ -174,10 +174,10 @@
   <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
     <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;">
       <a href="index.html" class="ss-brand"><img class="ss-brand-logo" src="images/home/untitled-design-20.png" alt="" loading="eager" decoding="async"><span>Sunshine Smiles Academy</span></a>
-      <div id="navlinks" style="display:flex; align-items:center; gap:30px; font-weight:600; font-size:15px; color:#6B635A;">
+      <div id="navlinks" style="display:flex; align-items:center; gap:24px; font-weight:600; font-size:15px; color:#6B635A;">
         <a href="#programs" style="text-decoration:none; color:inherit;">Programs</a>
         <a href="staff.html" style="text-decoration:none; color:inherit;">Our Team</a>
-        <a href="#curriculum" style="text-decoration:none; color:inherit;">Curriculum</a>
+        <a href="rates-fees.html" style="text-decoration:none; color:inherit;">Tuition &amp; Forms</a>
         <a href="enrollment.html" style="text-decoration:none; color:inherit;">Enrollment</a>
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
         <a href="tel:9193171500" style="text-decoration:none; color:#5FA873; font-weight:700;">919.317.1500</a>
@@ -190,7 +190,8 @@
     <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
       <a href="#programs" onClick="{{ toggleMenu }}" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Programs</a>
       <a href="staff.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Our Team</a>
-      <a href="#curriculum" onClick="{{ toggleMenu }}" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Curriculum</a>
+      <a href="rates-fees.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Rates &amp; Fees</a>
+      <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
       <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
@@ -233,7 +234,7 @@
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Why families choose us</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Everything a parent worries about &mdash; already handled.</h2>
       </div>
-      <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;">
 	        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
 	          <div class="ss-promise-card ss-spatial-card" data-spatial-card style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
 	            <div style="width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:25px; background:{{ r.tint }}; color:{{ r.accent }};"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ r.icon }}"></use></svg></div>
@@ -351,7 +352,7 @@
       <div>
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#D9A21B;">Our family &amp; yours</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.12; margin:14px 0 0; color:#2E2A24;">A neighborhood center with real heart.</h2>
-        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:20px 0 0;">Sunshine Smiles Academy has been part of the North Durham community since 2008. What started as one family&rsquo;s commitment to warm, dependable childcare has grown into six joyful classrooms &mdash; but the heart hasn&rsquo;t changed. We still know every child by name, celebrate every milestone, and treat your family like our own.</p>
+        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:20px 0 0;">Sunshine Smiles Academy has been part of the North Durham community since June 23, 2008. What started as one family&rsquo;s commitment to warm, dependable childcare at a fair rate has grown into six joyful classrooms &mdash; but the heart hasn&rsquo;t changed. We still know every child by name, celebrate every milestone, and treat your family like our own.</p>
         <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:16px 0 0;">When you walk through our doors, you&rsquo;ll feel it: kids who are genuinely happy, teachers who genuinely care, and a place that genuinely feels like home.</p>
         <a href="staff.html" style="text-decoration:none; display:inline-block; margin-top:26px; font-weight:700; font-size:15px; color:#2E2A24; border-bottom:2px solid #FFB23E; padding-bottom:3px;">Meet our team &rarr;</a>
       </div>
@@ -413,7 +414,7 @@
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Parent confidence</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">What families want to feel before enrolling.</h2>
       </div>
-      <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+      <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;">
         <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
           <div class="ss-testimonial-card ss-spatial-card" data-spatial-card style="background:{{ t.tint }}; border-radius:22px; padding:32px 28px;">
             <div style="font-size:30px; color:#FFB23E; line-height:1; font-family:Spectral,serif;">&ldquo;</div>
@@ -425,6 +426,7 @@
           </div>
         </sc-for>
       </div>
+      <div style="text-align:center; margin-top:26px;"><a href="testimonials.html" style="text-decoration:none; color:#2E2A24; font-weight:800; display:inline-flex; align-items:center; gap:8px;">Read more parent stories <span style="color:#5FA873;">&rarr;</span></a></div>
     </div>
   </section>
 
@@ -488,15 +490,15 @@
         <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="programs.html" style="text-decoration:none; color:#B7AE9F;">Infants &middot; Lullaby Lane</a><a href="programs.html" style="text-decoration:none; color:#B7AE9F;">Toddlers &middot; Huggable Hills</a><a href="programs.html" style="text-decoration:none; color:#B7AE9F;">Twos &middot; Explorers Expressway</a><a href="programs.html" style="text-decoration:none; color:#B7AE9F;">Pre-K &middot; Discovery Drive</a></div>
       </div>
       <div>
-        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Explore</div>
-        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="staff.html" style="text-decoration:none; color:#B7AE9F;">Our Team</a><a href="enrollment.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="contact.html" style="text-decoration:none; color:#B7AE9F;">Schedule a Tour</a><a href="contact.html" style="text-decoration:none; color:#B7AE9F;">Contact</a></div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Family resources</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="rates-fees.html" style="text-decoration:none; color:#B7AE9F;">Rates &amp; Fees</a><a href="forms.html" style="text-decoration:none; color:#B7AE9F;">Forms &amp; Handbook</a><a href="curriculum.html" style="text-decoration:none; color:#B7AE9F;">Curriculum</a><a href="enrollment.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="testimonials.html" style="text-decoration:none; color:#B7AE9F;">Testimonials</a></div>
       </div>
       <div>
         <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Visit</div>
         <div style="font-size:14px; line-height:1.7;">2611 Broad St.<br>Durham, NC 27704<br><a href="tel:9193171500" style="color:#FFB23E; font-weight:700; text-decoration:none;">919.317.1500</a><br>Mon&ndash;Fri 6:30a&ndash;5:30p</div>
       </div>
     </div>
-    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; North Durham, NC &middot; Made with warmth.</div>
+    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; <a href="privacy-policy.html" style="color:#B7AE9F; text-decoration:none;">Privacy Policy</a> &middot; <a href="terms-conditions.html" style="color:#B7AE9F; text-decoration:none;">Terms</a></div>
   </footer>
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
@@ -570,9 +572,10 @@ class Component extends DCLogic {
         { name: "Kristi Brewer", role: "Classroom Team", room: "Classroom Team", since: "Care", badge: "Classroom Team", tint: "#D4ECDB", image: "images/sunshine-staff/Kristi-Brewer.jpg", alt: "Kristi Brewer smiling outdoors in a Sunshine Smiles shirt.", crop: "center 34%" },
       ],
       testimonials: [
-        { quote: "A tour should make the classrooms feel real: clean, bright, calm, and full of children who are comfortable being themselves.", name: "Safety", detail: "Clean rooms, secure routines", initials: "S", tint: "#EAF4EC" },
-        { quote: "Families want to know their child will be greeted by name, comforted with patience, and encouraged through every little milestone.", name: "Teachers", detail: "Warm, familiar faces", initials: "T", tint: "#E5F2FA" },
-        { quote: "Clear communication matters. Parents should leave each day knowing how their child ate, slept, played, learned, and felt.", name: "Connection", detail: "Updates and real conversations", initials: "C", tint: "#FFF3D6" },
+        { quote: "The team has been amazing with both of my children. They helped us through infant care, toddler transitions, and every question in between.", name: "Paola F.", detail: "Sunshine Smiles parent", initials: "PF", tint: "#EAF4EC" },
+        { quote: "As a parent, I was anxious about daycare. The updates, messages, and genuine care made Sunshine Smiles feel like the right place.", name: "Alannah M.", detail: "Sunshine Smiles parent", initials: "AM", tint: "#E5F2FA" },
+        { quote: "Our daughter started at four months old. Erika is responsive, the teachers are loving, and she comes home with art, songs, and stories.", name: "Lucy P-T", detail: "Sunshine Smiles parent", initials: "LP", tint: "#FFF3D6" },
+        { quote: "My child feels safe, loved, happy, and is learning every day. That peace of mind means everything.", name: "Lauren F.", detail: "Sunshine Smiles parent", initials: "LF", tint: "#FFD7CC" },
 
       ]
     };

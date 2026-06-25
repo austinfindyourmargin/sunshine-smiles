@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum | Sunshine Smiles Academy</title>
+<meta name="description" content="Learn how Sunshine Smiles Academy uses Mother Goose Time and Creative Curriculum to support social-emotional, physical, language, and cognitive development.">
+<link rel="canonical" href="https://sunshinesmilesacademy.com/curriculum.html">
+<link rel="icon" href="images/home/untitled-design-20-57x57.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  img{ max-width:100%; display:block; }
+  .ss-svg{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
+  .ss-brand{ text-decoration:none; color:inherit; font-family:Spectral,serif; font-weight:600; font-size:21px; line-height:1.05; letter-spacing:-.01em; display:flex; align-items:center; gap:11px; min-width:0; }
+  .ss-brand-logo{ width:42px; height:42px; object-fit:contain; flex:0 0 42px; }
+  .ss-footer-logo-wrap{ width:40px; height:40px; border-radius:50%; background:#FCFBF6; display:flex; align-items:center; justify-content:center; flex:0 0 40px; }
+  .ss-footer-logo{ width:34px; height:34px; object-fit:contain; }
+  .ss-learn-card{ background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:28px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45); }
+  .ss-link-card{ transition:transform .22s cubic-bezier(.22,1,.36,1), background .22s ease; }
+  .ss-link-card:hover{ transform:translateY(-2px); background:#FFF6E4 !important; }
+  a:focus-visible, button:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
+  #mobilecta{ display:none; }
+  #hamburger{ display:none; }
+  @media (max-width:860px){
+    #navlinks{ display:none !important; }
+    #hamburger{ display:flex !important; }
+    #navcta{ display:none !important; }
+    #mobilemenu[data-open="true"]{ display:flex !important; }
+    #mobilecta{ display:flex !important; }
+    .ss-grid2{ grid-template-columns:1fr !important; }
+    .ss-grid4{ grid-template-columns:1fr 1fr !important; }
+    .ss-h1{ font-size:42px !important; }
+    .ss-sec{ padding:54px 22px !important; }
+    body{ padding-bottom:74px; }
+    .ss-grid2 > *, .ss-grid4 > *, .ss-footergrid > *{ min-width:0 !important; }
+    .ss-footergrid{ grid-template-columns:1fr !important; }
+  }
+  @media (max-width:560px){
+    .ss-brand{ font-size:17px; gap:9px; }
+    .ss-brand-logo{ width:34px; height:34px; flex-basis:34px; }
+    .ss-grid4{ grid-template-columns:1fr !important; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{ animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:Mulish,sans-serif; color:#2E2A24;">
+  <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.9); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:22px;">
+      <a href="index.html" class="ss-brand"><img class="ss-brand-logo" src="images/home/untitled-design-20.png" alt="" loading="eager" decoding="async"><span>Sunshine Smiles Academy</span></a>
+      <div id="navlinks" style="display:flex; align-items:center; gap:24px; font-weight:600; font-size:15px; color:#6B635A;">
+        <a href="programs.html" style="text-decoration:none; color:inherit;">Programs</a>
+        <a href="staff.html" style="text-decoration:none; color:inherit;">Our Team</a>
+        <a href="rates-fees.html" style="text-decoration:none; color:inherit;">Tuition &amp; Forms</a>
+        <a href="enrollment.html" style="text-decoration:none; color:inherit;">Enrollment</a>
+        <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
+        <a href="tel:9193171500" style="text-decoration:none; color:#5FA873; font-weight:700;">919.317.1500</a>
+      </div>
+      <a id="navcta" href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
+      <button id="hamburger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;"><span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span></button>
+    </div>
+    <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
+      <a href="programs.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Programs</a>
+      <a href="staff.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Our Team</a>
+      <a href="rates-fees.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Rates &amp; Fees</a>
+      <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
+      <a href="curriculum.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Curriculum</a>
+      <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
+      <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
+      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+    </div>
+  </nav>
+
+  <section class="ss-sec" style="padding:74px 32px 58px; background:linear-gradient(135deg,#E5F2FA 0%,#FCFBF6 52%,#D4ECDB 100%);">
+    <div class="ss-grid2" style="max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1fr .9fr; gap:42px; align-items:center;">
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:#3C7AA0;">Curriculum</div>
+        <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:56px; line-height:1.05; letter-spacing:-.02em; margin:14px 0 0; color:#2E2A24;">Playful learning with real developmental purpose.</h1>
+        <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:35em; margin:20px 0 0;">Sunshine Smiles Academy blends warm classroom care with research-based early learning systems that support social-emotional, physical, language, and cognitive growth.</p>
+      </div>
+      <div style="border-radius:24px; overflow:hidden; background:#fff; padding:22px; box-shadow:0 28px 56px -34px rgba(80,70,40,.5);">
+        <img src="images/curriculum/screen-shot-2021-06-10-at-12-08-52-pm_orig.png" alt="Mother Goose Time curriculum activity materials." loading="eager" decoding="async" style="width:100%; border-radius:16px; background:#fff;">
+      </div>
+    </div>
+  </section>
+
+  <section class="ss-sec" style="padding:34px 32px 88px;">
+    <div style="max-width:1120px; margin:0 auto;">
+      <div class="ss-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch;">
+        <article class="ss-learn-card">
+          <div style="width:56px; height:56px; border-radius:16px; background:#FFF3D6; color:#9A6B12; display:flex; align-items:center; justify-content:center; font-size:28px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
+          <h2 style="font-family:Spectral,serif; font-weight:400; font-size:34px; line-height:1.1; margin:18px 0 0; color:#2E2A24;">Mother Goose Time</h2>
+          <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:14px 0 0;">Mother Goose Time provides concrete materials, ideas, and training that inspire children&rsquo;s curiosity. Its integrated system supports high-quality, research-based early learning through playful games and projects.</p>
+          <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:12px 0 0;">The curriculum weaves 33 research-based skills into activities where children naturally grow across social-emotional, physical, language, and cognitive development.</p>
+          <a href="http://www.mothergoosetime.com/" style="text-decoration:none; display:inline-flex; margin-top:20px; background:#2E2A24; color:#fff; font-weight:800; padding:13px 18px; border-radius:8px;">Visit Mother Goose Time</a>
+        </article>
+
+        <article class="ss-learn-card">
+          <div style="width:56px; height:56px; border-radius:16px; background:#CDE9F7; color:#3C7AA0; display:flex; align-items:center; justify-content:center; font-size:28px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-book"></use></svg></div>
+          <h2 style="font-family:Spectral,serif; font-weight:400; font-size:34px; line-height:1.1; margin:18px 0 0; color:#2E2A24;">Creative Curriculum</h2>
+          <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:14px 0 0;">The Creative Curriculum builds children&rsquo;s confidence, creativity, and critical thinking skills through hands-on, project-based investigations.</p>
+          <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:12px 0 0;">It is nationally known for a forward-thinking, rigorously researched approach trusted by early childhood educators across the country.</p>
+          <a href="https://teachingstrategies.com/integrated-solution/" style="text-decoration:none; display:inline-flex; margin-top:20px; background:#2E2A24; color:#fff; font-weight:800; padding:13px 18px; border-radius:8px;">Explore Creative Curriculum</a>
+        </article>
+      </div>
+
+      <div class="ss-grid4" style="margin-top:26px; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+        <div style="background:#FFF6E4; border-radius:16px; padding:20px;"><div style="font-weight:900; color:#9A6B12;">Social-emotional</div><p style="font-size:14px; line-height:1.55; color:#6B635A; margin:8px 0 0;">Friendship, confidence, cooperation, and classroom belonging.</p></div>
+        <div style="background:#EAF4EC; border-radius:16px; padding:20px;"><div style="font-weight:900; color:#3F7E5A;">Physical</div><p style="font-size:14px; line-height:1.55; color:#6B635A; margin:8px 0 0;">Fine motor, large motor, coordination, and outdoor play.</p></div>
+        <div style="background:#E5F2FA; border-radius:16px; padding:20px;"><div style="font-weight:900; color:#3C7AA0;">Language</div><p style="font-size:14px; line-height:1.55; color:#6B635A; margin:8px 0 0;">Stories, songs, vocabulary, expression, and early literacy.</p></div>
+        <div style="background:#FFD7CC; border-radius:16px; padding:20px;"><div style="font-weight:900; color:#C25A36;">Cognitive</div><p style="font-size:14px; line-height:1.55; color:#6B635A; margin:8px 0 0;">Problem-solving, early math, curiosity, memory, and discovery.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ss-sec" style="padding:0 32px 90px;">
+    <div style="max-width:1120px; margin:0 auto; background:#231F1A; color:#fff; border-radius:24px; padding:42px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+      <div style="max-width:44em;">
+        <h2 style="font-family:Spectral,serif; font-weight:500; font-size:34px; line-height:1.12; margin:0;">Want to see learning in action?</h2>
+        <p style="font-size:16px; line-height:1.65; color:#E5DED2; margin:12px 0 0;">A tour is the best way to see how curriculum, warm teachers, and daily routines come together inside the classrooms.</p>
+      </div>
+      <a href="contact.html" style="text-decoration:none; background:#FFB23E; color:#2E2A24; font-weight:900; padding:15px 22px; border-radius:8px;">Schedule a Tour</a>
+    </div>
+  </section>
+
+  <footer style="background:#231F1A; color:#B7AE9F; padding:54px 32px 90px;">
+    <div class="ss-footergrid" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;">
+      <div>
+        <div style="font-family:Spectral,serif; font-weight:600; font-size:20px; color:#fff; display:flex; align-items:center; gap:11px;"><span class="ss-footer-logo-wrap"><img class="ss-footer-logo" src="images/home/untitled-design-20.png" alt="" loading="lazy" decoding="async"></span>Sunshine Smiles Academy</div>
+        <p style="font-size:14px; line-height:1.6; margin:16px 0 0; max-width:24em;">Warm, family-owned childcare and early learning in North Durham, NC &mdash; caring for little ones since 2008.</p>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Programs</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="programs.html#infants" style="text-decoration:none; color:#B7AE9F;">Infants &middot; Lullaby Lane</a><a href="programs.html#toddlers" style="text-decoration:none; color:#B7AE9F;">Toddlers &middot; Huggable Hills</a><a href="programs.html#twos" style="text-decoration:none; color:#B7AE9F;">Twos &middot; Explorers Expressway</a><a href="programs.html#prek" style="text-decoration:none; color:#B7AE9F;">Pre-K &middot; Discovery Drive</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Family resources</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="rates-fees.html" style="text-decoration:none; color:#B7AE9F;">Rates &amp; Fees</a><a href="forms.html" style="text-decoration:none; color:#B7AE9F;">Forms &amp; Handbook</a><a href="curriculum.html" style="text-decoration:none; color:#B7AE9F;">Curriculum</a><a href="enrollment.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="testimonials.html" style="text-decoration:none; color:#B7AE9F;">Testimonials</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Visit</div>
+        <div style="font-size:14px; line-height:1.7;">2611 Broad St.<br>Durham, NC 27704<br><a href="tel:9193171500" style="color:#FFB23E; font-weight:700; text-decoration:none;">919.317.1500</a><br>Mon&ndash;Fri 6:30a&ndash;5:30p</div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; <a href="privacy-policy.html" style="color:#B7AE9F; text-decoration:none;">Privacy Policy</a> &middot; <a href="terms-conditions.html" style="color:#B7AE9F; text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
+    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
+    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  renderVals() {
+    return { menuOpen: this.state.menuOpen, toggleMenu: this.toggleMenu };
+  }
+}
+</script>
+</body>
+</html>

@@ -55,10 +55,10 @@
   <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
     <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;">
       <a href="index.html" class="ss-brand"><img class="ss-brand-logo" src="images/home/untitled-design-20.png" alt="" loading="eager" decoding="async"><span>Sunshine Smiles Academy</span></a>
-      <div id="navlinks" style="display:flex; align-items:center; gap:30px; font-weight:600; font-size:15px; color:#6B635A;">
+      <div id="navlinks" style="display:flex; align-items:center; gap:24px; font-weight:600; font-size:15px; color:#6B635A;">
         <a href="programs.html" style="text-decoration:none; color:#2E2A24; font-weight:800;">Programs</a>
         <a href="staff.html" style="text-decoration:none; color:inherit;">Our Team</a>
-        <a href="index.html#curriculum" style="text-decoration:none; color:inherit;">Curriculum</a>
+        <a href="rates-fees.html" style="text-decoration:none; color:inherit;">Tuition &amp; Forms</a>
         <a href="enrollment.html" style="text-decoration:none; color:inherit;">Enrollment</a>
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
         <a href="tel:9193171500" style="text-decoration:none; color:#5FA873; font-weight:700;">919.317.1500</a>
@@ -69,7 +69,8 @@
     <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
       <a href="programs.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Programs</a>
       <a href="staff.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Our Team</a>
-      <a href="index.html#curriculum" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Curriculum</a>
+      <a href="rates-fees.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Rates &amp; Fees</a>
+      <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
       <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
@@ -94,7 +95,7 @@
   </section>
 
   <section class="ss-sec" style="padding:30px 32px 40px;">
-    <div style="max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:30px;">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:24px;">
       <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
         <div id="{{ p.id }}" class="ss-prow" data-flip="{{ p.flip }}" style="display:grid; grid-template-columns:1fr 1.1fr; gap:40px; align-items:center; background:#fff; border:1px solid #F0E9DA; border-radius:28px; padding:30px; box-shadow:0 22px 50px -32px rgba(80,70,40,.45);">
           <div class="ss-pimg" style="border-radius:22px; overflow:hidden; min-height:320px; background:{{ p.grad }};">
@@ -139,15 +140,15 @@
         <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="#infants" style="text-decoration:none; color:#B7AE9F;">Infants &middot; Lullaby Lane</a><a href="#toddlers" style="text-decoration:none; color:#B7AE9F;">Toddlers &middot; Huggable Hills</a><a href="#twos" style="text-decoration:none; color:#B7AE9F;">Twos &middot; Explorers Expressway</a><a href="#prek" style="text-decoration:none; color:#B7AE9F;">Pre-K &middot; Discovery Drive</a></div>
       </div>
       <div>
-        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Explore</div>
-        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="staff.html" style="text-decoration:none; color:#B7AE9F;">Our Team</a><a href="enrollment.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="contact.html" style="text-decoration:none; color:#B7AE9F;">Schedule a Tour</a><a href="contact.html" style="text-decoration:none; color:#B7AE9F;">Contact</a></div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Family resources</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="rates-fees.html" style="text-decoration:none; color:#B7AE9F;">Rates &amp; Fees</a><a href="forms.html" style="text-decoration:none; color:#B7AE9F;">Forms &amp; Handbook</a><a href="curriculum.html" style="text-decoration:none; color:#B7AE9F;">Curriculum</a><a href="enrollment.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="testimonials.html" style="text-decoration:none; color:#B7AE9F;">Testimonials</a></div>
       </div>
       <div>
         <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Visit</div>
         <div style="font-size:14px; line-height:1.7;">2611 Broad St.<br>Durham, NC 27704<br><a href="tel:9193171500" style="color:#FFB23E; font-weight:700; text-decoration:none;">919.317.1500</a><br>Mon&ndash;Fri 6:30a&ndash;5:30p</div>
       </div>
     </div>
-    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; North Durham, NC &middot; Made with warmth.</div>
+    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; <a href="privacy-policy.html" style="color:#B7AE9F; text-decoration:none;">Privacy Policy</a> &middot; <a href="terms-conditions.html" style="color:#B7AE9F; text-decoration:none;">Terms</a></div>
   </footer>
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
@@ -169,28 +170,28 @@ class Component extends DCLogic {
       programs: [
         { id:"infants", anchor:"#infants", name:"Infants", place:"Lullaby Lane", agesShort:"6wk-12mo", ages:"6 WEEKS - 12 MONTHS", icon:"baby", flip:false,
           tint:"#CDE9F7", deep:"#3C7AA0", accent:"#5BA7D6", grad:"linear-gradient(150deg,#CDE9F7,#E5F2FA)", image:"images/infants/lullybylane_orig.jpg", alt:"The Lullaby Lane infant classroom at Sunshine Smiles Academy.",
-          long:"Your baby's first home away from home. We follow your little one's rhythm with gentle, attentive care, soft routines, and plenty of calm connection throughout the day.",
-          points:["Care that respects your baby's personal schedule","Daily bottle, diaper and nap details for peace of mind","Tummy time, songs and sensory play for early development"] },
+          long:"Your baby's first home away from home. Lullaby Lane follows each infant's rhythm with individualized schedules, fresh crib linens, gentle activity plans, and written daily communication.",
+          points:["1:5 child care ratio in Lullaby Lane","Individualized schedules, fresh linens, and calm routines","Written daily reports for food, diapers, naps, and behavior"] },
         { id:"waddlers", anchor:"#waddlers", name:"Waddlers", place:"Tender Terrace", agesShort:"12-18mo", ages:"12 - 18 MONTHS", icon:"steps", flip:true,
           tint:"#D4ECDB", deep:"#3F7E5A", accent:"#5FA873", grad:"linear-gradient(150deg,#D4ECDB,#EAF4EC)", image:"images/waddlers/waddlers_orig.jpg", alt:"The Tender Terrace waddlers classroom at Sunshine Smiles Academy.",
-          long:"First steps and first words deserve a safe place to happen. Tender Terrace is built for new walkers to explore, wobble, and grow confidence with teachers cheering them on.",
-          points:["Soft, safe spaces designed for new walkers","Early language through songs, books and naming play","Lots of encouragement for every brave new step"] },
+          long:"First steps and first words deserve a safe place to happen. Tender Terrace gives new walkers room to play, explore, and build social, emotional, intellectual, and physical skills.",
+          points:["1:5 or 1:6 child care ratios in Tender Terrace","Story time, rhymes, music, dance, painting, and puzzles","Meals, snacks, outside time, rest cot, and daily reports"] },
         { id:"toddlers", anchor:"#toddlers", name:"Toddlers", place:"Huggable Hills", agesShort:"18-24mo", ages:"18 - 24 MONTHS", icon:"blocks", flip:false,
           tint:"#FFE7A8", deep:"#9A6B12", accent:"#D9A21B", grad:"linear-gradient(150deg,#FFE7A8,#FFF3D6)", image:"images/toddlers/toddlerhuggable_orig-1.jpg", alt:"The Huggable Hills toddler classroom at Sunshine Smiles Academy.",
-          long:"Busy hands and big curiosity find their place here. Days are full of songs, stories, art, and discovery that channel toddler energy into meaningful learning.",
-          points:["Hands-on art, music and sensory exploration","Gentle routines that build security and independence","Beginning self-help skills like cleanup and hand-washing"] },
+          long:"Busy hands and big curiosity find their place here. Huggable Hills uses child-sized furniture, steady structure, classroom jobs, and plenty of songs, stories, art, and discovery.",
+          points:["1:6 child care ratio in Huggable Hills","Child-sized furniture, classroom tasks, and guided sharing","Meals, outside time, rest cot, and written daily report"] },
         { id:"twos", anchor:"#twos", name:"Twos", place:"Explorers Expressway", agesShort:"2 years", ages:"2 YEARS", icon:"route", flip:true,
           tint:"#FFD7CC", deep:"#C25A36", accent:"#E07B4F", grad:"linear-gradient(150deg,#FFD7CC,#FFE7DF)", image:"images/twos/twosexplorers_orig-1.jpg", alt:"The Explorers Expressway twos classroom at Sunshine Smiles Academy.",
-          long:"Confident little explorers build independence and their first friendships. Through guided play, our Twos grow language, responsibility, and social confidence.",
-          points:["Guided play that grows language and vocabulary","First friendships, sharing and turn-taking","Potty-training support, partnered with your home routine"] },
+          long:"Confident little explorers build independence and first friendships. Explorers Expressway supports language bursts, vocabulary, art, large motor play, and toilet-training readiness.",
+          points:["1:9 child care ratio in Explorers Expressway","Language, vocabulary, art, and gross motor growth","Toilet-training support when children are ready"] },
         { id:"threes", anchor:"#threes", name:"Threes", place:"Adventure Avenue", agesShort:"3 years", ages:"3 YEARS", icon:"palette", flip:false,
           tint:"#EAF4EC", deep:"#3F7E5A", accent:"#5FA873", grad:"linear-gradient(150deg,#EAF4EC,#D4ECDB)", image:"images/threes/3sadventure_orig-1.jpg", alt:"The Adventure Avenue threes classroom at Sunshine Smiles Academy.",
-          long:"Imagination takes the lead. Threes dive into art, pretend play, early letters and numbers, and big questions about the world around them.",
-          points:["Early letters, numbers, colors and shapes","Imaginative and dramatic play to build creativity","Listening, focus and following multi-step directions"] },
+          long:"Imagination takes the lead. Adventure Avenue uses the Letter People curriculum, hands-on work, early academics, and social practice to help preschoolers get ready for kindergarten.",
+          points:["1:10 child care ratio in Adventure Avenue","Letter People curriculum for kindergarten readiness","Hands-on work alone, with a friend, or in small groups"] },
         { id:"prek", anchor:"#prek", name:"Pre-Kindergarten", place:"Discovery Drive", agesShort:"4-5 years", ages:"4 - 5 YEARS", icon:"backpack", flip:true,
           tint:"#E5F2FA", deep:"#3C7AA0", accent:"#5BA7D6", grad:"linear-gradient(150deg,#E5F2FA,#CDE9F7)", image:"images/pre-kindergarten/prekdiscover_orig.jpg", alt:"The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.",
-          long:"The confident send-off to kindergarten. Discovery Drive builds early reading, writing, math, and the social-emotional skills children need for school.",
-          points:["Early reading, writing and math foundations","Confidence, independence and emotional readiness","A smooth, well-prepared transition to kindergarten"] },
+          long:"The confident send-off to kindergarten. Discovery Drive builds math, literacy, journals, independence, and school-ready habits so children feel prepared for the next step.",
+          points:["1:13 child care ratio in Discovery Drive","Basic math, literacy, journals, telling time, and shoe-tying","Mother Goose Time extensions for a smooth kindergarten transition"] },
 
       ]
     };
