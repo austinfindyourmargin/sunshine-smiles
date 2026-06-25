@@ -1,0 +1,29 @@
+{
+  "page": "https://sunshinesmilesacademy.com/infants/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/lullybylane_orig-300x225.jpg",
+      "file": "lullybylane_orig-300x225.jpg",
+      "bytes": 20308,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/lullybylane_orig.jpg",
+      "file": "lullybylane_orig.jpg",
+      "bytes": 66795,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    }
+  ]
+}

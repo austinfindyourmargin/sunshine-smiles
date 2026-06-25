@@ -1,0 +1,131 @@
+{
+  "source": "https://sunshinesmilesacademy.com",
+  "pages": [
+    {
+      "page": "https://sunshinesmilesacademy.com/",
+      "folder": "images/home",
+      "found": 58,
+      "downloaded": 58,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/about/",
+      "folder": "images/about",
+      "found": 78,
+      "downloaded": 78,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/sunshine-staff/",
+      "folder": "images/sunshine-staff",
+      "found": 81,
+      "downloaded": 81,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/curriculum/",
+      "folder": "images/curriculum",
+      "found": 5,
+      "downloaded": 5,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/testimonials/",
+      "folder": "images/testimonials",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/programs/",
+      "folder": "images/programs",
+      "found": 26,
+      "downloaded": 26,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/infants/",
+      "folder": "images/infants",
+      "found": 4,
+      "downloaded": 4,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/waddlers/",
+      "folder": "images/waddlers",
+      "found": 6,
+      "downloaded": 6,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/toddlers/",
+      "folder": "images/toddlers",
+      "found": 6,
+      "downloaded": 6,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/twos/",
+      "folder": "images/twos",
+      "found": 6,
+      "downloaded": 6,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/threes/",
+      "folder": "images/threes",
+      "found": 6,
+      "downloaded": 6,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/pre-kindergarten/",
+      "folder": "images/pre-kindergarten",
+      "found": 6,
+      "downloaded": 6,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/enrollment/",
+      "folder": "images/enrollment",
+      "found": 11,
+      "downloaded": 11,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/forms/",
+      "folder": "images/forms",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/rates-fees/",
+      "folder": "images/rates-fees",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/contact/",
+      "folder": "images/contact",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/privacy-policy/",
+      "folder": "images/privacy-policy",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    },
+    {
+      "page": "https://sunshinesmilesacademy.com/terms-conditions/",
+      "folder": "images/terms-conditions",
+      "found": 2,
+      "downloaded": 2,
+      "failed": 0
+    }
+  ]
+}

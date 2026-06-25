@@ -1,0 +1,41 @@
+{
+  "page": "https://sunshinesmilesacademy.com/toddlers/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-1024x768.jpg",
+      "file": "toddlerhuggable_orig-1-1024x768.jpg",
+      "bytes": 168940,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-300x225.jpg",
+      "file": "toddlerhuggable_orig-1-300x225.jpg",
+      "bytes": 23341,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-768x576.jpg",
+      "file": "toddlerhuggable_orig-1-768x576.jpg",
+      "bytes": 105323,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1.jpg",
+      "file": "toddlerhuggable_orig-1.jpg",
+      "bytes": 239935,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    }
+  ]
+}

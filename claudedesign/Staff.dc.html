@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  #mobilecta{ display:none; }
+  #hamburger{ display:none; }
+  @media (max-width:860px){
+    #navlinks{ display:none !important; }
+    #hamburger{ display:flex !important; }
+    #navcta{ display:none !important; }
+    #mobilemenu[data-open="true"]{ display:flex !important; }
+    #mobilecta{ display:flex !important; }
+    .ss-grid2{ grid-template-columns:1fr !important; }
+    .ss-staffgrid{ grid-template-columns:1fr 1fr !important; }
+    .ss-h1{ font-size:42px !important; }
+    .ss-sec{ padding:56px 22px !important; }
+    body{ padding-bottom:74px; }
+  }
+  @media (max-width:560px){ .ss-staffgrid{ grid-template-columns:1fr !important; } }
+</style>
+</helmet>
+
+<div style="font-family:Mulish,sans-serif; color:#2E2A24;">
+
+  <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="Sunshine Smiles — Home.dc.html" style="text-decoration:none; color:inherit; font-family:Spectral,serif; font-weight:600; font-size:21px; letter-spacing:-.01em; display:flex; align-items:center; gap:11px;"><span style="width:13px; height:13px; border-radius:50%; background:#FFB23E; box-shadow:0 0 0 6px #FFEFC4;"></span>Sunshine Smiles Academy</a>
+      <div id="navlinks" style="display:flex; align-items:center; gap:30px; font-weight:600; font-size:15px; color:#6B635A;">
+        <a href="Programs.dc.html" style="text-decoration:none; color:inherit;">Programs</a>
+        <a href="Staff.dc.html" style="text-decoration:none; color:#2E2A24; font-weight:800;">Our Team</a>
+        <a href="Sunshine Smiles — Home.dc.html#curriculum" style="text-decoration:none; color:inherit;">Curriculum</a>
+        <a href="Enrollment.dc.html" style="text-decoration:none; color:inherit;">Enrollment</a>
+        <a href="Contact.dc.html" style="text-decoration:none; color:inherit;">Contact</a>
+        <a href="tel:9193171500" style="text-decoration:none; color:#5FA873; font-weight:700;">919.317.1500</a>
+      </div>
+      <a id="navcta" href="Contact.dc.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
+      <button id="hamburger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;"><span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span></button>
+    </div>
+    <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
+      <a href="Programs.dc.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Programs</a>
+      <a href="Staff.dc.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Our Team</a>
+      <a href="Sunshine Smiles — Home.dc.html#curriculum" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Curriculum</a>
+      <a href="Enrollment.dc.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
+      <a href="Contact.dc.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
+      <a href="Contact.dc.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+    </div>
+  </nav>
+
+  <section class="ss-sec" style="padding:70px 32px 56px; text-align:center; background:linear-gradient(180deg,#FFF6E4,#FCFBF6);">
+    <div style="max-width:46em; margin:0 auto;">
+      <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#FF8E72;">Meet the smiling faces</div>
+      <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:56px; line-height:1.06; letter-spacing:-.02em; margin:16px 0 0; color:#2E2A24;">The smiling faces behind Sunshine Smiles Academy.</h1>
+      <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:34em; margin:20px auto 0;">Our teachers are the heart of everything we do. Many have been with us for years, and most have a warm story about a child they&rsquo;ll never forget. They&rsquo;re patient, playful, trained in early childhood care &mdash; and they&rsquo;ll know your little one by name from day one.</p>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px;">
+        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5FA873; padding:9px 16px; border-radius:24px;">🌻 Caring since 2008</span>
+        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5BA7D6; padding:9px 16px; border-radius:24px;">👩‍🏫 Trained early educators</span>
+        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#D9A21B; padding:9px 16px; border-radius:24px;">❤️ Low child-to-teacher ratios</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="ss-sec" style="padding:10px 32px 70px;">
+    <div class="ss-grid2" style="max-width:1100px; margin:0 auto; background:#fff; border:1px solid #F0E9DA; border-radius:28px; overflow:hidden; display:grid; grid-template-columns:0.85fr 1.15fr; box-shadow:0 26px 56px -30px rgba(80,70,40,.45);">
+      <div style="background:linear-gradient(150deg,#FFE7A8,#FFD7CC); min-height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#9A6B12; padding:30px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="14" rx="3" stroke="#9A6B12" stroke-width="1.6"/><circle cx="12" cy="13" r="3.4" stroke="#9A6B12" stroke-width="1.6"/><path d="M8 6l1.4-2h5.2L16 6" stroke="#9A6B12" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <div style="font-weight:700; font-size:15px; text-align:center; max-width:12em; line-height:1.4;">Photo — Erika Byrd, Owner &amp; Director</div>
+      </div>
+      <div style="padding:44px 44px;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:#FFF3D6; color:#9A6B12; font-weight:800; font-size:12px; padding:7px 14px; border-radius:20px; letter-spacing:.04em;">FOUNDER &middot; SINCE 2008</div>
+        <h2 style="font-family:Spectral,serif; font-weight:400; font-size:34px; line-height:1.1; margin:16px 0 0; color:#2E2A24;">Erika Byrd</h2>
+        <div style="font-weight:800; font-size:15px; color:#FF8E72; margin-top:4px;">Owner &amp; Director</div>
+        <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:18px 0 0;">Erika opened Sunshine Smiles Academy in 2008 with one belief: every child deserves to feel known, safe, and genuinely loved. Nearly two decades later, that belief still shapes every classroom, every hire, and every warm welcome at the door.</p>
+        <p style="font-size:16px; line-height:1.7; color:#6B635A; margin:14px 0 0;">&ldquo;This isn&rsquo;t just a daycare to me &mdash; it&rsquo;s an extension of my own family. When parents trust us with their child, we don&rsquo;t take that lightly for a single day.&rdquo;</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ss-sec" style="padding:0 32px 84px;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-family:Spectral,serif; font-weight:400; font-size:36px; color:#2E2A24; margin:0;">Our teaching team</h2>
+        <p style="font-size:16px; color:#8A8077; margin:8px 0 0;">The warm, familiar faces your child will see every day.</p>
+      </div>
+      <div class="ss-staffgrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+        <sc-for list="{{ team }}" as="s" hint-placeholder-count="8">
+          <div style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -26px rgba(80,70,40,.4);">
+            <div style="height:200px; background:{{ s.tint }}; display:flex; align-items:center; justify-content:center; color:rgba(60,50,30,.45); font-size:32px; position:relative;">🙂
+              <span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,.9); font-size:11px; font-weight:800; color:#5C544B; padding:5px 10px; border-radius:16px;">{{ s.badge }}</span>
+            </div>
+            <div style="padding:18px 20px 22px;">
+              <h3 style="font-family:Spectral,serif; font-weight:500; font-size:20px; margin:0; color:#2E2A24;">{{ s.name }}</h3>
+              <div style="font-size:14px; font-weight:700; color:#6B635A; margin-top:3px;">{{ s.role }}</div>
+              <div style="font-size:13px; color:#8A8077; margin-top:10px; line-height:1.45;">{{ s.note }}</div>
+              <div style="display:flex; align-items:center; gap:8px; margin-top:14px; flex-wrap:wrap;">
+                <span style="font-size:11px; font-weight:700; background:#EAF4EC; color:#5FA873; padding:5px 10px; border-radius:18px;">{{ s.room }}</span>
+                <span style="font-size:11px; font-weight:700; background:#FFF3D6; color:#9A6B12; padding:5px 10px; border-radius:18px;">{{ s.since }}</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section class="ss-sec" style="padding:0 32px 90px;">
+    <div style="max-width:1100px; margin:0 auto; background:linear-gradient(135deg,#5FA873,#5BA7D6); border-radius:32px; padding:60px 48px; text-align:center; box-shadow:0 30px 70px -32px rgba(70,130,120,.7);">
+      <h2 style="font-family:Spectral,serif; font-weight:500; font-size:38px; line-height:1.12; color:#fff; margin:0;">Come meet our team in person.</h2>
+      <p style="font-size:18px; color:rgba(255,255,255,.92); margin:14px 0 0;">Photos are lovely, but a visit says it all. Schedule a guided tour and feel the warmth for yourself.</p>
+      <div style="display:flex; gap:14px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
+        <a href="Contact.dc.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px;">Schedule a Tour</a>
+        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6);">📞 Call 919.317.1500</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#231F1A; color:#B7AE9F; padding:54px 32px 90px;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;">
+      <div>
+        <div style="font-family:Spectral,serif; font-weight:600; font-size:20px; color:#fff; display:flex; align-items:center; gap:11px;"><span style="width:13px; height:13px; border-radius:50%; background:#FFB23E;"></span>Sunshine Smiles Academy</div>
+        <p style="font-size:14px; line-height:1.6; margin:16px 0 0; max-width:24em;">Warm, family-owned childcare and early learning in North Durham, NC &mdash; caring for little ones since 2008.</p>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Programs</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="Programs.dc.html" style="text-decoration:none; color:#B7AE9F;">Infants &middot; Lullaby Lane</a><a href="Programs.dc.html" style="text-decoration:none; color:#B7AE9F;">Toddlers &middot; Huggable Hills</a><a href="Programs.dc.html" style="text-decoration:none; color:#B7AE9F;">Twos &middot; Explorers Expressway</a><a href="Programs.dc.html" style="text-decoration:none; color:#B7AE9F;">Pre-K &middot; Discovery Drive</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:9px; font-size:14px;"><a href="Staff.dc.html" style="text-decoration:none; color:#B7AE9F;">Our Team</a><a href="Enrollment.dc.html" style="text-decoration:none; color:#B7AE9F;">Enrollment</a><a href="Contact.dc.html" style="text-decoration:none; color:#B7AE9F;">Schedule a Tour</a><a href="Contact.dc.html" style="text-decoration:none; color:#B7AE9F;">Contact</a></div>
+      </div>
+      <div>
+        <div style="font-weight:800; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#fff; margin-bottom:14px;">Visit</div>
+        <div style="font-size:14px; line-height:1.7;">2611 Broad St.<br>Durham, NC 27704<br><a href="tel:9193171500" style="color:#FFB23E; font-weight:700; text-decoration:none;">919.317.1500</a><br>Mon&ndash;Fri 6:30a&ndash;5:30p</div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; North Durham, NC &middot; Made with warmth.</div>
+  </footer>
+
+  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
+    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">📞 Call</a>
+    <a href="Contact.dc.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      toggleMenu: this.toggleMenu,
+      team: [
+        { name: "Ms. Tasha", role: "Lead Infant Teacher", room: "Infants", since: "Joined 2014", badge: "Infants", tint: "#CDE9F7", note: "Knows exactly which lullaby settles each baby — and never forgets a nap schedule." },
+        { name: "Ms. Denise", role: "Infant Caregiver", room: "Lullaby Lane", since: "Joined 2016", badge: "Infants", tint: "#E5F2FA", note: "The gentlest hands in the building. Tummy-time champion." },
+        { name: "Ms. Renee", role: "Toddler Teacher", room: "Toddler Team", since: "Joined 2017", badge: "Toddlers", tint: "#D4ECDB", note: "Turns clean-up time into a song-and-dance the kids actually love." },
+        { name: "Ms. Kayla", role: "Waddlers Lead", room: "Tender Terrace", since: "Joined 2018", badge: "Waddlers", tint: "#EAF4EC", note: "Has celebrated more 'first steps' than she can count." },
+        { name: "Ms. Brianna", role: "Twos Teacher", room: "Explorers Expressway", since: "Joined 2019", badge: "Twos", tint: "#FFD7CC", note: "Master of the 'why?' question and patient with every single one." },
+        { name: "Ms. Camille", role: "Pre-K Lead", room: "Pre-K", since: "Joined 2019", badge: "Pre-K", tint: "#FFF3D6", note: "Gets every child kindergarten-ready — and confident about it." },
+        { name: "Mr. Andre", role: "Threes Teacher", room: "Adventure Avenue", since: "Joined 2021", badge: "Threes", tint: "#FFE7A8", note: "Storytime hero. Does all the voices, every time." },
+        { name: "Ms. Yolanda", role: "Assistant Director", room: "Front Office", since: "Joined 2012", badge: "Office", tint: "#CDE9F7", note: "The friendly first hello and the answer to every parent question." },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

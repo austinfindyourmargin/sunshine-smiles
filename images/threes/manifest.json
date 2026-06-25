@@ -1,0 +1,41 @@
+{
+  "page": "https://sunshinesmilesacademy.com/threes/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-1024x759.jpg",
+      "file": "3sadventure_orig-1-1024x759.jpg",
+      "bytes": 173266,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-300x222.jpg",
+      "file": "3sadventure_orig-1-300x222.jpg",
+      "bytes": 21011,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-768x569.jpg",
+      "file": "3sadventure_orig-1-768x569.jpg",
+      "bytes": 105403,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1.jpg",
+      "file": "3sadventure_orig-1.jpg",
+      "bytes": 255260,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    }
+  ]
+}

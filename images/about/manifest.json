@@ -1,0 +1,473 @@
+{
+  "page": "https://sunshinesmilesacademy.com/about/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-1024x759.jpg",
+      "file": "3sadventure_orig-1-1024x759.jpg",
+      "bytes": 173266,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-300x222.jpg",
+      "file": "3sadventure_orig-1-300x222.jpg",
+      "bytes": 21389,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1-768x569.jpg",
+      "file": "3sadventure_orig-1-768x569.jpg",
+      "bytes": 105403,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/3sadventure_orig-1.jpg",
+      "file": "3sadventure_orig-1.jpg",
+      "bytes": 255260,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway1_orig-225x300.jpg",
+      "file": "entryway1_orig-225x300.jpg",
+      "bytes": 22891,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway1_orig.jpg",
+      "file": "entryway1_orig.jpg",
+      "bytes": 193538,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway2_orig-215x300.jpg",
+      "file": "entryway2_orig-215x300.jpg",
+      "bytes": 18545,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway2_orig.jpg",
+      "file": "entryway2_orig.jpg",
+      "bytes": 133677,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway_orig-1024x768.jpg",
+      "file": "entryway_orig-1024x768.jpg",
+      "bytes": 173481,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway_orig-300x225.jpg",
+      "file": "entryway_orig-300x225.jpg",
+      "bytes": 21319,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway_orig-768x576.jpg",
+      "file": "entryway_orig-768x576.jpg",
+      "bytes": 104106,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/entryway_orig.jpg",
+      "file": "entryway_orig.jpg",
+      "bytes": 245513,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground-2_orig-300x225.jpg",
+      "file": "large-playground-2_orig-300x225.jpg",
+      "bytes": 18615,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground-2_orig-768x576.jpg",
+      "file": "large-playground-2_orig-768x576.jpg",
+      "bytes": 110947,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground-2_orig.jpg",
+      "file": "large-playground-2_orig.jpg",
+      "bytes": 206194,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground_orig-300x225.jpg",
+      "file": "large-playground_orig-300x225.jpg",
+      "bytes": 19573,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground_orig-768x576.jpg",
+      "file": "large-playground_orig-768x576.jpg",
+      "bytes": 110963,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/large-playground_orig.jpg",
+      "file": "large-playground_orig.jpg",
+      "bytes": 199745,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside1_orig-300x225.jpg",
+      "file": "outside1_orig-300x225.jpg",
+      "bytes": 19565,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside1_orig-768x576.jpg",
+      "file": "outside1_orig-768x576.jpg",
+      "bytes": 118566,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside1_orig.jpg",
+      "file": "outside1_orig.jpg",
+      "bytes": 209080,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside2-300x225.jpg",
+      "file": "outside2-300x225.jpg",
+      "bytes": 18559,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside2-768x576.jpg",
+      "file": "outside2-768x576.jpg",
+      "bytes": 107056,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/outside2.jpg",
+      "file": "outside2.jpg",
+      "bytes": 187157,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg2_orig-1024x768.jpg",
+      "file": "pg2_orig-1024x768.jpg",
+      "bytes": 303501,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg2_orig-300x225.jpg",
+      "file": "pg2_orig-300x225.jpg",
+      "bytes": 27619,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg2_orig-768x576.jpg",
+      "file": "pg2_orig-768x576.jpg",
+      "bytes": 174381,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg2_orig.jpg",
+      "file": "pg2_orig.jpg",
+      "bytes": 474720,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg3_orig-1024x756.jpg",
+      "file": "pg3_orig-1024x756.jpg",
+      "bytes": 281159,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg3_orig-300x221.jpg",
+      "file": "pg3_orig-300x221.jpg",
+      "bytes": 26921,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg3_orig-768x567.jpg",
+      "file": "pg3_orig-768x567.jpg",
+      "bytes": 162686,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg3_orig.jpg",
+      "file": "pg3_orig.jpg",
+      "bytes": 432981,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg5_orig-1024x773.jpg",
+      "file": "pg5_orig-1024x773.jpg",
+      "bytes": 311605,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg5_orig-300x226.jpg",
+      "file": "pg5_orig-300x226.jpg",
+      "bytes": 27616,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg5_orig-768x580.jpg",
+      "file": "pg5_orig-768x580.jpg",
+      "bytes": 179373,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg5_orig.jpg",
+      "file": "pg5_orig.jpg",
+      "bytes": 463963,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg6_orig-1024x768.jpg",
+      "file": "pg6_orig-1024x768.jpg",
+      "bytes": 261184,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg6_orig-300x225.jpg",
+      "file": "pg6_orig-300x225.jpg",
+      "bytes": 27483,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg6_orig-768x576.jpg",
+      "file": "pg6_orig-768x576.jpg",
+      "bytes": 153513,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg6_orig.jpg",
+      "file": "pg6_orig.jpg",
+      "bytes": 395124,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg8_orig-1024x768.jpg",
+      "file": "pg8_orig-1024x768.jpg",
+      "bytes": 286787,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg8_orig-300x225.jpg",
+      "file": "pg8_orig-300x225.jpg",
+      "bytes": 27598,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg8_orig-768x576.jpg",
+      "file": "pg8_orig-768x576.jpg",
+      "bytes": 167314,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg8_orig.jpg",
+      "file": "pg8_orig.jpg",
+      "bytes": 436593,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg9_orig-1024x768.jpg",
+      "file": "pg9_orig-1024x768.jpg",
+      "bytes": 264134,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg9_orig-300x225.jpg",
+      "file": "pg9_orig-300x225.jpg",
+      "bytes": 26205,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg9_orig-768x576.jpg",
+      "file": "pg9_orig-768x576.jpg",
+      "bytes": 154660,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/pg9_orig.jpg",
+      "file": "pg9_orig.jpg",
+      "bytes": 398460,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/playground1_orig-1024x768.jpg",
+      "file": "playground1_orig-1024x768.jpg",
+      "bytes": 280903,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/playground1_orig-300x225.jpg",
+      "file": "playground1_orig-300x225.jpg",
+      "bytes": 27459,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/playground1_orig-768x576.jpg",
+      "file": "playground1_orig-768x576.jpg",
+      "bytes": 163084,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/playground1_orig.jpg",
+      "file": "playground1_orig.jpg",
+      "bytes": 435183,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/prekdiscover_orig-1024x768.jpg",
+      "file": "prekdiscover_orig-1024x768.jpg",
+      "bytes": 162722,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/prekdiscover_orig-300x225.jpg",
+      "file": "prekdiscover_orig-300x225.jpg",
+      "bytes": 20208,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/prekdiscover_orig-768x576.jpg",
+      "file": "prekdiscover_orig-768x576.jpg",
+      "bytes": 97442,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/prekdiscover_orig.jpg",
+      "file": "prekdiscover_orig.jpg",
+      "bytes": 238885,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa2_orig-225x300.jpg",
+      "file": "ssa2_orig-225x300.jpg",
+      "bytes": 29567,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa2_orig.jpg",
+      "file": "ssa2_orig.jpg",
+      "bytes": 253223,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa3_orig-225x300.jpg",
+      "file": "ssa3_orig-225x300.jpg",
+      "bytes": 27982,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa3_orig.jpg",
+      "file": "ssa3_orig.jpg",
+      "bytes": 221155,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa4_orig-1024x768.jpg",
+      "file": "ssa4_orig-1024x768.jpg",
+      "bytes": 286322,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa4_orig-300x225.jpg",
+      "file": "ssa4_orig-300x225.jpg",
+      "bytes": 26659,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa4_orig-768x576.jpg",
+      "file": "ssa4_orig-768x576.jpg",
+      "bytes": 160532,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssa4_orig.jpg",
+      "file": "ssa4_orig.jpg",
+      "bytes": 403548,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssas5_orig-1024x768.jpg",
+      "file": "ssas5_orig-1024x768.jpg",
+      "bytes": 309521,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssas5_orig-300x225.jpg",
+      "file": "ssas5_orig-300x225.jpg",
+      "bytes": 27778,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssas5_orig-768x576.jpg",
+      "file": "ssas5_orig-768x576.jpg",
+      "bytes": 171803,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/ssas5_orig.jpg",
+      "file": "ssas5_orig.jpg",
+      "bytes": 438506,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-1024x768.jpg",
+      "file": "toddlerhuggable_orig-1-1024x768.jpg",
+      "bytes": 168940,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-300x225.jpg",
+      "file": "toddlerhuggable_orig-1-300x225.jpg",
+      "bytes": 23867,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1-768x576.jpg",
+      "file": "toddlerhuggable_orig-1-768x576.jpg",
+      "bytes": 105323,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/toddlerhuggable_orig-1.jpg",
+      "file": "toddlerhuggable_orig-1.jpg",
+      "bytes": 239935,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-1024x768.jpg",
+      "file": "twosexplorers_orig-1-1024x768.jpg",
+      "bytes": 184434,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-300x225.jpg",
+      "file": "twosexplorers_orig-1-300x225.jpg",
+      "bytes": 22613,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-768x576.jpg",
+      "file": "twosexplorers_orig-1-768x576.jpg",
+      "bytes": 110453,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1.jpg",
+      "file": "twosexplorers_orig-1.jpg",
+      "bytes": 270797,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    }
+  ]
+}

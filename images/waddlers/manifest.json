@@ -1,0 +1,41 @@
+{
+  "page": "https://sunshinesmilesacademy.com/waddlers/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/waddlers_orig-1024x768.jpg",
+      "file": "waddlers_orig-1024x768.jpg",
+      "bytes": 164743,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/waddlers_orig-300x225.jpg",
+      "file": "waddlers_orig-300x225.jpg",
+      "bytes": 20773,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/waddlers_orig-768x576.jpg",
+      "file": "waddlers_orig-768x576.jpg",
+      "bytes": 101549,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/waddlers_orig.jpg",
+      "file": "waddlers_orig.jpg",
+      "bytes": 243756,
+      "contentType": "image/jpeg"
+    }
+  ]
+}

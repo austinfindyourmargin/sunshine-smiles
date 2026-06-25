@@ -1,0 +1,41 @@
+{
+  "page": "https://sunshinesmilesacademy.com/twos/",
+  "images": [
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-1024x768.jpg",
+      "file": "twosexplorers_orig-1-1024x768.jpg",
+      "bytes": 184434,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-300x225.jpg",
+      "file": "twosexplorers_orig-1-300x225.jpg",
+      "bytes": 22160,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1-768x576.jpg",
+      "file": "twosexplorers_orig-1-768x576.jpg",
+      "bytes": 110453,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/twosexplorers_orig-1.jpg",
+      "file": "twosexplorers_orig-1.jpg",
+      "bytes": 270797,
+      "contentType": "image/jpeg"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20-57x57.png",
+      "file": "untitled-design-20-57x57.png",
+      "bytes": 1699,
+      "contentType": "image/png"
+    },
+    {
+      "url": "https://sunshinesmilesacademy.com/wp-content/uploads/2025/02/untitled-design-20.png",
+      "file": "untitled-design-20.png",
+      "bytes": 4308,
+      "contentType": "image/png"
+    }
+  ]
+}
