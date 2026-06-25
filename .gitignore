@@ -1,0 +1,9 @@
+.claude/
+.codex/
+
+.DS_Store
+node_modules/
+dist/
+build/
+.env
+.env.*
