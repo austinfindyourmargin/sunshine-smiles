@@ -16,9 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;500;600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *{ box-sizing:border-box; }
-  body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
-  img{ max-width:100%; display:block; }
+	  *{ box-sizing:border-box; }
+	  body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+	  img{ max-width:100%; display:block; }
+	  .ss-svg{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
 	  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
 	  iframe{ max-width:100%; }
 	  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
@@ -81,12 +82,12 @@
     <div style="max-width:46em; margin:0 auto;">
       <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#FF8E72;">Meet the smiling faces</div>
       <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:56px; line-height:1.06; letter-spacing:-.02em; margin:16px 0 0; color:#2E2A24;">The smiling faces behind Sunshine Smiles Academy.</h1>
-      <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:34em; margin:20px auto 0;">Our teachers are the heart of everything we do. They bring patience, warmth, steady routines, and genuine attention to each child&rsquo;s day &mdash; the kind of care parents can feel from the first hello.</p>
-      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px;">
-        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5FA873; padding:9px 16px; border-radius:24px;">🌻 Caring since 2008</span>
-        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5BA7D6; padding:9px 16px; border-radius:24px;">👩‍🏫 Warm classroom team</span>
-        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#D9A21B; padding:9px 16px; border-radius:24px;">❤️ Low child-to-teacher ratios</span>
-      </div>
+	      <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:34em; margin:20px auto 0;">Our teachers are the heart of everything we do. They bring patience, warmth, steady routines, and genuine attention to each child&rsquo;s day &mdash; the kind of care parents can feel from the first hello.</p>
+	      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px;">
+	        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5FA873; padding:9px 16px; border-radius:24px; display:inline-flex; align-items:center; gap:8px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg>Caring since 2008</span>
+	        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#5BA7D6; padding:9px 16px; border-radius:24px; display:inline-flex; align-items:center; gap:8px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-user-check"></use></svg>Warm classroom team</span>
+	        <span style="background:#fff; border:1px solid #F0E9DA; font-weight:700; font-size:14px; color:#D9A21B; padding:9px 16px; border-radius:24px; display:inline-flex; align-items:center; gap:8px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-heart"></use></svg>Low child-to-teacher ratios</span>
+	      </div>
     </div>
   </section>
 
@@ -161,7 +162,7 @@
       <p style="font-size:18px; color:rgba(255,255,255,.92); margin:14px 0 0;">Photos are lovely, but a visit says it all. Schedule a guided tour and feel the warmth for yourself.</p>
       <div style="display:flex; gap:14px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
         <a href="contact.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px;">Schedule a Tour</a>
-        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6);">📞 Call 919.317.1500</a>
+	        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6); display:inline-flex; align-items:center; gap:9px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call 919.317.1500</a>
       </div>
     </div>
   </section>
@@ -188,8 +189,8 @@
     <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; North Durham, NC &middot; Made with warmth.</div>
   </footer>
 
-  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
-    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">📞 Call</a>
+	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
+	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
     <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 

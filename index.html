@@ -19,6 +19,7 @@
   *{ box-sizing:border-box; }
   body{ margin:0; background:#FCFBF6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
   img{ max-width:100%; display:block; }
+  .ss-svg{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
   a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:3px solid #5BA7D6; outline-offset:3px; }
 	  iframe{ max-width:100%; }
 	  @keyframes ssFloat{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
@@ -121,11 +122,11 @@
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Everything a parent worries about &mdash; already handled.</h2>
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
-        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
-          <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
-            <div style="width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:26px; background:{{ r.tint }};">{{ r.icon }}</div>
-            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:22px; margin:18px 0 0; color:#2E2A24;">{{ r.title }}</h3>
-            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:10px 0 0;">{{ r.blurb }}</p>
+	        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
+	          <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
+	            <div style="width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:25px; background:{{ r.tint }}; color:{{ r.accent }};"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ r.icon }}"></use></svg></div>
+	            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:22px; margin:18px 0 0; color:#2E2A24;">{{ r.title }}</h3>
+	            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:10px 0 0;">{{ r.blurb }}</p>
           </div>
         </sc-for>
       </div>
@@ -191,7 +192,7 @@
         <div style="position:absolute; inset:0 30px 0 0; border-radius:24px; overflow:hidden; background:linear-gradient(150deg,#FFE7A8,#FFD7CC); box-shadow:0 30px 58px -26px rgba(120,90,40,.45);">
           <img src="images/sunshine-staff/family_orig.jpg" alt="The Sunshine Smiles Academy family walking together outdoors." loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center;">
         </div>
-        <div style="position:absolute; right:0; bottom:28px; background:#fff; border-radius:16px; padding:14px 18px; box-shadow:0 18px 38px -16px rgba(120,90,40,.4); font-weight:800; font-size:14px; color:#2E2A24;">🌻 Family-owned since 2008</div>
+	        <div style="position:absolute; right:0; bottom:28px; background:#fff; border-radius:16px; padding:14px 18px; box-shadow:0 18px 38px -16px rgba(120,90,40,.4); font-weight:800; font-size:14px; color:#2E2A24; display:flex; align-items:center; gap:8px;"><span style="width:22px; height:22px; border-radius:50%; background:#FFF3D6; color:#D9A21B; display:flex; align-items:center; justify-content:center; font-size:14px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></span>Family-owned since 2008</div>
       </div>
       <div>
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#D9A21B;">Our family &amp; yours</div>
@@ -237,11 +238,11 @@
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.12; margin:14px 0 0; color:#2E2A24;">Play with a purpose, every single day.</h2>
         <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:18px 0 26px;">Our days are full of hands-on discovery that builds real skills &mdash; and they never feel like work to a child. Curiosity, language, motor skills, and confidence grow together through joyful, age-appropriate play.</p>
         <div class="ss-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-          <sc-for list="{{ skills }}" as="k" hint-placeholder-count="6">
-            <div style="background:#fff; border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:12px; box-shadow:0 12px 26px -20px rgba(60,90,110,.5);">
-              <span style="font-size:20px;">{{ k.icon }}</span><span style="font-weight:700; font-size:14px; color:#2E2A24;">{{ k.label }}</span>
-            </div>
-          </sc-for>
+	          <sc-for list="{{ skills }}" as="k" hint-placeholder-count="6">
+	            <div style="background:#fff; border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:12px; box-shadow:0 12px 26px -20px rgba(60,90,110,.5);">
+	              <span style="font-size:21px; color:{{ k.accent }}; display:flex; align-items:center; justify-content:center;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ k.icon }}"></use></svg></span><span style="font-weight:700; font-size:14px; color:#2E2A24;">{{ k.label }}</span>
+	            </div>
+	          </sc-for>
         </div>
       </div>
       <div style="position:relative; min-height:420px;">
@@ -280,7 +281,7 @@
       <p style="font-size:18px; color:rgba(255,255,255,.92); margin:16px 0 0; position:relative;">The best way to know is to visit. Come see the classrooms, meet the team, and feel the warmth for yourself.</p>
       <div style="display:flex; gap:14px; justify-content:center; margin-top:30px; flex-wrap:wrap; position:relative;">
         <a href="contact.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; box-shadow:0 16px 30px -14px rgba(0,0,0,.3);">Schedule a Guided Tour</a>
-        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6);">📞 Call 919.317.1500</a>
+	        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6); display:inline-flex; align-items:center; gap:9px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call 919.317.1500</a>
       </div>
     </div>
   </section>
@@ -291,19 +292,19 @@
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#FFB23E;">Come visit us</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:38px; line-height:1.12; margin:14px 0 0; color:#fff;">We&rsquo;d love to meet your family.</h2>
         <div style="margin-top:28px; display:flex; flex-direction:column; gap:18px;">
-          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:20px;">📍</span><div><div style="font-weight:800;">2611 Broad St.</div><div style="color:#B7AE9F;">Durham, NC 27704 &middot; North Durham</div></div></div>
-          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:20px;">📞</span><div><a href="tel:9193171500" style="text-decoration:none; color:#fff; font-weight:800;">919.317.1500</a><div style="color:#B7AE9F;">Tap to call &mdash; we answer with a smile</div></div></div>
-          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:20px;">🕖</span><div><div style="font-weight:800;">Monday&ndash;Friday, 6:30 am&ndash;5:30 pm</div><div style="color:#B7AE9F;">Easy morning drop-off &amp; evening pickup</div></div></div>
+	          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:21px; color:#FFB23E; padding-top:2px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-pin"></use></svg></span><div><div style="font-weight:800;">2611 Broad St.</div><div style="color:#B7AE9F;">Durham, NC 27704 &middot; North Durham</div></div></div>
+	          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:21px; color:#FFB23E; padding-top:2px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg></span><div><a href="tel:9193171500" style="text-decoration:none; color:#fff; font-weight:800;">919.317.1500</a><div style="color:#B7AE9F;">Tap to call &mdash; we answer with a smile</div></div></div>
+	          <div style="display:flex; gap:14px; align-items:flex-start;"><span style="font-size:21px; color:#FFB23E; padding-top:2px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-clock"></use></svg></span><div><div style="font-weight:800;">Monday&ndash;Friday, 6:30 am&ndash;5:30 pm</div><div style="color:#B7AE9F;">Easy morning drop-off &amp; evening pickup</div></div></div>
         </div>
         <div style="margin-top:24px; height:200px; border-radius:18px; overflow:hidden; border:1px solid #4A463E;"><iframe title="Map to Sunshine Smiles Academy at 2611 Broad St., Durham, NC 27704" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2611%20Broad%20St.%20Durham%20NC%2027704&output=embed" style="width:100%; height:200px; border:0; border-radius:18px;"></iframe></div>
       </div>
       <div style="background:#FCFBF6; border-radius:24px; padding:34px;">
         <h3 style="font-family:Spectral,serif; font-weight:500; font-size:24px; margin:0 0 4px; color:#2E2A24;">Request a tour</h3>
         <p style="font-size:14px; color:#8A8077; margin:0 0 20px;">Tell us a little about your family and we&rsquo;ll be in touch within one business day.</p>
-        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
-          <div style="background:#EAF4EC; border-radius:16px; padding:30px; text-align:center;">
-            <div style="font-size:34px;">🌻</div>
-            <div style="font-family:Spectral,serif; font-size:22px; color:#2E2A24; margin-top:8px;">Thank you!</div>
+	        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
+	          <div style="background:#EAF4EC; border-radius:16px; padding:30px; text-align:center;">
+	            <div style="width:46px; height:46px; border-radius:50%; background:#FFF3D6; color:#D9A21B; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
+	            <div style="font-family:Spectral,serif; font-size:22px; color:#2E2A24; margin-top:8px;">Thank you!</div>
             <p style="font-size:14px; color:#6B635A; margin:6px 0 0;">We&rsquo;ve received your request and will reach out very soon.</p>
           </div>
         </sc-if>
@@ -344,8 +345,8 @@
     <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; North Durham, NC &middot; Made with warmth.</div>
   </footer>
 
-  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
-    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">📞 Call</a>
+	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
+	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
     <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 
@@ -368,12 +369,12 @@ class Component extends DCLogic {
   };
   renderVals() {
     const programData = [
-      { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", emoji: "🍼", tint: "#CDE9F7", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home." },
-      { id:"waddlers", anchor:"programs.html#waddlers", name: "Waddlers", place: "Tender Terrace", agesShort: "12-18mo", ages: "12 - 18 months", emoji: "🧸", tint: "#D4ECDB", deep: "#3F7E5A", accent: "#5FA873", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by.", finderCopy: "A safe, cheerful room for new walkers who are ready to move, explore, and build confidence one brave step at a time." },
-      { id:"toddlers", anchor:"programs.html#toddlers", name: "Toddlers", place: "Huggable Hills", agesShort: "18-24mo", ages: "18 - 24 months", emoji: "🪁", tint: "#FFE7A8", deep: "#9A6B12", accent: "#D9A21B", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines.", finderCopy: "A hands-on classroom for big toddler curiosity, early words, simple routines, and the kind of play that builds security." },
-      { id:"twos", anchor:"programs.html#twos", name: "Twos", place: "Explorers Expressway", agesShort: "2 years", ages: "2 years", emoji: "🚂", tint: "#FFD7CC", deep: "#C25A36", accent: "#E07B4F", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play.", finderCopy: "A warm next step for language bursts, first friendships, potty-training support, and growing independence." },
-      { id:"threes", anchor:"programs.html#threes", name: "Threes", place: "Adventure Avenue", agesShort: "3 years", ages: "3 years", emoji: "🎨", tint: "#EAF4EC", deep: "#3F7E5A", accent: "#5FA873", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures.", finderCopy: "A bright preschool room for imaginative play, early letters and numbers, listening skills, and growing friendships." },
-      { id:"prek", anchor:"programs.html#prek", name: "Pre-Kindergarten", place: "Discovery Drive", agesShort: "4-5 years", ages: "4 - 5 years", emoji: "🎒", tint: "#E5F2FA", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start.", finderCopy: "A confident send-off toward kindergarten with early literacy, math, independence, and social-emotional readiness." },
+      { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", icon: "baby", tint: "#CDE9F7", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home." },
+      { id:"waddlers", anchor:"programs.html#waddlers", name: "Waddlers", place: "Tender Terrace", agesShort: "12-18mo", ages: "12 - 18 months", icon: "steps", tint: "#D4ECDB", deep: "#3F7E5A", accent: "#5FA873", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by.", finderCopy: "A safe, cheerful room for new walkers who are ready to move, explore, and build confidence one brave step at a time." },
+      { id:"toddlers", anchor:"programs.html#toddlers", name: "Toddlers", place: "Huggable Hills", agesShort: "18-24mo", ages: "18 - 24 months", icon: "blocks", tint: "#FFE7A8", deep: "#9A6B12", accent: "#D9A21B", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines.", finderCopy: "A hands-on classroom for big toddler curiosity, early words, simple routines, and the kind of play that builds security." },
+      { id:"twos", anchor:"programs.html#twos", name: "Twos", place: "Explorers Expressway", agesShort: "2 years", ages: "2 years", icon: "route", tint: "#FFD7CC", deep: "#C25A36", accent: "#E07B4F", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play.", finderCopy: "A warm next step for language bursts, first friendships, potty-training support, and growing independence." },
+      { id:"threes", anchor:"programs.html#threes", name: "Threes", place: "Adventure Avenue", agesShort: "3 years", ages: "3 years", icon: "palette", tint: "#EAF4EC", deep: "#3F7E5A", accent: "#5FA873", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures.", finderCopy: "A bright preschool room for imaginative play, early letters and numbers, listening skills, and growing friendships." },
+      { id:"prek", anchor:"programs.html#prek", name: "Pre-Kindergarten", place: "Discovery Drive", agesShort: "4-5 years", ages: "4 - 5 years", icon: "backpack", tint: "#E5F2FA", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start.", finderCopy: "A confident send-off toward kindergarten with early literacy, math, independence, and social-emotional readiness." },
     ];
     const activeProgram = programData.find((program) => program.id === this.state.activeProgram) || programData[0];
     const programs = programData.map((program) => ({
@@ -391,19 +392,19 @@ class Component extends DCLogic {
       formOpen: !this.state.formSent,
       submitForm: this.submitForm,
       reasons: [
-        { icon: "❤️", title: "Loving, experienced teachers", blurb: "Warm, background-checked educators who stay for years — so your child builds a real, lasting bond.", tint: "#FFD7CC" },
-        { icon: "🛡️", title: "Safe, clean & secure", blurb: "Secure keypad entry, daily-sanitized rooms, and careful sign-in keep every child protected.", tint: "#CDE9F7" },
-        { icon: "🧩", title: "Age-appropriate learning", blurb: "Six dedicated classrooms meet children exactly where they are, from first steps to school-ready.", tint: "#D4ECDB" },
-        { icon: "💬", title: "Open family communication", blurb: "Daily updates, photos, and real conversations — you'll always know how your child's day went.", tint: "#FFF3D6" },
-        { icon: "🌳", title: "Outdoor play & growth", blurb: "Fresh air, big motor play, and room to run on our safe, shaded playground every day.", tint: "#EAF4EC" },
+        { icon: "heart", title: "Loving, experienced teachers", blurb: "Warm, background-checked educators who stay for years — so your child builds a real, lasting bond.", tint: "#FFD7CC", accent: "#C25A36" },
+        { icon: "shield", title: "Safe, clean & secure", blurb: "Secure keypad entry, daily-sanitized rooms, and careful sign-in keep every child protected.", tint: "#CDE9F7", accent: "#3C7AA0" },
+        { icon: "blocks", title: "Age-appropriate learning", blurb: "Six dedicated classrooms meet children exactly where they are, from first steps to school-ready.", tint: "#D4ECDB", accent: "#3F7E5A" },
+        { icon: "message", title: "Open family communication", blurb: "Daily updates, photos, and real conversations — you'll always know how your child's day went.", tint: "#FFF3D6", accent: "#9A6B12" },
+        { icon: "tree", title: "Outdoor play & growth", blurb: "Fresh air, big motor play, and room to run on our safe, shaded playground every day.", tint: "#EAF4EC", accent: "#3F7E5A" },
       ],
       skills: [
-        { icon: "🗣️", label: "Language & early literacy" },
-        { icon: "🔢", label: "Numbers & problem-solving" },
-        { icon: "✋", label: "Fine & gross motor skills" },
-        { icon: "🎨", label: "Creativity & imagination" },
-        { icon: "🤝", label: "Sharing & social skills" },
-        { icon: "🎒", label: "Kindergarten readiness" },
+        { icon: "book", label: "Language & early literacy", accent: "#3C7AA0" },
+        { icon: "numbers", label: "Numbers & problem-solving", accent: "#9A6B12" },
+        { icon: "hand", label: "Fine & gross motor skills", accent: "#C25A36" },
+        { icon: "palette", label: "Creativity & imagination", accent: "#5FA873" },
+        { icon: "users", label: "Sharing & social skills", accent: "#5BA7D6" },
+        { icon: "backpack", label: "Kindergarten readiness", accent: "#3C7AA0" },
       ],
       programs,
       activeProgram,
