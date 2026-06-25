@@ -63,6 +63,48 @@
 	  .ss-space-signs{ display:flex; flex-direction:column; gap:10px; margin-top:28px; }
 	  .ss-space-signs span{ display:flex; align-items:center; gap:10px; font-weight:800; color:#2E2A24; }
 	  .ss-space-dot{ width:11px; height:11px; border-radius:3px; background:#FFB23E; flex:0 0 11px; }
+	  .ss-place-hero, .ss-promise-hall, .ss-program-hall, .ss-family-lobby, .ss-staff-gallery, .ss-learning-studio, .ss-parent-gallery, .ss-visit-moment, .ss-front-desk{ position:relative; overflow:hidden; isolation:isolate; }
+	  .ss-place-hero::before{ content:""; position:absolute; inset:0 0 auto 0; height:210px; background:linear-gradient(90deg,rgba(255,178,62,.16),rgba(91,167,214,.12),rgba(95,168,115,.1)); clip-path:polygon(0 0,100% 0,100% 68%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-place-hero::after{ content:""; position:absolute; right:5vw; top:86px; width:min(38vw,460px); height:420px; border-radius:240px 240px 18px 18px; background:#EAF4EC; z-index:0; pointer-events:none; }
+	  .ss-place-hero > *, .ss-promise-hall > *, .ss-program-hall > *, .ss-family-lobby > *, .ss-staff-gallery > *, .ss-learning-studio > *, .ss-parent-gallery > *, .ss-front-desk > *{ position:relative; z-index:1; }
+	  .ss-hero-shell::before{ content:""; position:absolute; right:4px; top:28px; width:82%; height:84%; background:#FFB23E; clip-path:polygon(10% 0,100% 0,88% 100%,0 76%); opacity:.22; }
+	  .ss-heroimg{ transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
+	  .ss-hero-shell:hover .ss-heroimg{ transform:translateY(-4px); }
+	  .ss-hero-kicker{ display:inline-flex; align-items:center; gap:10px; background:#2E2A24; color:#fff !important; padding:10px 13px; border-radius:10px; letter-spacing:.08em !important; box-shadow:0 12px 24px -18px rgba(46,42,36,.7); }
+	  .ss-hero-kicker::before{ content:""; width:28px; height:2px; background:#FFB23E; }
+	  .ss-promise-hall::before{ content:""; position:absolute; left:max(32px,calc((100vw - 1200px)/2)); right:max(32px,calc((100vw - 1200px)/2)); top:118px; height:180px; background:rgba(255,255,255,.42); clip-path:polygon(0 18%,100% 0,100% 70%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-promise-card, .ss-staff-card, .ss-testimonial-card{ position:relative; isolation:isolate; overflow:hidden; }
+	  .ss-promise-card::before{ content:""; position:absolute; right:0; top:0; width:92px; height:92px; background:linear-gradient(135deg,rgba(255,178,62,.34),rgba(91,167,214,.2)); clip-path:polygon(100% 0,0 0,100% 100%); z-index:0; pointer-events:none; }
+	  .ss-promise-card > *{ position:relative; z-index:1; }
+	  .ss-spatial-card{ --tilt-x:0; --tilt-y:0; transform:perspective(900px) rotateX(calc(var(--tilt-y) * -1deg)) rotateY(calc(var(--tilt-x) * 1deg)); transition:transform .26s cubic-bezier(.22,1,.36,1), box-shadow .26s ease; transform-style:preserve-3d; }
+	  .ss-spatial-card:hover{ transform:perspective(900px) rotateX(calc(var(--tilt-y) * -1deg)) rotateY(calc(var(--tilt-x) * 1deg)) translateY(-5px); }
+	  .ss-program-hall::before{ content:""; position:absolute; left:0; right:0; bottom:0; height:360px; background:#FFF6E4; clip-path:polygon(0 34%,100% 8%,100% 100%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-finder{ position:relative; overflow:hidden; isolation:isolate; background:linear-gradient(135deg,#FFF6E4 0%,#F8E9C8 52%,#EAF4EC 100%) !important; }
+	  .ss-finder::before{ content:""; position:absolute; right:-44px; top:-34px; width:260px; height:158px; background:#5BA7D6; opacity:.18; clip-path:polygon(14% 0,100% 0,78% 100%,0 78%); z-index:0; pointer-events:none; }
+	  .ss-finder::after{ content:""; position:absolute; left:18px; right:18px; bottom:18px; height:56px; background:rgba(255,255,255,.48); clip-path:polygon(0 35%,100% 0,100% 100%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-finder > *{ position:relative; z-index:1; }
+	  .ss-finder-panel{ position:relative; overflow:hidden; }
+	  .ss-finder-panel::before{ content:"Room Preview"; position:absolute; left:18px; top:18px; z-index:2; background:#2E2A24; color:#fff; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; }
+	  .ss-program-card{ position:relative; isolation:isolate; }
+	  .ss-program-card::before{ content:""; position:absolute; left:0; right:0; top:0; height:78px; background:linear-gradient(90deg,rgba(255,178,62,.34),rgba(91,167,214,.16)); clip-path:polygon(0 0,100% 0,100% 54%,0 100%); z-index:1; mix-blend-mode:multiply; pointer-events:none; }
+	  .ss-program-card img, .ss-staff-card img{ transition:transform .38s cubic-bezier(.22,1,.36,1); }
+	  .ss-program-card:hover img, .ss-staff-card:hover img{ transform:scale(1.045); }
+	  .ss-family-lobby::before{ content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(255,178,62,.18) 0 38%,transparent 38% 100%); z-index:0; pointer-events:none; }
+	  .ss-lobby-photo::before{ content:""; position:absolute; left:-22px; bottom:34px; width:58%; height:96px; background:#5FA873; opacity:.22; clip-path:polygon(0 28%,100% 0,88% 100%,0 78%); }
+	  .ss-staff-gallery::before{ content:""; position:absolute; left:0; right:0; top:0; height:220px; background:linear-gradient(90deg,rgba(255,142,114,.12),rgba(255,246,228,.9),rgba(91,167,214,.12)); clip-path:polygon(0 0,100% 0,100% 72%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-staff-card::before{ content:"Team"; position:absolute; left:14px; top:14px; z-index:2; background:#fff; color:#2E2A24; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; box-shadow:0 10px 20px -16px rgba(46,42,36,.55); }
+	  .ss-learning-studio{ background:linear-gradient(135deg,#E5F2FA 0%,#F4FBFE 52%,#D4ECDB 100%) !important; }
+	  .ss-learning-studio::before{ content:""; position:absolute; left:7vw; bottom:70px; width:min(34vw,360px); height:130px; background:#FFB23E; opacity:.18; clip-path:polygon(0 0,100% 24%,84% 100%,0 78%); z-index:0; pointer-events:none; }
+	  .ss-skill-tile{ position:relative; overflow:hidden; }
+	  .ss-skill-tile::after{ content:""; position:absolute; right:-14px; bottom:-18px; width:54px; height:54px; border-radius:16px; background:rgba(91,167,214,.12); transform:rotate(14deg); }
+	  .ss-learning-portal::before{ content:"Learning Studio"; position:absolute; left:22px; top:22px; z-index:3; background:#2E2A24; color:#fff; font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:9px 12px; border-radius:9px; }
+	  .ss-parent-gallery::before{ content:""; position:absolute; left:0; right:0; top:128px; height:170px; background:#FFF6E4; clip-path:polygon(0 20%,100% 0,100% 82%,0 100%); z-index:0; pointer-events:none; }
+	  .ss-testimonial-card::before{ content:""; position:absolute; left:24px; top:0; width:82px; height:8px; border-radius:0 0 8px 8px; background:#FFB23E; }
+	  .ss-visit-moment .ss-cta-panel{ border-radius:24px !important; background:linear-gradient(135deg,#2E2A24 0%,#5FA873 48%,#FF8E72 100%) !important; }
+	  .ss-visit-moment .ss-cta-panel::before{ content:"Tour this way"; position:absolute; left:28px; top:28px; background:#fff; color:#2E2A24; font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:9px 12px; border-radius:8px; }
+	  .ss-front-desk::before{ content:""; position:absolute; right:-120px; top:40px; width:380px; height:380px; border-radius:210px 210px 24px 24px; background:rgba(255,178,62,.12); z-index:0; pointer-events:none; }
+	  .ss-tour-form{ position:relative; overflow:hidden; }
+	  .ss-tour-form::before{ content:"Schedule"; position:absolute; right:22px; top:22px; background:#EAF4EC; color:#3F7E5A; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; }
 	  #mobilecta{ display:none; }
 	  #hamburger{ display:none; }
 	  @media (max-width:860px){
@@ -79,6 +121,13 @@
 	    .ss-space-photo{ left:22px !important; right:22px !important; top:96px !important; width:auto !important; height:230px !important; }
 	    .ss-space-sign{ left:22px !important; right:22px !important; top:350px !important; width:auto !important; }
 	    .ss-space-rail{ grid-template-columns:repeat(2,1fr) !important; left:16px !important; right:16px !important; bottom:24px !important; }
+	    .ss-place-hero::after{ display:none; }
+	    .ss-hero-shell::before{ width:96%; height:300px; top:18px; }
+	    .ss-finder-panel::before, .ss-learning-portal::before, .ss-staff-card::before, .ss-tour-form::before{ font-size:10px; }
+	    .ss-tour-form::before{ position:relative; right:auto; top:auto; display:inline-flex; margin-bottom:14px; }
+	    .ss-visit-moment .ss-cta-panel{ padding:48px 24px !important; }
+	    .ss-visit-moment .ss-cta-panel h2{ font-size:32px !important; }
+	    .ss-visit-moment .ss-cta-panel::before{ position:relative; left:auto; top:auto; display:inline-flex; margin-bottom:20px; }
 	    .ss-finder{ grid-template-columns:1fr !important; padding:20px !important; }
 	    .ss-finder-panel{ grid-template-columns:1fr !important; }
 	    .ss-formrow{ grid-template-columns:1fr !important; }
@@ -128,10 +177,10 @@
     </div>
   </nav>
 
-  <section class="ss-sec" style="padding:64px 32px 0;">
+  <section class="ss-sec ss-place-hero" style="padding:64px 32px 0;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
       <div>
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">North Durham &middot; Ages 6 weeks&ndash;5 years</div>
+        <div class="ss-hero-kicker" style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">North Durham &middot; Ages 6 weeks&ndash;5 years</div>
         <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:62px; line-height:1.04; letter-spacing:-.02em; margin:18px 0 0; color:#2E2A24;">A warm start for <span style="color:#E07B4F;">bright</span> futures.</h1>
         <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:27em; margin:22px 0 0;">Care that feels personal from the very first hello. At Sunshine Smiles Academy we nurture curiosity, confidence, and little milestones every single day &mdash; a place where your child is known, loved, and encouraged.</p>
         <div style="display:flex; gap:16px; align-items:center; margin-top:32px; flex-wrap:wrap;">
@@ -144,7 +193,7 @@
           <div style="padding-left:26px;"><div style="font-weight:800; font-size:15px;">Family-owned</div><div style="font-size:13px; color:#8A8077; margin-top:3px;">since 2008</div></div>
         </div>
       </div>
-      <div style="position:relative; min-height:460px;">
+      <div class="ss-hero-shell" style="position:relative; min-height:460px;">
         <div class="ss-heroimg" style="position:absolute; right:0; top:0; width:90%; height:450px; border-radius:210px 210px 28px 28px; overflow:hidden; background:linear-gradient(160deg,#D4ECDB,#CDE9F7); box-shadow:0 34px 64px -26px rgba(70,90,80,.45);">
           <img src="images/home/kidlaughinprograms_orig.jpg" alt="A child laughing with colorful paint on their hands at Sunshine Smiles Academy." loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center 45%;">
         </div>
@@ -158,7 +207,7 @@
     <svg class="ss-wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="ss-wave-path" d="M0,38 Q36,8 72,38 T144,38 T216,38 T288,38 T360,38 T432,38 T504,38 T576,38 T648,38 T720,38 T792,38 T864,38 T936,38 T1008,38 T1080,38 T1152,38 T1224,38 T1296,38 T1368,38 T1440,38 L1440,60 L0,60 Z" fill="#EAF4EC"/></svg>
   </section>
 
-  <section class="ss-sec" style="background:#EAF4EC; padding:70px 32px 80px;">
+  <section class="ss-sec ss-promise-hall" style="background:#EAF4EC; padding:70px 32px 80px;">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="text-align:center; max-width:42em; margin:0 auto 46px;">
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Why families choose us</div>
@@ -166,7 +215,7 @@
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
 	        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="5">
-	          <div style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
+	          <div class="ss-promise-card ss-spatial-card" data-spatial-card style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
 	            <div style="width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:25px; background:{{ r.tint }}; color:{{ r.accent }};"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ r.icon }}"></use></svg></div>
 	            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:22px; margin:18px 0 0; color:#2E2A24;">{{ r.title }}</h3>
 	            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:10px 0 0;">{{ r.blurb }}</p>
@@ -218,7 +267,7 @@
     </div>
   </section>
 
-  <section id="programs" class="ss-sec" style="padding:80px 32px;">
+  <section id="programs" class="ss-sec ss-program-hall" style="padding:80px 32px;">
     <div style="max-width:1200px; margin:0 auto;">
 	      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
 	        <div style="max-width:30em;">
@@ -256,7 +305,7 @@
 	      </div>
 	      <div class="ss-progrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
 	        <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
-	          <a class="ss-program-card" href="{{ p.anchor }}" style="text-decoration:none; color:inherit; background:#fff; border:1px solid #F0E9DA; border-radius:22px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4); display:block;">
+	          <a class="ss-program-card ss-spatial-card" data-spatial-card href="{{ p.anchor }}" style="text-decoration:none; color:inherit; background:#fff; border:1px solid #F0E9DA; border-radius:22px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4); display:block;">
             <img src="{{ p.image }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="width:100%; height:150px; object-fit:cover; object-position:center;">
             <div style="padding:24px;">
               <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:{{ p.accent }};">{{ p.ages }}</div>
@@ -271,9 +320,9 @@
     </div>
   </section>
 
-  <section id="about" class="ss-sec" style="background:#FFF6E4; padding:80px 32px;">
+  <section id="about" class="ss-sec ss-family-lobby" style="background:#FFF6E4; padding:80px 32px;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1.05fr; gap:54px; align-items:center;">
-      <div style="position:relative; min-height:420px;">
+      <div class="ss-lobby-photo" style="position:relative; min-height:420px;">
         <div style="position:absolute; inset:0 30px 0 0; border-radius:24px; overflow:hidden; background:linear-gradient(150deg,#FFE7A8,#FFD7CC); box-shadow:0 30px 58px -26px rgba(120,90,40,.45);">
           <img src="images/sunshine-staff/family_orig.jpg" alt="The Sunshine Smiles Academy family walking together outdoors." loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center;">
         </div>
@@ -289,7 +338,7 @@
     </div>
   </section>
 
-  <section id="team" class="ss-sec" style="padding:80px 32px;">
+  <section id="team" class="ss-sec ss-staff-gallery" style="padding:80px 32px;">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
         <div style="max-width:30em;">
@@ -300,7 +349,7 @@
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
         <sc-for list="{{ staff }}" as="s" hint-placeholder-count="4">
-          <div style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4);">
+          <div class="ss-staff-card ss-spatial-card" data-spatial-card style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -24px rgba(80,70,40,.4);">
             <img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:220px; object-fit:cover; object-position:{{ s.crop }}; background:{{ s.tint }};">
             <div style="padding:18px 20px 22px;">
               <h3 style="font-family:Spectral,serif; font-weight:500; font-size:20px; margin:0; color:#2E2A24;">{{ s.name }}</h3>
@@ -316,7 +365,7 @@
     </div>
   </section>
 
-  <section id="curriculum" class="ss-sec" style="background:#E5F2FA; padding:80px 32px;">
+  <section id="curriculum" class="ss-sec ss-learning-studio" style="background:#E5F2FA; padding:80px 32px;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.05fr 1fr; gap:54px; align-items:center;">
       <div>
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5BA7D6;">How children grow with us</div>
@@ -324,13 +373,13 @@
         <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:18px 0 26px;">Our days are full of hands-on discovery that builds real skills &mdash; and they never feel like work to a child. Curiosity, language, motor skills, and confidence grow together through joyful, age-appropriate play.</p>
         <div class="ss-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 	          <sc-for list="{{ skills }}" as="k" hint-placeholder-count="6">
-	            <div style="background:#fff; border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:12px; box-shadow:0 12px 26px -20px rgba(60,90,110,.5);">
+	            <div class="ss-skill-tile" style="background:#fff; border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:12px; box-shadow:0 12px 26px -20px rgba(60,90,110,.5);">
 	              <span style="font-size:21px; color:{{ k.accent }}; display:flex; align-items:center; justify-content:center;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ k.icon }}"></use></svg></span><span style="font-weight:700; font-size:14px; color:#2E2A24;">{{ k.label }}</span>
 	            </div>
 	          </sc-for>
         </div>
       </div>
-      <div style="position:relative; min-height:420px;">
+      <div class="ss-learning-portal" style="position:relative; min-height:420px;">
         <div style="position:absolute; inset:0; border-radius:24px 24px 200px 200px; overflow:hidden; background:linear-gradient(160deg,#CDE9F7,#D4ECDB); box-shadow:0 30px 58px -26px rgba(60,90,110,.45);">
           <img src="images/enrollment/156592634-3911882632165179-3931037869188847033-n_orig.jpg" alt="Children and teachers gathered together in a Sunshine Smiles classroom." loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center;">
         </div>
@@ -338,7 +387,7 @@
     </div>
   </section>
 
-  <section class="ss-sec" style="padding:80px 32px;">
+  <section class="ss-sec ss-parent-gallery" style="padding:80px 32px;">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="text-align:center; max-width:40em; margin:0 auto 44px;">
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Parent confidence</div>
@@ -346,7 +395,7 @@
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
         <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
-          <div style="background:{{ t.tint }}; border-radius:22px; padding:32px 28px;">
+          <div class="ss-testimonial-card ss-spatial-card" data-spatial-card style="background:{{ t.tint }}; border-radius:22px; padding:32px 28px;">
             <div style="font-size:30px; color:#FFB23E; line-height:1; font-family:Spectral,serif;">&ldquo;</div>
             <p style="font-family:Spectral,serif; font-weight:400; font-size:20px; line-height:1.5; color:#2E2A24; margin:6px 0 0;">{{ t.quote }}</p>
             <div style="display:flex; align-items:center; gap:12px; margin-top:22px;">
@@ -359,8 +408,8 @@
     </div>
   </section>
 
-  <section class="ss-sec" style="padding:30px 32px 90px;">
-    <div style="max-width:1100px; margin:0 auto; background:linear-gradient(135deg,#FFB23E,#FF8E72); border-radius:32px; padding:64px 48px; text-align:center; position:relative; overflow:hidden; box-shadow:0 30px 70px -30px rgba(255,140,90,.7);">
+  <section class="ss-sec ss-visit-moment" style="padding:30px 32px 90px;">
+    <div class="ss-cta-panel" style="max-width:1100px; margin:0 auto; background:linear-gradient(135deg,#FFB23E,#FF8E72); border-radius:32px; padding:64px 48px; text-align:center; position:relative; overflow:hidden; box-shadow:0 30px 70px -30px rgba(255,140,90,.7);">
       <div style="position:absolute; right:-40px; top:-40px; width:200px; height:200px; border-radius:50%; background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.35) 0 8deg,transparent 8deg 20deg); -webkit-mask:radial-gradient(circle,#000 40%,transparent 72%); mask:radial-gradient(circle,#000 40%,transparent 72%); animation:ssSpin 90s linear infinite;"></div>
       <h2 style="font-family:Spectral,serif; font-weight:500; font-size:40px; line-height:1.12; color:#fff; margin:0; position:relative;">Ready to see if Sunshine Smiles<br>is the right fit for your family?</h2>
       <p style="font-size:18px; color:rgba(255,255,255,.92); margin:16px 0 0; position:relative;">The best way to know is to visit. Come see the classrooms, meet the team, and feel the warmth for yourself.</p>
@@ -371,7 +420,7 @@
     </div>
   </section>
 
-  <section id="contact" class="ss-sec" style="background:#2E2A24; padding:80px 32px;">
+  <section id="contact" class="ss-sec ss-front-desk" style="background:#2E2A24; padding:80px 32px;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:54px;">
       <div style="color:#F4EFE6;">
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#FFB23E;">Come visit us</div>
@@ -383,7 +432,7 @@
         </div>
         <div style="margin-top:24px; height:200px; border-radius:18px; overflow:hidden; border:1px solid #4A463E;"><iframe title="Map to Sunshine Smiles Academy at 2611 Broad St., Durham, NC 27704" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2611%20Broad%20St.%20Durham%20NC%2027704&output=embed" style="width:100%; height:200px; border:0; border-radius:18px;"></iframe></div>
       </div>
-      <div style="background:#FCFBF6; border-radius:24px; padding:34px;">
+      <div class="ss-tour-form" style="background:#FCFBF6; border-radius:24px; padding:34px;">
         <h3 style="font-family:Spectral,serif; font-weight:500; font-size:24px; margin:0 0 4px; color:#2E2A24;">Request a tour</h3>
         <p style="font-size:14px; color:#8A8077; margin:0 0 20px;">Tell us a little about your family and we&rsquo;ll be in touch within one business day.</p>
 	        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
@@ -593,7 +642,7 @@ class Component extends DCLogic {
     }
   }
 
-  document.addEventListener("pointermove", (event) => {
+  function handleWaveMove(event) {
     if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
     if (!(event.target instanceof Element)) return;
 
@@ -615,9 +664,9 @@ class Component extends DCLogic {
     state.targetFocus = focus;
     activeWaves.add(svg);
     wakeWave(svg);
-  }, { passive: true });
+  }
 
-  document.addEventListener("pointerout", (event) => {
+  function handleWaveOut(event) {
     if (!(event.target instanceof Element)) return;
 
     const svg = event.target.closest(".ss-wave-divider");
@@ -626,7 +675,74 @@ class Component extends DCLogic {
     const state = getState(svg);
     state.target = 0;
     wakeWave(svg);
-  }, { passive: true });
+  }
+
+  document.addEventListener("pointermove", handleWaveMove, { passive: true });
+  document.addEventListener("mousemove", handleWaveMove, { passive: true });
+  document.addEventListener("pointerout", handleWaveOut, { passive: true });
+  document.addEventListener("mouseout", handleWaveOut, { passive: true });
+})();
+
+(() => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduceMotion.matches) return;
+
+  let activeCard = null;
+  let frame = 0;
+  let nextTiltX = 0;
+  let nextTiltY = 0;
+
+  function setTiltVars() {
+    if (!activeCard) {
+      frame = 0;
+      return;
+    }
+
+    activeCard.style.setProperty("--tilt-x", nextTiltX.toFixed(3));
+    activeCard.style.setProperty("--tilt-y", nextTiltY.toFixed(3));
+    frame = 0;
+  }
+
+  function resetCard(card) {
+    card.style.setProperty("--tilt-x", "0");
+    card.style.setProperty("--tilt-y", "0");
+  }
+
+  function handleSpatialMove(event) {
+    if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+    if (!(event.target instanceof Element)) return;
+
+    const card = event.target.closest("[data-spatial-card]");
+    if (!card) {
+      if (activeCard) resetCard(activeCard);
+      activeCard = null;
+      return;
+    }
+
+    if (activeCard && activeCard !== card) resetCard(activeCard);
+
+    const rect = card.getBoundingClientRect();
+    nextTiltX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    nextTiltY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+    activeCard = card;
+
+    if (!frame) frame = window.requestAnimationFrame(setTiltVars);
+  }
+
+  function handleSpatialOut(event) {
+    if (!(event.target instanceof Element)) return;
+
+    const card = event.target.closest("[data-spatial-card]");
+    if (!card || (event.relatedTarget instanceof Node && card.contains(event.relatedTarget))) return;
+
+    resetCard(card);
+    if (card === activeCard) activeCard = null;
+  }
+
+  document.addEventListener("pointermove", handleSpatialMove, { passive: true });
+  document.addEventListener("mousemove", handleSpatialMove, { passive: true });
+  document.addEventListener("pointerout", handleSpatialOut, { passive: true });
+  document.addEventListener("mouseout", handleSpatialOut, { passive: true });
 })();
 
 (() => {
