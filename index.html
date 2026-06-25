@@ -33,6 +33,8 @@
 	  .ss-choice:hover, .ss-program-card:hover, .ss-softlink:hover{ transform:translateY(-2px); }
 	  .ss-choice:active, .ss-softlink:active{ transform:translateY(0) scale(.98); }
 	  .ss-finder-panel{ animation:ssPanelIn .34s cubic-bezier(.22,1,.36,1); }
+	  .ss-wave-divider{ display:block; width:100%; height:54px; margin-top:42px; overflow:visible; touch-action:pan-y; }
+	  .ss-wave-path{ transform-box:fill-box; transform-origin:center; }
 	  #mobilecta{ display:none; }
 	  #hamburger{ display:none; }
 	  @media (max-width:860px){
@@ -120,7 +122,7 @@
         <div style="position:absolute; right:18px; top:-16px; width:56px; height:56px; border-radius:50%; background:#FFB23E; box-shadow:0 12px 26px -10px rgba(255,170,40,.8); animation:ssFloat 6s ease-in-out infinite;"></div>
       </div>
     </div>
-    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block; width:100%; height:54px; margin-top:42px;"><path d="M0,38 Q36,8 72,38 T144,38 T216,38 T288,38 T360,38 T432,38 T504,38 T576,38 T648,38 T720,38 T792,38 T864,38 T936,38 T1008,38 T1080,38 T1152,38 T1224,38 T1296,38 T1368,38 T1440,38 L1440,60 L0,60 Z" fill="#EAF4EC"/></svg>
+    <svg class="ss-wave-divider" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="ss-wave-path" d="M0,38 Q36,8 72,38 T144,38 T216,38 T288,38 T360,38 T432,38 T504,38 T576,38 T648,38 T720,38 T792,38 T864,38 T936,38 T1008,38 T1080,38 T1152,38 T1224,38 T1296,38 T1368,38 T1440,38 L1440,60 L0,60 Z" fill="#EAF4EC"/></svg>
   </section>
 
   <section class="ss-sec" style="background:#EAF4EC; padding:70px 32px 80px;">
@@ -431,6 +433,120 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(() => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  if (reduceMotion.matches) return;
+
+  const waveState = new WeakMap();
+  const activeWaves = new Set();
+  const basePath = "M0,38 Q36,8 72,38 T144,38 T216,38 T288,38 T360,38 T432,38 T504,38 T576,38 T648,38 T720,38 T792,38 T864,38 T936,38 T1008,38 T1080,38 T1152,38 T1224,38 T1296,38 T1368,38 T1440,38 L1440,60 L0,60 Z";
+
+  function getState(svg) {
+    let state = waveState.get(svg);
+    if (!state) {
+      state = {
+        current: 0,
+        focus: 0.5,
+        raf: 0,
+        target: 0,
+        targetFocus: 0.5,
+        path: svg.querySelector(".ss-wave-path"),
+      };
+      waveState.set(svg, state);
+    }
+    return state;
+  }
+
+  function buildWavePath(focus, strength) {
+    const baseY = 38;
+    const controlY = 8;
+    const segmentWidth = 72;
+    const totalWidth = 1440;
+    let d = `M0,${baseY}`;
+
+    for (let index = 0; index < 20; index += 1) {
+      const cx = 36 + index * segmentWidth;
+      const endX = (index + 1) * segmentWidth;
+      const controlRatio = cx / totalWidth;
+      const endRatio = endX / totalWidth;
+      const controlDistance = Math.abs(controlRatio - focus);
+      const endDistance = Math.abs(endRatio - focus);
+      const controlFalloff = Math.exp(-Math.pow(controlDistance / 0.18, 2));
+      const endFalloff = Math.exp(-Math.pow(endDistance / 0.2, 2));
+      const ripple = Math.sin((controlRatio - focus) * Math.PI * 8);
+      const endRipple = Math.sin((endRatio - focus) * Math.PI * 8);
+      const liftedControlY = controlY - controlFalloff * strength * 9 + ripple * controlFalloff * strength * 4;
+      const liftedEndY = baseY + endRipple * endFalloff * strength * 3;
+
+      d += ` Q${cx.toFixed(1)},${liftedControlY.toFixed(1)} ${endX.toFixed(1)},${liftedEndY.toFixed(1)}`;
+    }
+
+    return `${d} L1440,60 L0,60 Z`;
+  }
+
+  function animateWave(svg) {
+    const state = getState(svg);
+    state.current += (state.target - state.current) * 0.14;
+    state.focus += (state.targetFocus - state.focus) * 0.16;
+
+    if (state.path) {
+      state.path.setAttribute("d", buildWavePath(state.focus, state.current));
+    }
+
+    if (Math.abs(state.current - state.target) > 0.01 || state.current > 0.02) {
+      state.raf = window.requestAnimationFrame(() => animateWave(svg));
+    } else {
+      state.current = 0;
+      state.raf = 0;
+      activeWaves.delete(svg);
+      state.path?.setAttribute("d", basePath);
+    }
+  }
+
+  function wakeWave(svg) {
+    const state = getState(svg);
+    if (!state.raf) {
+      state.raf = window.requestAnimationFrame(() => animateWave(svg));
+    }
+  }
+
+  document.addEventListener("pointermove", (event) => {
+    if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+    if (!(event.target instanceof Element)) return;
+
+    const svg = event.target.closest(".ss-wave-divider");
+    if (!svg) {
+      activeWaves.forEach((activeSvg) => {
+        const activeState = getState(activeSvg);
+        activeState.target = 0;
+        wakeWave(activeSvg);
+      });
+      return;
+    }
+
+    const rect = svg.getBoundingClientRect();
+    const focus = Math.min(1, Math.max(0, (event.clientX - rect.left) / rect.width));
+    const state = getState(svg);
+
+    state.target = 1;
+    state.targetFocus = focus;
+    activeWaves.add(svg);
+    wakeWave(svg);
+  }, { passive: true });
+
+  document.addEventListener("pointerout", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const svg = event.target.closest(".ss-wave-divider");
+    if (!svg || (event.relatedTarget instanceof Node && svg.contains(event.relatedTarget))) return;
+
+    const state = getState(svg);
+    state.target = 0;
+    wakeWave(svg);
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
