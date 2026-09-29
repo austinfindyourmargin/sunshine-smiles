@@ -55,6 +55,8 @@ async function main() {
           assert.equal(state.lang, 'en');
           assert.equal(state.leakedTemplates, false);
           assert.deepEqual(errors, []);
+          const clippedTables = await page.locator('.ss-tablewrap table').evaluateAll(tables => tables.filter(table => table.getBoundingClientRect().right > table.parentElement.getBoundingClientRect().right + 1).length);
+          assert.equal(clippedTables, 0, 'A tuition table is clipped by its container');
           state.links.filter(url => url.startsWith(base)).forEach(url => links.add(url));
           ids[new URL(name, base).pathname] = state.ids;
           if (width === widths[0]) {

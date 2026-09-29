@@ -9,6 +9,7 @@ The approved design is preserved, including the real logo, family photo treatmen
 - Every page has an English language declaration, a main landmark, skip navigation, and a JavaScript-disabled contact fallback.
 - Navigation uses the compact menu through 1200px, avoiding the crowded tablet header.
 - Long email addresses wrap at 320px; mobile inputs use 16px text; fixed actions respect the device safe area.
+- Tuition tables fit their containers on narrow screens, with rate units on a second line. A dedicated check catches table clipping even when the page itself does not overflow.
 - Small text, accent labels, buttons, and footer links have stronger contrast and clear link affordances.
 - React 18.3.1 and React DOM are hosted locally with their license.
 - The build creates an isolated Margin preview with noindex metadata, share metadata, a file-hash manifest, and no source archives or credentials.
@@ -24,6 +25,7 @@ The approved design is preserved, including the real logo, family photo treatmen
 - Menu open/close, Escape, six classroom choices, FAQ expansion, invalid/valid form states, draft feedback, and input preservation.
 - Zero automated axe WCAG 2 A/AA and WCAG 2.1 AA violations at 320px. Automated checks do not replace manual assistive-technology testing.
 - Desktop/mobile screenshot review, `npm run build`, and `git diff --check`.
+- After the tuition-table correction: all 11 pages passed again at 320px and 390px, including the new table-clipping check and automated accessibility audit.
 
 ## Known Boundaries
 

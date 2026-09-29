@@ -13,6 +13,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visib
 #navlinks { flex-shrink: 0; }
 #navcta { flex-shrink: 0; margin-left: 18px; }
 #hamburger { flex-shrink: 0; margin-left: 14px; }
+.ss-brand span { min-width: 0; }
 #mobilemenu { max-height: calc(100dvh - 160px); overflow-y: auto; }
 @media (max-width: 1200px) {
   #navlinks, #navcta { display: none !important; }
@@ -24,6 +25,12 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visib
   nav > div:first-child { padding-inline: 18px !important; }
 }
 @media (max-width: 860px) {
+  .ss-tablewrap table { width: 100%; table-layout: fixed; }
+  .ss-tablewrap th, .ss-tablewrap td { min-width: 0; padding: 13px 10px; }
+  .ss-tablewrap th:first-child { width: 40%; }
   #mobilecta { padding-bottom: max(10px, env(safe-area-inset-bottom)) !important; }
   body { padding-bottom: calc(74px + env(safe-area-inset-bottom)) !important; }
+}
+@media (max-width: 560px) {
+  .ss-rate-unit { display: block; font-size: 13px; }
 }
