@@ -31,8 +31,8 @@ client.connect(
 )
 stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 # Staging and backups stay outside the public web root.
-stage = f".sunshinesmiles-stage-{stamp}"
-backup = f".sunshinesmiles-backup-{stamp}"
+stage = f"private_html/.sunshinesmiles-stage-{stamp}"
+backup = f"private_html/.sunshinesmiles-backup-{stamp}"
 
 
 def exists(sftp, path):
