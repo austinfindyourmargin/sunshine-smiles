@@ -22,7 +22,7 @@ Sunshine Smiles Academy uses the Claude visual direction as the active site desi
 
 ## Buttons
 
-- Primary: filled coral pill with white text for Schedule a Tour.
+- Primary: filled coral pill with charcoal text for Schedule a Tour; the header uses a charcoal button with white text.
 - Secondary: white or pale sky button with ink text for Explore Programs and Contact paths.
 - Text links: high-contrast underline or arrow treatment, never vague "click here" copy.
 - Touch target: minimum 44px height.
@@ -50,5 +50,7 @@ Primary CTA: Schedule a Tour. Secondary CTAs: Explore Programs, Meet Our Staff, 
 ## Developer Notes
 
 - Staff cards use real names/images where the asset mapping is clear, with conservative classroom labels instead of unverified joined years.
-- The static tour forms open the configured email address; replace with a backend form handler before production if submissions should be captured reliably.
+- The static tour forms validate required fields and prepare an email draft. The visitor must send it in their email app; the site never claims receipt. Add a verified backend form handler if submissions should be captured directly.
+- Shared text accents use darker green, blue, ochre, and coral shades for readable contrast while the original soft background colors remain.
+- Navigation switches to the accessible menu at 1200px to avoid crowding on tablets; page layouts retain their existing 860px breakpoint.
 - Keep local SEO copy natural: Durham daycare, North Durham childcare, childcare in Durham NC, preschool in Durham NC, infant care in Durham, toddler care in Durham, and pre-kindergarten in Durham.

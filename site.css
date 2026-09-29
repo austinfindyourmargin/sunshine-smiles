@@ -1,0 +1,29 @@
+html { scroll-padding-top: 110px; }
+main { overflow-wrap: anywhere; }
+footer > div:last-child a { text-decoration: underline !important; text-underline-offset: 3px; }
+.ss-room-age { opacity: 1 !important; }
+.ss-skip-link { position: fixed; top: 12px; left: 12px; z-index: 100; transform: translateY(-160%); padding: 12px 18px; background: #2e2a24; color: #fff; border-radius: 8px; font: 700 16px Mulish, sans-serif; }
+.ss-skip-link:focus { transform: none; }
+#main-content:focus { outline: none; }
+input, textarea, select { font-size: 16px !important; }
+input::placeholder, textarea::placeholder { color: #6b635a; opacity: 1; }
+input:focus-visible, textarea:focus-visible, select:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid #27678f; outline-offset: 3px; }
+.ss-email-note { font-size: 14px; line-height: 1.6; color: #5c544b; margin: 0; overflow-wrap: anywhere; }
+.ss-email-note a { color: #325e42; text-underline-offset: 3px; }
+#navlinks { flex-shrink: 0; }
+#navcta { flex-shrink: 0; margin-left: 18px; }
+#hamburger { flex-shrink: 0; margin-left: 14px; }
+#mobilemenu { max-height: calc(100dvh - 160px); overflow-y: auto; }
+@media (max-width: 1200px) {
+  #navlinks, #navcta { display: none !important; }
+  #hamburger { display: flex !important; }
+  #mobilemenu[data-open="true"] { display: flex !important; }
+}
+@media (max-width: 380px) {
+  .ss-brand { font-size: 16px !important; }
+  nav > div:first-child { padding-inline: 18px !important; }
+}
+@media (max-width: 860px) {
+  #mobilecta { padding-bottom: max(10px, env(safe-area-inset-bottom)) !important; }
+  body { padding-bottom: calc(74px + env(safe-area-inset-bottom)) !important; }
+}

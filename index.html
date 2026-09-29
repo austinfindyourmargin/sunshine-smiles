@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +7,14 @@
 <meta name="description" content="Warm, family-owned childcare and early learning in North Durham for infants, toddlers, preschoolers, and pre-kindergarten children.">
 <link rel="canonical" href="https://sunshinesmilesacademy.com/">
 <link rel="icon" href="images/home/untitled-design-20-57x57.png">
+<link rel="stylesheet" href="site.css">
+<script src="vendor/react.production.min.js"></script>
+<script src="vendor/react-dom.production.min.js"></script>
+<script src="site.js"></script>
 <script src="./support.js"></script>
 </head>
 <body>
+<noscript><p>Sunshine Smiles Academy: childcare at 2611 Broad St., Durham, NC 27704. Please enable JavaScript to explore the site, or <a href="tel:9193171500">call 919.317.1500</a> to arrange a tour.</p></noscript>
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +109,7 @@
 	  .ss-visit-moment .ss-cta-panel::before{ content:"Tour this way"; position:absolute; left:28px; top:28px; background:#fff; color:#2E2A24; font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:9px 12px; border-radius:8px; }
 	  .ss-front-desk::before{ content:""; position:absolute; right:-120px; top:40px; width:380px; height:380px; border-radius:210px 210px 24px 24px; background:rgba(255,178,62,.12); z-index:0; pointer-events:none; }
 	  .ss-tour-form{ position:relative; overflow:hidden; }
-	  .ss-tour-form::before{ content:"Schedule"; position:absolute; right:22px; top:22px; background:#EAF4EC; color:#3F7E5A; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; }
+	  .ss-tour-form::before{ content:"Schedule"; position:absolute; right:22px; top:22px; background:#EAF4EC; color:#356C46; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; }
 	  #mobilecta{ display:none; }
 	  #hamburger{ display:none; }
 	  @media (max-width:860px){
@@ -171,19 +176,20 @@
 
 <div style="font-family:Mulish,sans-serif; color:#2E2A24;">
 
-  <nav style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
+  <a class="ss-skip-link" href="#main-content">Skip to content</a>
+  <nav aria-label="Main navigation" style="position:sticky; top:0; z-index:50; background:rgba(252,251,246,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(120,100,70,.1);">
     <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between;">
       <a href="index.html" class="ss-brand"><img class="ss-brand-logo" src="images/home/untitled-design-20.png" alt="" loading="eager" decoding="async"><span>Sunshine Smiles Academy</span></a>
-      <div id="navlinks" style="display:flex; align-items:center; gap:24px; font-weight:600; font-size:15px; color:#6B635A;">
+      <div id="navlinks" style="display:flex; align-items:center; gap:24px; font-weight:600; font-size:15px; color:#625A51;">
         <a href="#programs" style="text-decoration:none; color:inherit;">Programs</a>
         <a href="staff.html" style="text-decoration:none; color:inherit;">Our Team</a>
         <a href="rates-fees.html" style="text-decoration:none; color:inherit;">Tuition &amp; Forms</a>
         <a href="enrollment.html" style="text-decoration:none; color:inherit;">Enrollment</a>
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
-        <a href="tel:9193171500" style="text-decoration:none; color:#5FA873; font-weight:700;">919.317.1500</a>
+        <a href="tel:9193171500" style="text-decoration:none; color:#356C46; font-weight:700;">919.317.1500</a>
       </div>
       <a id="navcta" href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
-      <button id="hamburger" onClick="{{ toggleMenu }}" aria-label="Open menu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;">
+      <button id="hamburger" type="button" onClick="{{ toggleMenu }}" aria-label="Toggle navigation" aria-expanded="{{ menuOpen }}" aria-controls="mobilemenu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;">
         <span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span>
       </button>
     </div>
@@ -194,24 +200,25 @@
       <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
-      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
     </div>
   </nav>
+<main id="main-content" tabindex="-1">
 
   <section class="ss-sec ss-place-hero" style="padding:64px 32px 0;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
       <div>
-        <div class="ss-hero-kicker" style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">North Durham &middot; Ages 6 weeks&ndash;5 years</div>
-        <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:62px; line-height:1.04; letter-spacing:-.02em; margin:18px 0 0; color:#2E2A24;">A warm start for <span style="color:#E07B4F;">bright</span> futures.</h1>
-        <p style="font-size:18px; line-height:1.65; color:#6B635A; max-width:27em; margin:22px 0 0;">Care that feels personal from the very first hello. At Sunshine Smiles Academy we nurture curiosity, confidence, and little milestones every single day &mdash; a place where your child is known, loved, and encouraged.</p>
+        <div class="ss-hero-kicker" style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#356C46;">North Durham &middot; Ages 6 weeks&ndash;5 years</div>
+        <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:62px; line-height:1.04; letter-spacing:-.02em; margin:18px 0 0; color:#2E2A24;">A warm start for <span style="color:#9D4026;">bright</span> futures.</h1>
+        <p style="font-size:18px; line-height:1.65; color:#625A51; max-width:27em; margin:22px 0 0;">Care that feels personal from the very first hello. At Sunshine Smiles Academy we nurture curiosity, confidence, and little milestones every single day &mdash; a place where your child is known, loved, and encouraged.</p>
         <div style="display:flex; gap:16px; align-items:center; margin-top:32px; flex-wrap:wrap;">
           <a href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:16px; padding:16px 30px; border-radius:8px;">Schedule a Guided Tour</a>
-          <a href="#programs" style="text-decoration:none; font-weight:700; font-size:16px; color:#2E2A24; display:flex; align-items:center; gap:8px;">Explore Programs <span style="color:#5FA873;">&rarr;</span></a>
+          <a href="#programs" style="text-decoration:none; font-weight:700; font-size:16px; color:#2E2A24; display:flex; align-items:center; gap:8px;">Explore Programs <span style="color:#356C46;">&rarr;</span></a>
         </div>
         <div class="ss-herostat" style="display:flex; gap:0; margin-top:44px; border-top:1px solid #EAE3D4; padding-top:22px;">
-          <div style="padding-right:26px; border-right:1px solid #EAE3D4;"><div style="font-weight:800; font-size:15px;">Loving teachers</div><div style="font-size:13px; color:#8A8077; margin-top:3px;">low ratios, real bonds</div></div>
-          <div style="padding:0 26px; border-right:1px solid #EAE3D4;"><div style="font-weight:800; font-size:15px;">Safe &amp; spotless</div><div style="font-size:13px; color:#8A8077; margin-top:3px;">secure entry, clean rooms</div></div>
-          <div style="padding-left:26px;"><div style="font-weight:800; font-size:15px;">Family-owned</div><div style="font-size:13px; color:#8A8077; margin-top:3px;">since 2008</div></div>
+          <div style="padding-right:26px; border-right:1px solid #EAE3D4;"><div style="font-weight:800; font-size:15px;">Loving teachers</div><div style="font-size:13px; color:#625A51; margin-top:3px;">low ratios, real bonds</div></div>
+          <div style="padding:0 26px; border-right:1px solid #EAE3D4;"><div style="font-weight:800; font-size:15px;">Safe &amp; spotless</div><div style="font-size:13px; color:#625A51; margin-top:3px;">secure entry, clean rooms</div></div>
+          <div style="padding-left:26px;"><div style="font-weight:800; font-size:15px;">Family-owned</div><div style="font-size:13px; color:#625A51; margin-top:3px;">since 2008</div></div>
         </div>
       </div>
       <div class="ss-hero-shell" style="position:relative; min-height:460px;">
@@ -219,8 +226,8 @@
           <img src="images/home/kidlaughinprograms_orig.jpg" alt="A child laughing with colorful paint on their hands at Sunshine Smiles Academy." loading="eager" fetchpriority="high" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center 45%;">
         </div>
         <div style="position:absolute; left:-14px; bottom:26px; width:178px; background:#fff; border-radius:18px; padding:18px; box-shadow:0 22px 42px -18px rgba(70,80,70,.4);">
-          <div style="font-family:Spectral,serif; font-size:30px; color:#5FA873; line-height:1.05;">Since<br>2008</div>
-          <div style="font-size:13px; color:#6B635A; font-weight:600; margin-top:6px; line-height:1.35;">family-owned childcare in North Durham</div>
+          <div style="font-family:Spectral,serif; font-size:30px; color:#356C46; line-height:1.05;">Since<br>2008</div>
+          <div style="font-size:13px; color:#625A51; font-weight:600; margin-top:6px; line-height:1.35;">family-owned childcare in North Durham</div>
         </div>
         <div style="position:absolute; right:18px; top:-16px; width:56px; height:56px; border-radius:50%; background:#FFB23E; box-shadow:0 12px 26px -10px rgba(255,170,40,.8); animation:ssFloat 6s ease-in-out infinite;"></div>
       </div>
@@ -231,7 +238,7 @@
   <section class="ss-sec ss-promise-hall" style="background:#EAF4EC; padding:70px 32px 80px;">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="text-align:center; max-width:42em; margin:0 auto 46px;">
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Why families choose us</div>
+        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#356C46;">Why families choose us</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Everything a parent worries about &mdash; already handled.</h2>
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;">
@@ -239,7 +246,7 @@
 	          <div class="ss-promise-card ss-spatial-card" data-spatial-card style="background:#fff; border-radius:20px; padding:30px; box-shadow:0 16px 34px -22px rgba(80,70,40,.4);">
 	            <div style="width:54px; height:54px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:25px; background:{{ r.tint }}; color:{{ r.accent }};"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-{{ r.icon }}"></use></svg></div>
 	            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:22px; margin:18px 0 0; color:#2E2A24;">{{ r.title }}</h3>
-	            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:10px 0 0;">{{ r.blurb }}</p>
+	            <p style="font-size:15px; line-height:1.6; color:#625A51; margin:10px 0 0;">{{ r.blurb }}</p>
           </div>
         </sc-for>
       </div>
@@ -249,9 +256,9 @@
   <section id="spaces" class="ss-sec ss-space-lab">
     <div class="ss-space-grid">
       <div>
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#E07B4F;">Classrooms as destinations</div>
+        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#9D4026;">Classrooms as destinations</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:42px; line-height:1.08; letter-spacing:-.01em; margin:14px 0 0; color:#2E2A24; text-wrap:balance;">A hallway designed for little explorers.</h2>
-        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:18px 0 0;">Thoughtful children&rsquo;s spaces use color, signs, murals, and cozy room moments to help kids feel oriented and excited. At Sunshine Smiles, each classroom gets its own clear identity so children know where they belong and parents can picture the day.</p>
+        <p style="font-size:17px; line-height:1.7; color:#625A51; margin:18px 0 0;">Thoughtful children&rsquo;s spaces use color, signs, murals, and cozy room moments to help kids feel oriented and excited. At Sunshine Smiles, each classroom gets its own clear identity so children know where they belong and parents can picture the day.</p>
         <div class="ss-space-signs">
           <span><i class="ss-space-dot" style="background:#5BA7D6;"></i>Visual cues make each classroom easy to recognize.</span>
           <span><i class="ss-space-dot" style="background:#FFB23E;"></i>Real photos show the spaces families will actually visit.</span>
@@ -292,16 +299,16 @@
     <div style="max-width:1200px; margin:0 auto;">
 	      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
 	        <div style="max-width:30em;">
-	          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5BA7D6;">Six classrooms, one happy hallway</div>
+	          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#286387;">Six classrooms, one happy hallway</div>
 	          <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">Find the right room for your child.</h2>
 	        </div>
 	        <a href="programs.html" style="text-decoration:none; font-weight:700; font-size:15px; color:#2E2A24; border:1.5px solid #E7DCC6; padding:13px 22px; border-radius:8px;">View all programs &rarr;</a>
 	      </div>
 	      <div class="ss-finder" style="display:grid; grid-template-columns:.86fr 1.14fr; gap:22px; align-items:stretch; background:#FFF6E4; border:1px solid #F0E9DA; border-radius:24px; padding:24px; margin-bottom:30px;">
 	        <div style="padding:4px;">
-	          <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#9A6B12;">Classroom finder</div>
+	          <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#795108;">Classroom finder</div>
 	          <h3 style="font-family:Spectral,serif; font-weight:500; font-size:30px; line-height:1.12; margin:10px 0 0; color:#2E2A24;">Choose your child&rsquo;s age.</h3>
-	          <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:12px 0 0;">Tap an age to preview the room families usually start with. We&rsquo;ll always confirm the best fit with you during a tour.</p>
+	          <p style="font-size:15px; line-height:1.6; color:#625A51; margin:12px 0 0;">Tap an age to preview the room families usually start with. We&rsquo;ll always confirm the best fit with you during a tour.</p>
 	          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;">
 	            <sc-for list="{{ programs }}" as="p" hint-placeholder-count="6">
 	              <button class="ss-choice" onClick="{{ p.pick }}" aria-pressed="{{ p.selected }}" style="font-family:inherit; cursor:pointer; border:1.5px solid {{ p.choiceBorder }}; background:{{ p.choiceBg }}; color:{{ p.choiceText }}; font-weight:800; font-size:13px; padding:10px 13px; border-radius:999px;">{{ p.agesShort }}</button>
@@ -316,10 +323,10 @@
 	            <div style="display:inline-flex; align-items:center; gap:8px; background:{{ activeProgram.tint }}; color:{{ activeProgram.deep }}; font-weight:800; font-size:12px; padding:7px 12px; border-radius:999px;">{{ activeProgram.ages }}</div>
 	            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:28px; line-height:1.08; margin:12px 0 0; color:#2E2A24;">{{ activeProgram.name }}</h3>
 	            <div style="font-size:14px; font-weight:800; color:{{ activeProgram.accent }}; margin-top:3px;">{{ activeProgram.place }}</div>
-	            <p style="font-size:15px; line-height:1.6; color:#6B635A; margin:12px 0 0;">{{ activeProgram.finderCopy }}</p>
+	            <p style="font-size:15px; line-height:1.6; color:#625A51; margin:12px 0 0;">{{ activeProgram.finderCopy }}</p>
 	            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:18px;">
 	              <a class="ss-softlink" href="{{ activeProgram.anchor }}" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:12px 18px; border-radius:8px;">See this room</a>
-	              <a href="contact.html" style="text-decoration:none; font-weight:800; font-size:14px; color:#E07B4F;">Schedule a tour &rarr;</a>
+	              <a href="contact.html" style="text-decoration:none; font-weight:800; font-size:14px; color:#9D4026;">Schedule a tour &rarr;</a>
 	            </div>
 	          </div>
 	        </div>
@@ -331,8 +338,8 @@
             <div style="padding:24px;">
               <div style="font-weight:800; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:{{ p.accent }};">{{ p.ages }}</div>
               <h3 style="font-family:Spectral,serif; font-weight:500; font-size:24px; margin:8px 0 0; color:#2E2A24;">{{ p.name }}</h3>
-              <div style="font-size:13px; font-weight:700; color:#8A8077; margin-top:2px;">{{ p.place }}</div>
-              <p style="font-size:15px; line-height:1.55; color:#6B635A; margin:12px 0 0;">{{ p.blurb }}</p>
+              <div style="font-size:13px; font-weight:700; color:#625A51; margin-top:2px;">{{ p.place }}</div>
+              <p style="font-size:15px; line-height:1.55; color:#625A51; margin:12px 0 0;">{{ p.blurb }}</p>
               <div style="margin-top:16px; font-weight:700; font-size:14px; color:{{ p.accent }};">Learn more &rarr;</div>
             </div>
           </a>
@@ -347,13 +354,13 @@
         <div style="position:absolute; inset:0 30px 0 0; border-radius:24px; overflow:hidden; background:linear-gradient(150deg,#FFE7A8,#FFD7CC); box-shadow:0 30px 58px -26px rgba(120,90,40,.45);">
           <img src="images/sunshine-staff/family_orig.jpg" alt="The Sunshine Smiles Academy family walking together outdoors." loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:center;">
         </div>
-	        <div style="position:absolute; right:0; bottom:28px; background:#fff; border-radius:16px; padding:14px 18px; box-shadow:0 18px 38px -16px rgba(120,90,40,.4); font-weight:800; font-size:14px; color:#2E2A24; display:flex; align-items:center; gap:8px;"><span style="width:22px; height:22px; border-radius:50%; background:#FFF3D6; color:#D9A21B; display:flex; align-items:center; justify-content:center; font-size:14px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></span>Family-owned since 2008</div>
+	        <div style="position:absolute; right:0; bottom:28px; background:#fff; border-radius:16px; padding:14px 18px; box-shadow:0 18px 38px -16px rgba(120,90,40,.4); font-weight:800; font-size:14px; color:#2E2A24; display:flex; align-items:center; gap:8px;"><span style="width:22px; height:22px; border-radius:50%; background:#FFF3D6; color:#795108; display:flex; align-items:center; justify-content:center; font-size:14px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></span>Family-owned since 2008</div>
       </div>
       <div>
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#D9A21B;">Our family &amp; yours</div>
+        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#795108;">Our family &amp; yours</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.12; margin:14px 0 0; color:#2E2A24;">A neighborhood center with real heart.</h2>
-        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:20px 0 0;">Sunshine Smiles Academy has been part of the North Durham community since June 23, 2008. What started as one family&rsquo;s commitment to warm, dependable childcare at a fair rate has grown into six joyful classrooms &mdash; but the heart hasn&rsquo;t changed. We still know every child by name, celebrate every milestone, and treat your family like our own.</p>
-        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:16px 0 0;">When you walk through our doors, you&rsquo;ll feel it: kids who are genuinely happy, teachers who genuinely care, and a place that genuinely feels like home.</p>
+        <p style="font-size:17px; line-height:1.7; color:#625A51; margin:20px 0 0;">Sunshine Smiles Academy has been part of the North Durham community since June 23, 2008. What started as one family&rsquo;s commitment to warm, dependable childcare at a fair rate has grown into six joyful classrooms &mdash; but the heart hasn&rsquo;t changed. We still know every child by name, celebrate every milestone, and treat your family like our own.</p>
+        <p style="font-size:17px; line-height:1.7; color:#625A51; margin:16px 0 0;">When you walk through our doors, you&rsquo;ll feel it: kids who are genuinely happy, teachers who genuinely care, and a place that genuinely feels like home.</p>
         <a href="staff.html" style="text-decoration:none; display:inline-block; margin-top:26px; font-weight:700; font-size:15px; color:#2E2A24; border-bottom:2px solid #FFB23E; padding-bottom:3px;">Meet our team &rarr;</a>
       </div>
     </div>
@@ -363,7 +370,7 @@
     <div style="max-width:1200px; margin:0 auto;">
       <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; flex-wrap:wrap;">
         <div style="max-width:30em;">
-          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#FF8E72;">Meet the smiling faces</div>
+          <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#9D4026;">Meet the smiling faces</div>
           <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">The people who&rsquo;ll know your child by name.</h2>
         </div>
         <a href="staff.html" style="text-decoration:none; font-weight:700; font-size:15px; color:#2E2A24; border:1.5px solid #E7DCC6; padding:13px 22px; border-radius:8px;">Meet the full team &rarr;</a>
@@ -374,10 +381,10 @@
             <img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:220px; object-fit:cover; object-position:{{ s.crop }}; background:{{ s.tint }};">
             <div style="padding:18px 20px 22px;">
               <h3 style="font-family:Spectral,serif; font-weight:500; font-size:20px; margin:0; color:#2E2A24;">{{ s.name }}</h3>
-              <div style="font-size:14px; font-weight:700; color:#6B635A; margin-top:3px;">{{ s.role }}</div>
+              <div style="font-size:14px; font-weight:700; color:#625A51; margin-top:3px;">{{ s.role }}</div>
               <div style="display:flex; align-items:center; gap:8px; margin-top:12px; flex-wrap:wrap;">
-                <span style="font-size:12px; font-weight:700; background:#EAF4EC; color:#5FA873; padding:5px 10px; border-radius:20px;">{{ s.room }}</span>
-                <span style="font-size:12px; font-weight:700; background:#FFF3D6; color:#9A6B12; padding:5px 10px; border-radius:20px;">{{ s.since }}</span>
+                <span style="font-size:12px; font-weight:700; background:#EAF4EC; color:#356C46; padding:5px 10px; border-radius:20px;">{{ s.room }}</span>
+                <span style="font-size:12px; font-weight:700; background:#FFF3D6; color:#795108; padding:5px 10px; border-radius:20px;">{{ s.since }}</span>
               </div>
             </div>
           </div>
@@ -389,9 +396,9 @@
   <section id="curriculum" class="ss-sec ss-learning-studio" style="background:#E5F2FA; padding:80px 32px;">
     <div class="ss-grid2" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.05fr 1fr; gap:54px; align-items:center;">
       <div>
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5BA7D6;">How children grow with us</div>
+        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#286387;">How children grow with us</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.12; margin:14px 0 0; color:#2E2A24;">Play with a purpose, every single day.</h2>
-        <p style="font-size:17px; line-height:1.7; color:#6B635A; margin:18px 0 26px;">Our days are full of hands-on discovery that builds real skills &mdash; and they never feel like work to a child. Curiosity, language, motor skills, and confidence grow together through joyful, age-appropriate play.</p>
+        <p style="font-size:17px; line-height:1.7; color:#625A51; margin:18px 0 26px;">Our days are full of hands-on discovery that builds real skills &mdash; and they never feel like work to a child. Curiosity, language, motor skills, and confidence grow together through joyful, age-appropriate play.</p>
         <div class="ss-grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
 	          <sc-for list="{{ skills }}" as="k" hint-placeholder-count="6">
 	            <div class="ss-skill-tile" style="background:#fff; border-radius:14px; padding:16px 18px; display:flex; align-items:center; gap:12px; box-shadow:0 12px 26px -20px rgba(60,90,110,.5);">
@@ -411,7 +418,7 @@
   <section class="ss-sec ss-parent-gallery" style="padding:80px 32px;">
     <div style="max-width:1200px; margin:0 auto;">
       <div style="text-align:center; max-width:40em; margin:0 auto 44px;">
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#5FA873;">Parent confidence</div>
+        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#356C46;">Parent confidence</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:40px; line-height:1.1; margin:14px 0 0; color:#2E2A24;">What families want to feel before enrolling.</h2>
       </div>
       <div class="ss-grid3" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:22px;">
@@ -420,13 +427,13 @@
             <div style="font-size:30px; color:#FFB23E; line-height:1; font-family:Spectral,serif;">&ldquo;</div>
             <p style="font-family:Spectral,serif; font-weight:400; font-size:20px; line-height:1.5; color:#2E2A24; margin:6px 0 0;">{{ t.quote }}</p>
             <div style="display:flex; align-items:center; gap:12px; margin-top:22px;">
-              <span style="width:42px; height:42px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#8A8077;">{{ t.initials }}</span>
-              <div><div style="font-weight:800; font-size:14px; color:#2E2A24;">{{ t.name }}</div><div style="font-size:13px; color:#8A8077;">{{ t.detail }}</div></div>
+              <span style="width:42px; height:42px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; color:#625A51;">{{ t.initials }}</span>
+              <div><div style="font-weight:800; font-size:14px; color:#2E2A24;">{{ t.name }}</div><div style="font-size:13px; color:#625A51;">{{ t.detail }}</div></div>
             </div>
           </div>
         </sc-for>
       </div>
-      <div style="text-align:center; margin-top:26px;"><a href="testimonials.html" style="text-decoration:none; color:#2E2A24; font-weight:800; display:inline-flex; align-items:center; gap:8px;">Read more parent stories <span style="color:#5FA873;">&rarr;</span></a></div>
+      <div style="text-align:center; margin-top:26px;"><a href="testimonials.html" style="text-decoration:none; color:#2E2A24; font-weight:800; display:inline-flex; align-items:center; gap:8px;">Read more parent stories <span style="color:#356C46;">&rarr;</span></a></div>
     </div>
   </section>
 
@@ -456,29 +463,31 @@
       </div>
       <div class="ss-tour-form" style="background:#FCFBF6; border-radius:24px; padding:34px;">
         <h3 style="font-family:Spectral,serif; font-weight:500; font-size:24px; margin:0 0 4px; color:#2E2A24;">Request a tour</h3>
-        <p style="font-size:14px; color:#8A8077; margin:0 0 20px;">Tell us a little about your family and we&rsquo;ll be in touch within one business day.</p>
+        <p style="font-size:14px; color:#625A51; margin:0 0 20px;">Tell us a little about your family to start planning a visit.</p>
 	        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
-	          <div style="background:#EAF4EC; border-radius:16px; padding:30px; text-align:center;">
-	            <div style="width:46px; height:46px; border-radius:50%; background:#FFF3D6; color:#D9A21B; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
-	            <div style="font-family:Spectral,serif; font-size:22px; color:#2E2A24; margin-top:8px;">Thank you!</div>
-            <p style="font-size:14px; color:#6B635A; margin:6px 0 0;">We&rsquo;ve received your request and will reach out very soon.</p>
+	          <div role="status" style="background:#EAF4EC; border-radius:16px; padding:30px; text-align:center;">
+	            <div style="width:46px; height:46px; border-radius:50%; background:#FFF3D6; color:#795108; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
+	            <div style="font-family:Spectral,serif; font-size:22px; color:#2E2A24; margin-top:8px;">Your email draft is ready</div>
+            <p style="font-size:14px; color:#625A51; margin:6px 0 0;">Please press Send in your email app to deliver your message. Nothing has been sent by this website. If your email app did not open, email <a href="mailto:erika.byrd3@gmail.com">erika.byrd3@gmail.com</a> or call <a href="tel:9193171500">919.317.1500</a>.</p>
           </div>
         </sc-if>
         <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
-          <div style="display:flex; flex-direction:column; gap:14px;">
+          <form data-inquiry="tour" onSubmit="{{ submitForm }}" style="display:flex; flex-direction:column; gap:16px;">
+<p class="ss-email-note">Prepare an email to our team. Your email app will open so you can review and send it. Required fields are marked *.</p>
             <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Parent name<input type="text" placeholder="Your name" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Phone<input type="tel" placeholder="(919) 000-0000" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
+              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Parent name *<input type="text" name="parent-name" autocomplete="name" required="required" maxlength="150" placeholder="Your name" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
+              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Phone<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="(919) 000-0000" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
             </div>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Email<input type="email" placeholder="you@email.com" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
+            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Email *<input type="email" name="email" autocomplete="email" required="required" maxlength="254" placeholder="you@email.com" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
             <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Child&rsquo;s age<input type="text" placeholder="e.g. 18 months" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-            <button onClick="{{ submitForm }}" style="font-family:inherit; cursor:pointer; background:#FF8E72; color:#fff; font-weight:800; font-size:16px; padding:15px; border:none; border-radius:12px; box-shadow:0 14px 28px -12px rgba(255,110,80,.8);">Request My Tour</button>
-          </div>
+            <button type="submit" style="font-family:inherit; cursor:pointer; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:16px; padding:15px; border:none; border-radius:12px; box-shadow:0 14px 28px -12px rgba(255,110,80,.8);">Prepare Email</button>
+          </form>
         </sc-if>
       </div>
     </div>
   </section>
 
+</main>
   <footer style="background:#231F1A; color:#B7AE9F; padding:54px 32px 90px;">
     <div class="ss-footergrid" style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:32px;">
       <div>
@@ -498,12 +507,12 @@
         <div style="font-size:14px; line-height:1.7;">2611 Broad St.<br>Durham, NC 27704<br><a href="tel:9193171500" style="color:#FFB23E; font-weight:700; text-decoration:none;">919.317.1500</a><br>Mon&ndash;Fri 6:30a&ndash;5:30p</div>
       </div>
     </div>
-    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#7E766A;">&copy; 2026 Sunshine Smiles Academy &middot; <a href="privacy-policy.html" style="color:#B7AE9F; text-decoration:none;">Privacy Policy</a> &middot; <a href="terms-conditions.html" style="color:#B7AE9F; text-decoration:none;">Terms</a></div>
+    <div style="max-width:1200px; margin:36px auto 0; padding-top:22px; border-top:1px solid #3A362F; font-size:13px; color:#B7AE9F;">&copy; 2026 Sunshine Smiles Academy &middot; <a href="privacy-policy.html" style="color:#B7AE9F; text-decoration:none;">Privacy Policy</a> &middot; <a href="terms-conditions.html" style="color:#B7AE9F; text-decoration:none;">Terms</a></div>
   </footer>
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
 	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
-    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#fff; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 
 </div>
@@ -515,22 +524,16 @@ class Component extends DCLogic {
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
   selectProgram = (id) => this.setState({ activeProgram: id });
   submitForm = (event) => {
-    const scope = event?.currentTarget?.closest("section") || document;
-    const fields = Array.from(scope.querySelectorAll("input, textarea")).map((field) => {
-      const label = field.closest("label")?.childNodes?.[0]?.textContent?.trim() || field.placeholder || field.type;
-      return `${label}: ${field.value || "(not provided)"}`;
-    }).join("\n");
-    window.location.href = `mailto:erika.byrd3@gmail.com?subject=Sunshine%20Smiles%20tour%20request&body=${encodeURIComponent(fields)}`;
-    this.setState({ formSent: true });
+    if (window.sunshine.openEmailDraft(event)) this.setState({ formSent: true });
   };
   renderVals() {
     const programData = [
-      { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", icon: "baby", tint: "#CDE9F7", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home.", spaceNote: "A soft first stop with calm routines, cozy care, and gentle sensory moments for Sunshine Smiles' smallest learners.", spaceCues: ["Quiet rhythms", "Soft play", "Family updates"] },
-      { id:"waddlers", anchor:"programs.html#waddlers", name: "Waddlers", place: "Tender Terrace", agesShort: "12-18mo", ages: "12 - 18 months", icon: "steps", tint: "#D4ECDB", deep: "#3F7E5A", accent: "#5FA873", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by.", finderCopy: "A safe, cheerful room for new walkers who are ready to move, explore, and build confidence one brave step at a time.", spaceNote: "A little movement zone where new walkers can practice steps, words, and brave discoveries with teachers close by.", spaceCues: ["First steps", "Low shelves", "Big smiles"] },
-      { id:"toddlers", anchor:"programs.html#toddlers", name: "Toddlers", place: "Huggable Hills", agesShort: "18-24mo", ages: "18 - 24 months", icon: "blocks", tint: "#FFE7A8", deep: "#9A6B12", accent: "#D9A21B", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines.", finderCopy: "A hands-on classroom for big toddler curiosity, early words, simple routines, and the kind of play that builds security.", spaceNote: "A sunny room for busy hands, songs, stories, sensory play, and the routines toddlers use to feel secure.", spaceCues: ["Sensory play", "Simple routines", "Story time"] },
-      { id:"twos", anchor:"programs.html#twos", name: "Twos", place: "Explorers Expressway", agesShort: "2 years", ages: "2 years", icon: "route", tint: "#FFD7CC", deep: "#C25A36", accent: "#E07B4F", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play.", finderCopy: "A warm next step for language bursts, first friendships, potty-training support, and growing independence.", spaceNote: "A bright lane for first friendships, language bursts, independence, and potty-training support without pressure.", spaceCues: ["First friends", "Language bursts", "Independence"] },
-      { id:"threes", anchor:"programs.html#threes", name: "Threes", place: "Adventure Avenue", agesShort: "3 years", ages: "3 years", icon: "palette", tint: "#EAF4EC", deep: "#3F7E5A", accent: "#5FA873", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures.", finderCopy: "A bright preschool room for imaginative play, early letters and numbers, listening skills, and growing friendships.", spaceNote: "A preschool neighborhood for pretend play, early letters and numbers, classroom jobs, and growing confidence.", spaceCues: ["Art moments", "Early letters", "Pretend play"] },
-      { id:"prek", anchor:"programs.html#prek", name: "Pre-Kindergarten", navName: "Pre-K", place: "Discovery Drive", agesShort: "4-5 years", ages: "4 - 5 years", icon: "backpack", tint: "#E5F2FA", deep: "#3C7AA0", accent: "#5BA7D6", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start.", finderCopy: "A confident send-off toward kindergarten with early literacy, math, independence, and social-emotional readiness.", spaceNote: "A confident final stop before kindergarten with early literacy, problem-solving, leadership, and school-ready routines.", spaceCues: ["Early literacy", "Problem solving", "School readiness"] },
+      { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", icon: "baby", tint: "#CDE9F7", deep: "#286387", accent: "#286387", image: "images/infants/lullybylane_orig.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home.", spaceNote: "A soft first stop with calm routines, cozy care, and gentle sensory moments for Sunshine Smiles' smallest learners.", spaceCues: ["Quiet rhythms", "Soft play", "Family updates"] },
+      { id:"waddlers", anchor:"programs.html#waddlers", name: "Waddlers", place: "Tender Terrace", agesShort: "12-18mo", ages: "12 - 18 months", icon: "steps", tint: "#D4ECDB", deep: "#356C46", accent: "#356C46", image: "images/waddlers/waddlers_orig.jpg", alt: "The Tender Terrace waddlers classroom at Sunshine Smiles Academy.", blurb: "Safe spaces for first steps, first words, and brave little discoveries with teachers close by.", finderCopy: "A safe, cheerful room for new walkers who are ready to move, explore, and build confidence one brave step at a time.", spaceNote: "A little movement zone where new walkers can practice steps, words, and brave discoveries with teachers close by.", spaceCues: ["First steps", "Low shelves", "Big smiles"] },
+      { id:"toddlers", anchor:"programs.html#toddlers", name: "Toddlers", place: "Huggable Hills", agesShort: "18-24mo", ages: "18 - 24 months", icon: "blocks", tint: "#FFE7A8", deep: "#795108", accent: "#795108", image: "images/toddlers/toddlerhuggable_orig-1.jpg", alt: "The Huggable Hills toddler classroom at Sunshine Smiles Academy.", blurb: "Busy hands and big curiosity, channeled into songs, stories, sensory play, and joyful routines.", finderCopy: "A hands-on classroom for big toddler curiosity, early words, simple routines, and the kind of play that builds security.", spaceNote: "A sunny room for busy hands, songs, stories, sensory play, and the routines toddlers use to feel secure.", spaceCues: ["Sensory play", "Simple routines", "Story time"] },
+      { id:"twos", anchor:"programs.html#twos", name: "Twos", place: "Explorers Expressway", agesShort: "2 years", ages: "2 years", icon: "route", tint: "#FFD7CC", deep: "#9D4026", accent: "#9D4026", image: "images/twos/twosexplorers_orig-1.jpg", alt: "The Explorers Expressway twos classroom at Sunshine Smiles Academy.", blurb: "Confident explorers build independence, language, and first friendships through guided play.", finderCopy: "A warm next step for language bursts, first friendships, potty-training support, and growing independence.", spaceNote: "A bright lane for first friendships, language bursts, independence, and potty-training support without pressure.", spaceCues: ["First friends", "Language bursts", "Independence"] },
+      { id:"threes", anchor:"programs.html#threes", name: "Threes", place: "Adventure Avenue", agesShort: "3 years", ages: "3 years", icon: "palette", tint: "#EAF4EC", deep: "#356C46", accent: "#356C46", image: "images/threes/3sadventure_orig-1.jpg", alt: "The Adventure Avenue threes classroom at Sunshine Smiles Academy.", blurb: "Imagination takes the lead with art, early letters, numbers, and lots of pretend adventures.", finderCopy: "A bright preschool room for imaginative play, early letters and numbers, listening skills, and growing friendships.", spaceNote: "A preschool neighborhood for pretend play, early letters and numbers, classroom jobs, and growing confidence.", spaceCues: ["Art moments", "Early letters", "Pretend play"] },
+      { id:"prek", anchor:"programs.html#prek", name: "Pre-Kindergarten", navName: "Pre-K", place: "Discovery Drive", agesShort: "4-5 years", ages: "4 - 5 years", icon: "backpack", tint: "#E5F2FA", deep: "#286387", accent: "#286387", image: "images/pre-kindergarten/prekdiscover_orig.jpg", alt: "The Discovery Drive pre-kindergarten classroom at Sunshine Smiles Academy.", blurb: "School readiness with confidence: literacy, math, and social skills for a strong start.", finderCopy: "A confident send-off toward kindergarten with early literacy, math, independence, and social-emotional readiness.", spaceNote: "A confident final stop before kindergarten with early literacy, problem-solving, leadership, and school-ready routines.", spaceCues: ["Early literacy", "Problem solving", "School readiness"] },
     ];
     const activeProgram = programData.find((program) => program.id === this.state.activeProgram) || programData[0];
     const programs = programData.map((program) => ({
@@ -546,22 +549,22 @@ class Component extends DCLogic {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
       formSent: this.state.formSent,
-      formOpen: !this.state.formSent,
+      formOpen: true,
       submitForm: this.submitForm,
       reasons: [
-        { icon: "heart", title: "Loving, experienced teachers", blurb: "Warm, background-checked educators who stay for years — so your child builds a real, lasting bond.", tint: "#FFD7CC", accent: "#C25A36" },
-        { icon: "shield", title: "Safe, clean & secure", blurb: "Secure keypad entry, daily-sanitized rooms, and careful sign-in keep every child protected.", tint: "#CDE9F7", accent: "#3C7AA0" },
-        { icon: "blocks", title: "Age-appropriate learning", blurb: "Six dedicated classrooms meet children exactly where they are, from first steps to school-ready.", tint: "#D4ECDB", accent: "#3F7E5A" },
-        { icon: "message", title: "Open family communication", blurb: "Daily updates, photos, and real conversations — you'll always know how your child's day went.", tint: "#FFF3D6", accent: "#9A6B12" },
-        { icon: "tree", title: "Outdoor play & growth", blurb: "Fresh air, big motor play, and room to run on our safe, shaded playground every day.", tint: "#EAF4EC", accent: "#3F7E5A" },
+        { icon: "heart", title: "Loving, experienced teachers", blurb: "Warm, background-checked educators who stay for years — so your child builds a real, lasting bond.", tint: "#FFD7CC", accent: "#9D4026" },
+        { icon: "shield", title: "Safe, clean & secure", blurb: "Secure keypad entry, daily-sanitized rooms, and careful sign-in keep every child protected.", tint: "#CDE9F7", accent: "#286387" },
+        { icon: "blocks", title: "Age-appropriate learning", blurb: "Six dedicated classrooms meet children exactly where they are, from first steps to school-ready.", tint: "#D4ECDB", accent: "#356C46" },
+        { icon: "message", title: "Open family communication", blurb: "Daily updates, photos, and real conversations — you'll always know how your child's day went.", tint: "#FFF3D6", accent: "#795108" },
+        { icon: "tree", title: "Outdoor play & growth", blurb: "Fresh air, big motor play, and room to run on our safe, shaded playground every day.", tint: "#EAF4EC", accent: "#356C46" },
       ],
       skills: [
-        { icon: "book", label: "Language & early literacy", accent: "#3C7AA0" },
-        { icon: "numbers", label: "Numbers & problem-solving", accent: "#9A6B12" },
-        { icon: "hand", label: "Fine & gross motor skills", accent: "#C25A36" },
-        { icon: "palette", label: "Creativity & imagination", accent: "#5FA873" },
-        { icon: "users", label: "Sharing & social skills", accent: "#5BA7D6" },
-        { icon: "backpack", label: "Kindergarten readiness", accent: "#3C7AA0" },
+        { icon: "book", label: "Language & early literacy", accent: "#286387" },
+        { icon: "numbers", label: "Numbers & problem-solving", accent: "#795108" },
+        { icon: "hand", label: "Fine & gross motor skills", accent: "#9D4026" },
+        { icon: "palette", label: "Creativity & imagination", accent: "#356C46" },
+        { icon: "users", label: "Sharing & social skills", accent: "#286387" },
+        { icon: "backpack", label: "Kindergarten readiness", accent: "#286387" },
       ],
       programs,
       activeProgram,
