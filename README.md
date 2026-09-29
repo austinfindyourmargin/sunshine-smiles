@@ -48,7 +48,7 @@ The check covers all 11 pages, images, internal links, PDF signatures, mobile me
 
 ## Publish To Margin
 
-`npm run build` produces only public pages, media, documents, and runtime assets. It adds preview-specific canonical/share URLs and `noindex` metadata. The Margin preview is public by link but is not intended to compete with the academy's primary domain in search.
+`npm run build` produces only public pages, media, documents, and runtime assets. It adds content-hashed query versions to shared CSS and JavaScript URLs so the hosting cache cannot serve an earlier release, plus preview-specific canonical/share URLs and `noindex` metadata. The Margin preview is public by link but is not intended to compete with the academy's primary domain in search.
 
 Install the SFTP dependency in an isolated Python environment using `scripts/requirements-deploy.txt`. Set `SS_SFTP_HOST`, `SS_SFTP_USER`, and `SS_SFTP_PASSWORD` securely outside Git, then run `python scripts/deploy.py` from that environment. The server host key must already be trusted in your SSH known-hosts file. SSH key authentication is also supported.
 

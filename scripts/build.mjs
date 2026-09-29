@@ -14,6 +14,10 @@ for (const name of pages) {
   const url = base + (name === 'index.html' ? '' : name);
   const title = html.match(/<title>(.*?)<\/title>/)[1];
   const description = html.match(/name="description" content="([^"]+)"/)[1];
+  for (const asset of ['site.css', 'site.js', 'support.js', 'vendor/react.production.min.js', 'vendor/react-dom.production.min.js']) {
+    const version = crypto.createHash('sha256').update(fs.readFileSync(path.join(root, asset))).digest('hex').slice(0, 12);
+    html = html.replace(`"${asset}"`, `"${asset}?v=${version}"`).replace(`"./${asset}"`, `"${asset}?v=${version}"`);
+  }
   html = html.replace(/<link rel="canonical"[^>]+>/, `<link rel="canonical" href="${url}">`);
   html = html.replace('</head>', `<meta name="robots" content="noindex, nofollow">\n<meta property="og:type" content="website">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:url" content="${url}">\n<meta property="og:image" content="${base}images/sunshine-staff/family_orig.jpg">\n<meta name="twitter:card" content="summary_large_image">\n</head>`);
   fs.writeFileSync(path.join(out, name), html);

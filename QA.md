@@ -13,6 +13,7 @@ The approved design is preserved, including the real logo, family photo treatmen
 - Small text, accent labels, buttons, and footer links have stronger contrast and clear link affordances.
 - React 18.3.1 and React DOM are hosted locally with their license.
 - The build creates an isolated Margin preview with noindex metadata, share metadata, a file-hash manifest, and no source archives or credentials.
+- Shared CSS and JavaScript URLs include content hashes so the host's long-lived static asset cache cannot retain styling from an earlier release.
 
 ## Local Verification
 
