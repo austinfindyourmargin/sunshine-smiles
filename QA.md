@@ -33,3 +33,9 @@ The approved design is preserved, including the real logo, family photo treatmen
 The inquiry forms open the visitor's email app. No backend delivery or inbox receipt is claimed or tested. The original business facts and 2026 PDFs are preserved; this release review is not a new verification of current tuition, staffing, or availability.
 
 The SFTP release script verifies each uploaded file before making the directory public. After publishing, run `QA_URL=https://findyourmargin.com/sunshinesmiles/ npm run qa` and confirm the actual served Sunshine content, noindex metadata, runtime hashes, and downloadable documents.
+
+## Live Verification
+
+The final public release passed all 55 render checks across the same five widths, all 66 internal link targets, interaction checks, and the automated accessibility audit with zero reported failures. The live release manifest matched the local build; all five shared runtime/style files and all 14 PDFs matched their SHA-256 hashes. The MP4 returned HTTP 200 with the expected 7,022,995-byte size and video/mp4 content type.
+
+The exact address `https://findyourmargin.com/sunshinesmiles` resolves to `https://findyourmargin.com/sunshinesmiles/` with HTTP 200, retaining HTTPS. The folder-specific Apache rule uses `DirectorySlash Off` and `RewriteOptions AllowNoSlash`; it does not alter the parent site's configuration. Direct subpage access and the noindex header were verified.

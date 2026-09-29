@@ -31,7 +31,7 @@ for (const name of ['images', 'documents', 'vendor']) {
     filter: source => !['.DS_Store', 'manifest.json'].includes(path.basename(source))
   });
 }
-fs.writeFileSync(path.join(out, '.htaccess'), `Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n  Header set X-Content-Type-Options "nosniff"\n</IfModule>\n`);
+fs.writeFileSync(path.join(out, '.htaccess'), `Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_rewrite.c>\n  DirectorySlash Off\n  RewriteOptions AllowNoSlash\n  RewriteEngine On\n  RewriteCond %{REQUEST_URI} ^/sunshinesmiles$\n  RewriteRule ^ https://findyourmargin.com/sunshinesmiles/ [R=301,L]\n</IfModule>\n<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n  Header set X-Content-Type-Options "nosniff"\n</IfModule>\n`);
 const files = {};
 function inventory(dir) {
   for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
