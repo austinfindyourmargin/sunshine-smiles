@@ -4,7 +4,8 @@ Website for Sunshine Smiles Academy, a family-owned childcare and early learning
 
 The approved Claude design is in the root HTML files, with Sunshine Smiles photography in `images/`. This is a static site with a small template runtime, not a Vite or Next.js application.
 
-- Preview: https://findyourmargin.com/sunshinesmiles/
+- Cloudways preview: https://phpstack-1564285-6705359.cloudwaysapps.com/
+- Legacy preview: https://findyourmargin.com/sunshinesmiles/
 - Repository: https://github.com/austinfindyourmargin/sunshine-smiles
 - Handoff and remote setup: [HANDOFF.md](HANDOFF.md)
 - Brand and product context: [DESIGN.md](DESIGN.md), [PRODUCT.md](PRODUCT.md)
@@ -45,6 +46,10 @@ Node.js 20+ and Python 3 are needed for build/QA/deployment tooling, not by the 
 Install Chromium once with `npx playwright install chromium`, then run `npm run qa` while the local server is running. Alternatively, set `CHROME_PATH` to an installed Chrome executable. `QA_URL` can point at the deployed URL. `QA_WIDTHS` overrides the default 320, 390, 768, 1024, and 1440 widths. Screenshots and the detailed JSON report default to `/tmp/sunshine-qa`.
 
 The check covers all 11 pages, images, internal links, PDF signatures, mobile menus, classroom selection, FAQs, form validation, and automated WCAG A/AA checks. It checks the Playground embed, tour destinations, staff roster, and four approved downloads. It does not submit real inquiries.
+
+## Publish To Cloudways
+
+Build with `SS_SITE_URL=https://phpstack-1564285-6705359.cloudwaysapps.com/ npm run build` so canonical and share URLs match the preview. Set `SS_SFTP_PASSWORD` securely outside Git and run `python scripts/deploy-cloudways.py` using the deployment Python environment. The script is restricted to the Sunshine Smiles application and requires its matching release URL. It verifies every staged file, promotes assets before pages, and keeps the previous release in `private_html` with rollback if promotion fails. The server host key must already be trusted in your SSH known-hosts file.
 
 ## Publish To Margin
 

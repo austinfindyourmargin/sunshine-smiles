@@ -5,7 +5,12 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const out = path.join(root, 'dist');
-const base = 'https://findyourmargin.com/sunshinesmiles/';
+const siteUrl = new URL(process.env.SS_SITE_URL || 'https://findyourmargin.com/sunshinesmiles/');
+if (siteUrl.protocol !== 'https:' || siteUrl.search || siteUrl.hash || siteUrl.username || siteUrl.password) {
+  throw new Error('SS_SITE_URL must be an HTTPS URL without credentials, a query, or a fragment.');
+}
+siteUrl.pathname = siteUrl.pathname.replace(/\/?$/, '/');
+const base = siteUrl.href;
 fs.rmSync(out, { recursive: true, force: true });
 fs.mkdirSync(out, { recursive: true });
 const pages = fs.readdirSync(root).filter(name => name.endsWith('.html'));
@@ -38,7 +43,8 @@ for (const name of ['images', 'documents', 'vendor']) {
       && (name !== 'documents' || fs.statSync(source).isDirectory() || familyDocuments.has(path.basename(source)))
   });
 }
-fs.writeFileSync(path.join(out, '.htaccess'), `Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_rewrite.c>\n  DirectorySlash Off\n  RewriteOptions AllowNoSlash\n  RewriteEngine On\n  RewriteCond %{REQUEST_URI} ^/sunshinesmiles$\n  RewriteRule ^ https://findyourmargin.com/sunshinesmiles/ [R=301,L]\n</IfModule>\n<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n  Header set X-Content-Type-Options "nosniff"\n</IfModule>\n`);
+const subfolderRedirect = siteUrl.pathname === '/' ? '' : `<IfModule mod_rewrite.c>\n  DirectorySlash Off\n  RewriteOptions AllowNoSlash\n  RewriteEngine On\n  RewriteCond %{REQUEST_URI} ^${siteUrl.pathname.slice(0, -1).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$\n  RewriteRule ^ ${base} [R=301,L]\n</IfModule>\n`;
+fs.writeFileSync(path.join(out, '.htaccess'), `Options -Indexes\nDirectoryIndex index.html\n${subfolderRedirect}<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n  Header set X-Content-Type-Options "nosniff"\n</IfModule>\n`);
 const files = {};
 function inventory(dir) {
   for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
