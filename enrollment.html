@@ -68,7 +68,7 @@
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
         <a href="tel:9193171500" style="text-decoration:none; color:#356C46; font-weight:700;">919.317.1500</a>
       </div>
-      <a id="navcta" href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
+      <a id="navcta" href="contact.html#tour" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
       <button id="hamburger" type="button" onClick="{{ toggleMenu }}" aria-label="Toggle navigation" aria-expanded="{{ menuOpen }}" aria-controls="mobilemenu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;"><span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span></button>
     </div>
     <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
@@ -78,7 +78,7 @@
       <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
-      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+      <a href="contact.html#tour" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
     </div>
   </nav>
 <main id="main-content" tabindex="-1">
@@ -97,7 +97,10 @@
         <div style="display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center; background:#fff; border:1px solid #F0E9DA; border-radius:22px; padding:26px 30px; box-shadow:0 16px 36px -28px rgba(80,70,40,.45);">
           <div style="width:64px; height:64px; border-radius:50%; background:{{ st.tint }}; display:flex; align-items:center; justify-content:center; font-family:Spectral,serif; font-size:28px; color:{{ st.deep }}; font-weight:600;">{{ st.n }}</div>
           <div>
-            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:23px; margin:0; color:#2E2A24;">{{ st.title }}</h3>
+            <h3 style="font-family:Spectral,serif; font-weight:500; font-size:23px; margin:0; color:#2E2A24;">
+              <sc-if value="{{ st.isTour }}"><a href="contact.html#tour" style="color:inherit; text-underline-offset:4px;">{{ st.title }}</a></sc-if>
+              <sc-if value="{{ !st.isTour }}">{{ st.title }}</sc-if>
+            </h3>
             <p style="font-size:15px; line-height:1.6; color:#625A51; margin:6px 0 0;">{{ st.body }}</p>
           </div>
         </div>
@@ -117,7 +120,7 @@
         <img src="images/enrollment/img-2346_orig.png" alt="SmartCare parent communication app logo used by Sunshine Smiles Academy." loading="lazy" decoding="async" style="width:100%; max-width:260px; margin:0 auto; border-radius:18px;">
         <div style="margin-top:18px; display:flex; flex-direction:column; gap:10px;">
           <a href="mailto:sunshinesmilesacademy2611@gmail.com" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:13px 16px; border-radius:8px; text-align:center;">Email enrollment questions</a>
-          <a href="forms.html" style="text-decoration:none; background:#FFF6E4; color:#2E2A24; font-weight:800; font-size:14px; padding:13px 16px; border-radius:8px; text-align:center;">View enrollment forms</a>
+          <a href="forms.html" style="text-decoration:none; background:#FFF6E4; color:#2E2A24; font-weight:800; font-size:14px; padding:13px 16px; border-radius:8px; text-align:center;">View family resources</a>
         </div>
       </div>
     </div>
@@ -128,10 +131,10 @@
       <div>
         <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#795108;">What you&rsquo;ll need</div>
         <h2 style="font-family:Spectral,serif; font-weight:400; font-size:32px; line-height:1.12; margin:12px 0 0; color:#2E2A24;">A short checklist, nothing scary.</h2>
-        <p style="font-size:16px; line-height:1.65; color:#625A51; margin:14px 0 0;">When you&rsquo;re ready to enroll, we&rsquo;ll hand you a simple packet. You can also download the current forms and handbook anytime.</p>
+        <p style="font-size:16px; line-height:1.65; color:#625A51; margin:14px 0 0;">When you&rsquo;re ready to apply, complete your enrollment paperwork in Playground. Our handbook, holiday calendar, and rates are here for easy reference.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:18px;">
-          <a href="documents/new-childrens-application.pdf" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:12px 16px; border-radius:8px;">Application</a>
-          <a href="forms.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:14px; padding:12px 16px; border-radius:8px; border:1px solid #E7DCC6;">All forms</a>
+          <a href="https://app.tryplayground.com/form/LQAItkOwPffVVntPiWNd/Y2r5YYAuvUPxoPi2drqF" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:12px 16px; border-radius:8px;">Start in Playground</a>
+          <a href="forms.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:14px; padding:12px 16px; border-radius:8px; border:1px solid #E7DCC6;">Handbook &amp; resources</a>
         </div>
       </div>
       <div style="display:flex; flex-direction:column; gap:12px;">
@@ -146,36 +149,8 @@
   </section>
 
   <section class="ss-sec" style="padding:0 32px 90px;">
-    <div style="max-width:760px; margin:0 auto; background:#fff; border:1px solid #F0E9DA; border-radius:28px; padding:44px; box-shadow:0 26px 56px -32px rgba(80,70,40,.45);">
-      <div style="text-align:center; margin-bottom:26px;">
-        <div style="font-weight:700; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#356C46;">Start here</div>
-        <h2 style="font-family:Spectral,serif; font-weight:400; font-size:32px; margin:10px 0 0; color:#2E2A24;">Tell us about your family.</h2>
-        <p style="font-size:15px; color:#625A51; margin:8px 0 0;">Email us a quick note to ask about availability and plan your visit.</p>
-      </div>
-	      <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
-	        <div role="status" style="background:#EAF4EC; border-radius:18px; padding:40px; text-align:center;">
-	          <div style="width:52px; height:52px; border-radius:50%; background:#FFF3D6; color:#795108; display:flex; align-items:center; justify-content:center; font-size:29px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
-	          <div style="font-family:Spectral,serif; font-size:26px; color:#2E2A24; margin-top:10px;">Your email draft is ready</div>
-          <p style="font-size:15px; color:#625A51; margin:8px 0 0;">Please press Send in your email app to deliver your message. Nothing has been sent by this website. If your email app did not open, email <a href="mailto:erika.byrd3@gmail.com">erika.byrd3@gmail.com</a> or call <a href="tel:9193171500">919.317.1500</a>.</p>
-        </div>
-      </sc-if>
-      <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
-        <form data-inquiry="enrollment" onSubmit="{{ submitForm }}" style="display:flex; flex-direction:column; gap:16px;">
-<p class="ss-email-note">Prepare an email to our team. Your email app will open so you can review and send it. Required fields are marked *.</p>
-          <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Parent / guardian name *<input type="text" name="parent-name" autocomplete="name" required="required" maxlength="150" placeholder="Your name" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Phone<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="(919) 000-0000" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-          </div>
-          <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Email *<input type="email" name="email" autocomplete="email" required="required" maxlength="254" placeholder="you@email.com" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Child&rsquo;s age<input type="text" placeholder="e.g. 18 months" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-          </div>
-          <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Desired start date<input type="text" placeholder="e.g. next month" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-          <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Anything you&rsquo;d like us to know?<textarea name="notes" maxlength="2000" rows="3" placeholder="Tell us about your little one…" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6; resize:vertical;"></textarea></label>
-          <button type="submit" style="font-family:inherit; cursor:pointer; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:16px; padding:16px; border:none; border-radius:12px; box-shadow:0 14px 28px -12px rgba(255,110,80,.8);">Prepare Email</button>
-          <div style="text-align:center; font-size:13px; color:#625A51;">Prefer to talk? Call us anytime at <a href="tel:9193171500" style="color:#356C46; font-weight:700; text-decoration:none;">919.317.1500</a></div>
-        </form>
-      </sc-if>
+    <div class="ss-playground-panel" style="max-width:760px; margin:0 auto; background:#fff; border:1px solid #F0E9DA; border-radius:28px; padding:44px; box-shadow:0 26px 56px -32px rgba(80,70,40,.45);">
+	      <div class="ss-playground-embed"><iframe class="ss-playground-form" src="https://app.tryplayground.com/form/LQAItkOwPffVVntPiWNd/Y2r5YYAuvUPxoPi2drqF" title="Sunshine Smiles Academy tour inquiry form" loading="lazy" onLoad="{{ fitPlaygroundForm }}"></iframe></div>
     </div>
   </section>
 
@@ -204,7 +179,7 @@
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
 	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
-    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+    <a href="contact.html#tour" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 
 </div>
@@ -212,23 +187,18 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, formSent: false };
+  state = { menuOpen: false };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
-  submitForm = (event) => {
-    if (window.sunshine.openEmailDraft(event)) this.setState({ formSent: true });
-  };
   renderVals() {
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
-      formSent: this.state.formSent,
-      formOpen: true,
-      submitForm: this.submitForm,
+      fitPlaygroundForm: window.sunshine.fitPlaygroundForm,
       steps: [
         { n:"1", title:"Say hello", body:"Call us or send the form below. Tell us your child's age and when you're hoping to start — that's all we need to get going.", tint:"#FFE7A8", deep: "#795108" },
-        { n:"2", title:"Schedule a guided tour", body:"Come walk the classrooms, meet the teachers, and see the smiles in person. We'll answer every question, big or small.", tint:"#CDE9F7", deep: "#286387" },
+        { n:"2", isTour:true, title:"Schedule a guided tour", body:"Come walk the classrooms, meet the teachers, and see the smiles in person. We'll answer every question, big or small.", tint:"#CDE9F7", deep: "#286387" },
         { n:"3", title:"Find the right classroom", body:"Together we'll match your child to the room that fits their age and stage — and check availability for your start date.", tint:"#D4ECDB", deep: "#356C46" },
-        { n:"4", title:"Complete enrollment forms", body:"We'll share the application, parent handbook, agreement, health forms, and any classroom-specific paperwork. Fill them out at your own pace and we'll help with anything you're unsure about.", tint:"#FFD7CC", deep: "#9D4026" },
+        { n:"4", title:"Complete enrollment forms", body:"Complete your application, agreements, health forms, and classroom paperwork in Playground. Review the parent handbook here, and we'll help with anything you're unsure about.", tint:"#FFD7CC", deep: "#9D4026" },
         { n:"5", title:"Start with confidence", body:"On day one, your child walks into a room that already knows their name. We'll ease them in gently — and keep you in the loop.", tint:"#EAF4EC", deep: "#356C46" },
       ],
       checklist: [

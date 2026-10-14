@@ -22,13 +22,20 @@ for (const name of pages) {
   html = html.replace('</head>', `<meta name="robots" content="noindex, nofollow">\n<meta property="og:type" content="website">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:url" content="${url}">\n<meta property="og:image" content="${base}images/sunshine-staff/family_orig.jpg">\n<meta name="twitter:card" content="summary_large_image">\n</head>`);
   fs.writeFileSync(path.join(out, name), html);
 }
-for (const name of ['support.js', 'site.js', 'site.css', 'sunshine-smiles-site-tour.mp4']) {
+for (const name of ['support.js', 'site.js', 'site.css', 'contact.php', 'sunshine-smiles-site-tour.mp4']) {
   fs.copyFileSync(path.join(root, name), path.join(out, name));
 }
+const familyDocuments = new Set([
+  'parent-handbook-2026.pdf',
+  'summary-of-laws-rules-nc.pdf',
+  'holiday-closings-2026.pdf',
+  'rates-fees-2026.pdf'
+]);
 for (const name of ['images', 'documents', 'vendor']) {
   fs.cpSync(path.join(root, name), path.join(out, name), {
     recursive: true,
     filter: source => !['.DS_Store', 'manifest.json'].includes(path.basename(source))
+      && (name !== 'documents' || fs.statSync(source).isDirectory() || familyDocuments.has(path.basename(source)))
   });
 }
 fs.writeFileSync(path.join(out, '.htaccess'), `Options -Indexes\nDirectoryIndex index.html\n<IfModule mod_rewrite.c>\n  DirectorySlash Off\n  RewriteOptions AllowNoSlash\n  RewriteEngine On\n  RewriteCond %{REQUEST_URI} ^/sunshinesmiles$\n  RewriteRule ^ https://findyourmargin.com/sunshinesmiles/ [R=301,L]\n</IfModule>\n<IfModule mod_headers.c>\n  Header set X-Robots-Tag "noindex, nofollow"\n  Header set X-Content-Type-Options "nosniff"\n</IfModule>\n`);

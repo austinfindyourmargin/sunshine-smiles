@@ -1,7 +1,6 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const vm = require('node:vm');
 const { chromium } = require('playwright');
 
 const base = process.env.QA_URL || 'http://127.0.0.1:4173/';
@@ -73,18 +72,45 @@ async function main() {
             assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
           }
           if (['index.html', 'contact.html', 'enrollment.html'].includes(name) && width === widths[0]) {
-            const form = page.locator('form');
-            assert.equal(await form.evaluate(f => f.checkValidity()), false);
-            await form.locator('input[name="parent-name"]').fill('Release QA');
-            await form.locator('input[name="email"]').fill('not-an-email');
-            assert.equal(await form.evaluate(f => f.checkValidity()), false);
-            await form.locator('input[name="email"]').fill('qa@example.com');
-            assert.equal(await form.evaluate(f => f.checkValidity()), true);
-            // Exercise UI feedback without launching an email client or contacting the business.
-            await page.evaluate(() => { window.sunshine.openEmailDraft = event => { event.preventDefault(); return true; }; });
-            await form.locator('button[type="submit"]').click();
-            assert.match(await page.locator('[role="status"]').innerText(), /Nothing has been sent/);
-            assert.equal(await form.locator('input[name="parent-name"]').inputValue(), 'Release QA');
+            const embed = page.locator('.ss-playground-form');
+            assert.equal(await embed.count(), 1);
+            assert.equal(await embed.getAttribute('src'), 'https://app.tryplayground.com/form/LQAItkOwPffVVntPiWNd/Y2r5YYAuvUPxoPi2drqF');
+            assert.equal(await embed.getAttribute('title'), 'Sunshine Smiles Academy tour inquiry form');
+            assert.equal(await page.locator('form').count(), 0, 'A previous inquiry form is still present');
+            assert.equal(await page.locator('.ss-playground-panel').innerText(), '', 'Extra content is still present in the tour form panel');
+          }
+          const tourLinks = await page.locator('a').evaluateAll(anchors => anchors.filter(a => /schedule\s+a\s+(?:guided\s+)?tour/i.test(a.textContent)).map(a => a.getAttribute('href')));
+          assert.ok(tourLinks.every(href => href === 'contact.html#tour' || (name === 'contact.html' && href === '#tour')), 'A tour button does not lead to the Playground embed');
+          if (name === 'staff.html' && width === widths[0]) {
+            const expectedRoles = {
+              'Veronica Hernandez Vazquez': 'Toddler Teacher', 'Madison Oakley': 'Floater',
+              'Kayla Redd': 'Infant Teacher', 'Lorena Andrade': 'Twos Teacher',
+              'Rosario Vazquez': 'Toddler Teacher', 'Kimberly Wicker': 'Threes Teacher',
+              'June Wall': 'Twos Teacher', 'Hailey Hicks': 'Floater', 'Ruby Mills': 'Fours Teacher',
+              'Mica Bryant': 'Fours Teacher', 'Kylie Boney': 'Infant Teacher',
+              'Carleigh Franks': 'Assistant Director', 'Kristi Brewer': 'Floater', 'Gale Rhodes': 'Floater',
+              'Hilda Rodriguez': 'Cook', 'Sandra Benites': 'Waddler Teacher',
+              'Tara Mangum': 'Waddler Teacher', 'Ana Andrade': 'Floater',
+              'Abigail Rodriguez': 'Floater', 'Susan Mahoney': 'Floater'
+            };
+            assert.equal(await page.locator('.ss-staffcard').count(), 21);
+            for (const [name, role] of Object.entries(expectedRoles)) {
+              const card = page.locator('.ss-staffcard').filter({ has: page.getByRole('heading', { name, exact: true }) });
+              assert.equal(await card.count(), 1, `Missing or duplicate staff member: ${name}`);
+              assert.ok((await card.innerText()).includes(role), `Incorrect role: ${name}`);
+            }
+            assert.doesNotMatch(await page.locator('main').innerText(), /Alina Mena|Ana Batallas Andrade|Carleigh Byrd/);
+            await page.getByRole('button', { name: "View Abigail Rodriguez's profile", exact: true }).click();
+            await page.getByRole('dialog', { name: 'Abigail Rodriguez, Floater' }).waitFor();
+            assert.equal(await page.locator('.ss-profile-modal img').count(), 0);
+            assert.equal(await page.locator('.ss-profile-modal .ss-staff-initials').innerText(), 'AR');
+            await page.getByRole('button', { name: 'Close profile', exact: true }).click();
+          }
+          if (name === 'forms.html' && width === widths[0]) {
+            assert.deepEqual(await page.locator('.ss-doc-card').evaluateAll(cards => cards.map(a => a.getAttribute('href'))), [
+              'documents/parent-handbook-2026.pdf', 'documents/summary-of-laws-rules-nc.pdf',
+              'documents/holiday-closings-2026.pdf', 'documents/rates-fees-2026.pdf'
+            ]);
           }
           if (name === 'index.html' && [390, 1440].includes(width)) {
             for (let i = 0; i < 6; i++) {
@@ -94,11 +120,21 @@ async function main() {
             }
           }
           if (name === 'contact.html' && width === widths[0]) {
+            const email = page.getByRole('link', { name: 'Email us sunshinesmilesacademy2611@gmail.com', exact: true });
+            assert.equal(await email.getAttribute('href'), 'mailto:sunshinesmilesacademy2611@gmail.com');
             const question = page.locator('.ss-faq-button').nth(1);
             await question.click();
             assert.equal(await question.getAttribute('aria-expanded'), 'true');
             await question.click();
             assert.equal(await question.getAttribute('aria-expanded'), 'false');
+          }
+          if (name === 'contact.html') {
+            await page.goto(new URL('contact.html#tour', base).href, { waitUntil: 'load' });
+            await page.waitForFunction(() => {
+              const form = document.getElementById('tour');
+              const top = form?.getBoundingClientRect().top;
+              return top >= 80 && top <= 140;
+            });
           }
           await page.evaluate(() => scrollTo(0, 0));
           await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
@@ -123,14 +159,6 @@ async function main() {
       report.links++;
     }
     await context.close();
-    const sandbox = { window: { location: {} }, document: { addEventListener() {} } };
-    vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../site.js'), 'utf8'), sandbox);
-    let prevented = false;
-    const field = { value: 'Taylor & family', closest: () => ({ childNodes: [{ textContent: 'Parent name' }] }) };
-    const form = { reportValidity: () => true, dataset: { inquiry: 'enrollment' }, querySelectorAll: () => [field] };
-    assert.equal(sandbox.window.sunshine.openEmailDraft({ preventDefault() { prevented = true; }, currentTarget: form }), true);
-    assert.ok(prevented);
-    assert.match(decodeURIComponent(sandbox.window.location.href), /Enrollment inquiry&body=Parent name: Taylor & family/);
     fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report, null, 2));
     console.log(JSON.stringify({ renderChecks: report.pages.length, links: report.links, failures: report.failures, accessibility: report.accessibility.map(v => ({ page: v.page, id: v.id, count: v.count })) }, null, 2));
     if (report.failures.length || report.accessibility.length) process.exitCode = 1;

@@ -98,7 +98,7 @@
     </div>
   </section>
 
-  <section id="tour" class="ss-sec" style="padding:10px 32px 70px;">
+  <section class="ss-sec" style="padding:10px 32px 70px;">
     <div class="ss-grid2" style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:0.9fr 1.1fr; gap:36px; align-items:start;">
 
       <div style="display:flex; flex-direction:column; gap:16px;">
@@ -106,9 +106,9 @@
 	          <span style="width:48px; height:48px; border-radius:14px; background:#FFD7CC; color:#9D4026; display:flex; align-items:center; justify-content:center; font-size:23px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg></span>
 	          <div><div style="font-weight:800; font-size:13px; color:#625A51; text-transform:uppercase; letter-spacing:.06em;">Call us</div><div style="font-family:Spectral,serif; font-size:24px; color:#2E2A24;">919.317.1500</div></div>
 	        </a>
-	        <a class="ss-contact-card" href="mailto:erika.byrd3@gmail.com" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
+	        <a class="ss-contact-card" href="mailto:sunshinesmilesacademy2611@gmail.com" style="text-decoration:none; display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
 	          <span style="width:48px; height:48px; border-radius:14px; background:#CDE9F7; color:#286387; display:flex; align-items:center; justify-content:center; font-size:23px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-mail"></use></svg></span>
-	          <div><div style="font-weight:800; font-size:13px; color:#625A51; text-transform:uppercase; letter-spacing:.06em;">Email us</div><div style="font-weight:700; font-size:16px; color:#2E2A24;">erika.byrd3@gmail.com</div></div>
+	          <div><div style="font-weight:800; font-size:13px; color:#625A51; text-transform:uppercase; letter-spacing:.06em;">Email us</div><div style="font-weight:700; font-size:16px; color:#2E2A24;">sunshinesmilesacademy2611@gmail.com</div></div>
 	        </a>
 	        <div style="display:flex; align-items:center; gap:16px; background:#fff; border:1px solid #F0E9DA; border-radius:18px; padding:20px 22px; box-shadow:0 16px 34px -28px rgba(80,70,40,.45);">
 	          <span style="width:48px; height:48px; border-radius:14px; background:#D4ECDB; color:#356C46; display:flex; align-items:center; justify-content:center; font-size:23px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-pin"></use></svg></span>
@@ -121,32 +121,8 @@
 <div style="height:220px; border-radius:18px; overflow:hidden; background:#EAF4EC; border:1px solid #F0E9DA;"><iframe title="Map to Sunshine Smiles Academy at 2611 Broad St., Durham, NC 27704" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2611%20Broad%20St.%20Durham%20NC%2027704&output=embed" style="width:100%; height:220px; border:0; border-radius:18px;"></iframe></div>
       </div>
 
-      <div style="background:#fff; border:1px solid #F0E9DA; border-radius:24px; padding:36px; box-shadow:0 26px 56px -32px rgba(80,70,40,.45);">
-        <h2 style="font-family:Spectral,serif; font-weight:500; font-size:28px; margin:0; color:#2E2A24;">Request a guided tour</h2>
-        <p style="font-size:15px; color:#625A51; margin:6px 0 22px;">Tell us about your family and we can find a time to meet.</p>
-	        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
-	          <div role="status" style="background:#EAF4EC; border-radius:18px; padding:40px; text-align:center;">
-	            <div style="width:52px; height:52px; border-radius:50%; background:#FFF3D6; color:#795108; display:flex; align-items:center; justify-content:center; font-size:29px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
-	            <div style="font-family:Spectral,serif; font-size:24px; color:#2E2A24; margin-top:10px;">Your email draft is ready</div>
-            <p style="font-size:15px; color:#625A51; margin:8px 0 0;">Please press Send in your email app to deliver your message. Nothing has been sent by this website. If your email app did not open, email <a href="mailto:erika.byrd3@gmail.com">erika.byrd3@gmail.com</a> or call <a href="tel:9193171500">919.317.1500</a>.</p>
-          </div>
-        </sc-if>
-        <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
-          <form data-inquiry="tour" onSubmit="{{ submitForm }}" style="display:flex; flex-direction:column; gap:16px;">
-<p class="ss-email-note">Prepare an email to our team. Your email app will open so you can review and send it. Required fields are marked *.</p>
-            <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Your name *<input type="text" name="parent-name" autocomplete="name" required="required" maxlength="150" placeholder="Parent / guardian" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Phone<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="(919) 000-0000" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-            </div>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Email *<input type="email" name="email" autocomplete="email" required="required" maxlength="254" placeholder="you@email.com" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-            <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Child&rsquo;s age<input type="text" placeholder="e.g. 18 months" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Best time to call<input type="text" placeholder="e.g. weekday mornings" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6;"></label>
-            </div>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Questions or notes<textarea name="notes" maxlength="2000" rows="3" placeholder="Anything you'd like us to know…" style="font-family:inherit; font-size:15px; padding:13px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#FCFBF6; resize:vertical;"></textarea></label>
-            <button type="submit" style="font-family:inherit; cursor:pointer; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:16px; padding:16px; border:none; border-radius:12px; box-shadow:0 14px 28px -12px rgba(255,110,80,.8);">Prepare Email</button>
-          </form>
-        </sc-if>
+      <div id="tour" class="ss-playground-panel" style="background:#fff; border:1px solid #F0E9DA; border-radius:24px; padding:24px; box-shadow:0 26px 56px -32px rgba(80,70,40,.45);">
+	        <div class="ss-playground-embed"><iframe class="ss-playground-form" src="https://app.tryplayground.com/form/LQAItkOwPffVVntPiWNd/Y2r5YYAuvUPxoPi2drqF" title="Sunshine Smiles Academy tour inquiry form" loading="lazy" onLoad="{{ fitPlaygroundForm }}"></iframe></div>
       </div>
     </div>
   </section>
@@ -208,12 +184,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, formSent: false, openFaq: 0 };
+  state = { menuOpen: false, openFaq: 0 };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
   toggleFaq = (index) => this.setState((state) => ({ openFaq: state.openFaq === index ? -1 : index }));
-  submitForm = (event) => {
-    if (window.sunshine.openEmailDraft(event)) this.setState({ formSent: true });
-  };
   renderVals() {
     const faqData = [
       { q:"What ages do you care for?", a:"We welcome children from 6 weeks old through pre-kindergarten (age 5), across six age-based classrooms." },
@@ -234,9 +207,7 @@ class Component extends DCLogic {
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
-      formSent: this.state.formSent,
-      formOpen: true,
-      submitForm: this.submitForm,
+      fitPlaygroundForm: window.sunshine.fitPlaygroundForm,
       faqs,
     };
   }

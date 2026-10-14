@@ -79,7 +79,7 @@
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
         <a href="tel:9193171500" style="text-decoration:none; color:#356C46; font-weight:700;">919.317.1500</a>
       </div>
-      <a id="navcta" href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
+      <a id="navcta" href="contact.html#tour" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
       <button id="hamburger" type="button" onClick="{{ toggleMenu }}" aria-label="Toggle navigation" aria-expanded="{{ menuOpen }}" aria-controls="mobilemenu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;"><span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span></button>
     </div>
     <div id="mobilemenu" data-open="{{ menuOpen }}" style="display:none; flex-direction:column; gap:4px; padding:8px 22px 18px; border-top:1px solid rgba(120,100,70,.1);">
@@ -89,7 +89,7 @@
       <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
-      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+      <a href="contact.html#tour" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
     </div>
   </nav>
 <main id="main-content" tabindex="-1">
@@ -132,7 +132,8 @@
 	        <sc-for list="{{ team }}" as="s" hint-placeholder-count="8">
 	          <div class="ss-staffcard" style="background:#fff; border:1px solid #F0E9DA; border-radius:20px; overflow:hidden; box-shadow:0 16px 34px -26px rgba(80,70,40,.4);">
 	            <div style="height:260px; background:{{ s.tint }}; position:relative; overflow:hidden;">
-	              <img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:{{ s.crop }};">
+	              <sc-if value="{{ s.hasPhoto }}"><img src="{{ s.image }}" alt="{{ s.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:cover; object-position:{{ s.crop }};"></sc-if>
+              <sc-if value="{{ s.noPhoto }}"><div class="ss-staff-initials" aria-hidden="true">{{ s.initials }}</div></sc-if>
 	              <span style="position:absolute; top:12px; left:12px; background:rgba(255,255,255,.9); font-size:11px; font-weight:800; color:#5C544B; padding:5px 10px; border-radius:16px;">{{ s.badge }}</span>
             </div>
             <div style="padding:18px 20px 22px;">
@@ -152,7 +153,8 @@
 	        <div onClick="{{ closeStaff }}" style="position:fixed; inset:0; z-index:80; background:rgba(35,31,26,.58); display:flex; align-items:center; justify-content:center; padding:24px;">
 	          <div class="ss-profile-modal" onClick="{{ stopClick }}" role="dialog" aria-modal="true" aria-label="{{ modalLabel }}" style="width:min(880px,100%); max-height:90vh; overflow:hidden; display:grid; grid-template-columns:.9fr 1.1fr; background:#fff; border-radius:22px; box-shadow:0 34px 80px -24px rgba(0,0,0,.55);">
 	            <div style="min-height:360px; background:{{ activeStaff.tint }}; overflow:hidden;">
-	              <img src="{{ activeStaff.image }}" alt="{{ activeStaff.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; min-height:360px; object-fit:cover; object-position:{{ activeStaff.crop }};">
+	              <sc-if value="{{ activeStaff.hasPhoto }}"><img src="{{ activeStaff.image }}" alt="{{ activeStaff.alt }}" loading="lazy" decoding="async" style="width:100%; height:100%; min-height:360px; object-fit:cover; object-position:{{ activeStaff.crop }};"></sc-if>
+              <sc-if value="{{ activeStaff.noPhoto }}"><div class="ss-staff-initials" aria-hidden="true">{{ activeStaff.initials }}</div></sc-if>
 	            </div>
 	            <div style="padding:34px; position:relative;">
 	              <button onClick="{{ closeStaff }}" aria-label="Close profile" style="position:absolute; top:16px; right:16px; width:40px; height:40px; border:1px solid #E7DCC6; background:#FCFBF6; border-radius:50%; cursor:pointer; font-size:24px; line-height:1; color:#2E2A24;">&times;</button>
@@ -164,7 +166,7 @@
 	                <span style="font-size:12px; font-weight:800; background:#EAF4EC; color:#356C46; padding:7px 12px; border-radius:999px;">{{ activeStaff.room }}</span>
 	                <span style="font-size:12px; font-weight:800; background:#FFF3D6; color:#795108; padding:7px 12px; border-radius:999px;">{{ activeStaff.since }}</span>
 	              </div>
-	              <a href="contact.html" style="text-decoration:none; display:inline-block; margin-top:26px; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:13px 20px; border-radius:8px;">Schedule a tour to meet us</a>
+	              <a href="contact.html#tour" style="text-decoration:none; display:inline-block; margin-top:26px; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:13px 20px; border-radius:8px;">Schedule a tour to meet us</a>
 	            </div>
 	          </div>
 	        </div>
@@ -177,7 +179,7 @@
       <h2 style="font-family:Spectral,serif; font-weight:500; font-size:38px; line-height:1.12; color:#fff; margin:0;">Come meet our team in person.</h2>
       <p style="font-size:18px; color:rgba(255,255,255,.92); margin:14px 0 0;">Photos are lovely, but a visit says it all. Schedule a guided tour and feel the warmth for yourself.</p>
       <div style="display:flex; gap:14px; justify-content:center; margin-top:28px; flex-wrap:wrap;">
-        <a href="contact.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px;">Schedule a Tour</a>
+        <a href="contact.html#tour" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px;">Schedule a Tour</a>
 	        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6); display:inline-flex; align-items:center; gap:9px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call 919.317.1500</a>
       </div>
     </div>
@@ -208,7 +210,7 @@
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
 	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
-    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+    <a href="contact.html#tour" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 
 </div>
@@ -224,26 +226,36 @@ class Component extends DCLogic {
   renderVals() {
     const teamData = [
         { name: "Erika Byrd", role: "Owner & Director", room: "Leadership", since: "Since 2008", badge: "Founder", tint: "#FFE7A8", image: "images/sunshine-staff/erika_orig.jpg", alt: "Erika Byrd smiling outdoors.", crop: "center 24%", note: "Care that feels personal from the first hello." },
-        { name: "Veronica Hernandez Vazquez", role: "Classroom Team", room: "Infants", since: "Nurture", badge: "Infants", tint: "#CDE9F7", image: "images/sunshine-staff/veronica_orig-e1740498567959.jpg", alt: "Veronica Hernandez Vazquez smiling in a blue blouse.", crop: "center 32%", note: "A steady presence for routines, comfort, and connection." },
-        { name: "Madison Oakley", role: "Classroom Team", room: "Preschool", since: "Joy", badge: "Preschool", tint: "#D4ECDB", image: "images/sunshine-staff/Madison-Oakley.jpg", alt: "Madison Oakley smiling outdoors.", crop: "center 34%", note: "Encouraging children through play, friendship, and independence." },
-        { name: "Kayla Redd", role: "Classroom Team", room: "Toddler Team", since: "Warmth", badge: "Toddler Team", tint: "#EAF4EC", image: "images/sunshine-staff/kayla_orig-e1740498997263.jpg", alt: "Kayla Redd smiling outdoors.", crop: "center 30%", note: "Helping children feel welcomed, seen, and ready for the day." },
-        { name: "Ana Batallas Andrade", role: "Classroom Team", room: "Early Learning", since: "Care", badge: "Care Team", tint: "#FFD7CC", image: "images/sunshine-staff/IMG_1500.jpg", alt: "Ana Batallas Andrade smiling outdoors.", crop: "center 34%", note: "Supporting daily routines with patience and clear guidance." },
-        { name: "Rosario Vazquez", role: "Classroom Team", room: "Care Team", since: "Trust", badge: "Care Team", tint: "#E5F2FA", image: "images/sunshine-staff/IMG_1496-2-scaled.jpg", alt: "Rosario Vazquez smiling outdoors.", crop: "center 34%", note: "Creating calm, friendly space for children to feel secure." },
-        { name: "Kimberly Wicker", role: "Classroom Team", room: "Growth", since: "Play", badge: "Growth", tint: "#D4ECDB", image: "images/sunshine-staff/kim_orig-e1740499506295.jpg", alt: "Kimberly Wicker smiling outdoors.", crop: "center 32%", note: "Meeting children with warmth, structure, and encouragement." },
-        { name: "June Wall", role: "Classroom Team", room: "Classroom Support", since: "Steady", badge: "Support", tint: "#FFF3D6", image: "images/sunshine-staff/june_orig-e1740499578941.jpg", alt: "June Wall smiling outdoors.", crop: "center 30%", note: "A familiar face for safe routines and classroom confidence." },
-        { name: "Hailey Hicks", role: "Classroom Team", room: "Toddlers", since: "Energy", badge: "Toddlers", tint: "#CDE9F7", image: "images/sunshine-staff/Hailey-Hicks.jpg", alt: "Hailey Hicks smiling outdoors.", crop: "center 36%", note: "Bringing a bright welcome into busy, active classroom days." },
-        { name: "Ruby Mills", role: "Classroom Team", room: "Care Team", since: "Encouragement", badge: "Care Team", tint: "#EAF4EC", image: "images/sunshine-staff/ruby_orig-e1740499625157.jpg", alt: "Ruby Mills smiling outdoors.", crop: "center 32%", note: "Helping children feel safe to explore, speak, and smile." },
-        { name: "Mica Bryant", role: "Classroom Team", room: "Milestones", since: "Support", badge: "Milestones", tint: "#FFE7A8", image: "images/sunshine-staff/mica_orig-e1740499675498.png", alt: "Mica Bryant smiling outdoors.", crop: "center 30%", note: "Supporting little milestones with patience and positivity." },
-        { name: "Kylie Boney", role: "Classroom Team", room: "Learning", since: "Connection", badge: "Learning", tint: "#E5F2FA", image: "images/sunshine-staff/kylie_orig-e1740499695942.jpg", alt: "Kylie Boney smiling outdoors.", crop: "center 34%", note: "Making classroom moments feel cheerful, clear, and connected." },
-        { name: "Carleigh Byrd", role: "Classroom Team", room: "Community", since: "Kindness", badge: "Community", tint: "#FFD7CC", image: "images/sunshine-staff/carleigh_orig-e1740499778146.jpg", alt: "Carleigh Byrd smiling outdoors.", crop: "center 30%", note: "Helping children feel known and included in the classroom." },
-        { name: "Kristi Brewer", role: "Classroom Team", room: "Classroom Team", since: "Care", badge: "Classroom Team", tint: "#D4ECDB", image: "images/sunshine-staff/Kristi-Brewer.jpg", alt: "Kristi Brewer smiling outdoors in a Sunshine Smiles shirt.", crop: "center 34%", note: "Bringing school-day steadiness, friendliness, and care." },
-        { name: "Alina Mena Villanueva", role: "Classroom Team", room: "Care Team", since: "Welcome", badge: "Care Team", tint: "#CDE9F7", image: "images/sunshine-staff/Alina-Mena.jpg", alt: "Alina Mena Villanueva smiling outdoors.", crop: "center 34%", note: "Welcoming children with warmth, patience, and a smile." },
-        { name: "Gale Rhodes", role: "Classroom Team", room: "Support", since: "Calm", badge: "Support", tint: "#FFF3D6", image: "images/sunshine-staff/galerhodes_orig-e1740499908992.jpg", alt: "Gale Rhodes smiling outdoors.", crop: "center 30%", note: "A calm, caring presence for children and families." },
-        { name: "Sandra Benites", role: "Classroom Team", room: "Classroom Team", since: "Nurture", badge: "Classroom Team", tint: "#D4ECDB", image: "images/sunshine-staff/Sandra-Benites.jpg", alt: "Sandra Benites smiling outdoors.", crop: "center 34%", note: "Supporting children through routines, play, and everyday care." },
-        { name: "Hilda Rodriguez", role: "Classroom Team", room: "Early Learning", since: "Growth", badge: "Early Learning", tint: "#E5F2FA", image: "images/sunshine-staff/Hilda-Rodriguez-e1782224693352.jpg", alt: "Hilda Rodriguez smiling outdoors.", crop: "center 34%", note: "Creating a friendly classroom rhythm for growing children." },
+        { name: "Veronica Hernandez Vazquez", role: "Toddler Teacher", room: "Toddlers", since: "Nurture", badge: "Toddlers", tint: "#CDE9F7", image: "images/sunshine-staff/veronica_orig-e1740498567959.jpg", alt: "Veronica Hernandez Vazquez smiling in a blue blouse.", crop: "center 32%", note: "A steady presence for routines, comfort, and connection." },
+        { name: "Madison Oakley", role: "Floater", room: "Classroom Support", since: "Joy", badge: "Floater", tint: "#D4ECDB", image: "images/sunshine-staff/Madison-Oakley.jpg", alt: "Madison Oakley smiling outdoors.", crop: "center 34%", note: "Encouraging children through play, friendship, and independence." },
+        { name: "Kayla Redd", role: "Infant Teacher", room: "Infants", since: "Warmth", badge: "Infants", tint: "#EAF4EC", image: "images/sunshine-staff/kayla_orig-e1740498997263.jpg", alt: "Kayla Redd smiling outdoors.", crop: "center 30%", note: "Helping children feel welcomed, seen, and ready for the day." },
+        { name: "Lorena Andrade", role: "Twos Teacher", room: "Twos", since: "Care", badge: "Twos", tint: "#FFD7CC", image: "images/sunshine-staff/IMG_1500.jpg", alt: "Lorena Andrade smiling outdoors.", crop: "center 34%", note: "Supporting daily routines with patience and clear guidance." },
+        { name: "Rosario Vazquez", role: "Toddler Teacher", room: "Toddlers", since: "Trust", badge: "Toddlers", tint: "#E5F2FA", image: "images/sunshine-staff/IMG_1496-2-scaled.jpg", alt: "Rosario Vazquez smiling outdoors.", crop: "center 34%", note: "Creating calm, friendly space for children to feel secure." },
+        { name: "Kimberly Wicker", role: "Threes Teacher", room: "Threes", since: "Play", badge: "Threes", tint: "#D4ECDB", image: "images/sunshine-staff/kim_orig-e1740499506295.jpg", alt: "Kimberly Wicker smiling outdoors.", crop: "center 32%", note: "Meeting children with warmth, structure, and encouragement." },
+        { name: "June Wall", role: "Twos Teacher", room: "Twos", since: "Steady", badge: "Twos", tint: "#FFF3D6", image: "images/sunshine-staff/june_orig-e1740499578941.jpg", alt: "June Wall smiling outdoors.", crop: "center 30%", note: "A familiar face for safe routines and classroom confidence." },
+        { name: "Hailey Hicks", role: "Floater", room: "Classroom Support", since: "Energy", badge: "Floater", tint: "#CDE9F7", image: "images/sunshine-staff/Hailey-Hicks.jpg", alt: "Hailey Hicks smiling outdoors.", crop: "center 36%", note: "Bringing a bright welcome into busy, active classroom days." },
+        { name: "Ruby Mills", role: "Fours Teacher", room: "Fours", since: "Encouragement", badge: "Fours", tint: "#EAF4EC", image: "images/sunshine-staff/ruby_orig-e1740499625157.jpg", alt: "Ruby Mills smiling outdoors.", crop: "center 32%", note: "Helping children feel safe to explore, speak, and smile." },
+        { name: "Mica Bryant", role: "Fours Teacher", room: "Fours", since: "Support", badge: "Fours", tint: "#FFE7A8", image: "images/sunshine-staff/mica_orig-e1740499675498.png", alt: "Mica Bryant smiling outdoors.", crop: "center 30%", note: "Supporting little milestones with patience and positivity." },
+        { name: "Kylie Boney", role: "Infant Teacher", room: "Infants", since: "Connection", badge: "Infants", tint: "#E5F2FA", image: "images/sunshine-staff/kylie_orig-e1740499695942.jpg", alt: "Kylie Boney smiling outdoors.", crop: "center 34%", note: "Making classroom moments feel cheerful, clear, and connected." },
+        { name: "Carleigh Franks", role: "Assistant Director", room: "Leadership", since: "Kindness", badge: "Leadership", tint: "#FFD7CC", image: "images/sunshine-staff/carleigh_orig-e1740499778146.jpg", alt: "Carleigh Franks smiling outdoors.", crop: "center 30%", note: "Supporting our teachers and families through daily school routines." },
+        { name: "Kristi Brewer", role: "Floater", room: "Classroom Support", since: "Care", badge: "Floater", tint: "#D4ECDB", image: "images/sunshine-staff/Kristi-Brewer.jpg", alt: "Kristi Brewer smiling outdoors in a Sunshine Smiles shirt.", crop: "center 34%", note: "Bringing school-day steadiness, friendliness, and care." },
+        { name: "Gale Rhodes", role: "Floater", room: "Classroom Support", since: "Calm", badge: "Floater", tint: "#FFF3D6", image: "images/sunshine-staff/galerhodes_orig-e1740499908992.jpg", alt: "Gale Rhodes smiling outdoors.", crop: "center 30%", note: "A calm, caring presence for children and families." },
+        { name: "Sandra Benites", role: "Waddler Teacher", room: "Waddlers", since: "Nurture", badge: "Waddlers", tint: "#D4ECDB", image: "images/sunshine-staff/Sandra-Benites.jpg", alt: "Sandra Benites smiling outdoors.", crop: "center 34%", note: "Supporting children through routines, play, and everyday care." },
+        { name: "Hilda Rodriguez", role: "Cook", room: "Kitchen", since: "Growth", badge: "Kitchen", tint: "#E5F2FA", image: "images/sunshine-staff/Hilda-Rodriguez-e1782224693352.jpg", alt: "Hilda Rodriguez smiling outdoors.", crop: "center 34%", note: "Preparing meals for our children and supporting the school day from the kitchen." },
+
+        {"name": "Tara Mangum", "role": "Waddler Teacher", "room": "Waddlers", "since": "Care", "badge": "Waddlers", "tint": "#D4ECDB", "image": "images/sunshine-staff/IMG_1499.jpg", "alt": "Tara Mangum at Sunshine Smiles Academy.", "crop": "center 34%", "note": "Helping new walkers feel welcome as they explore, play, and grow."},
+        {"name": "Ana Andrade", "role": "Floater", "room": "Classroom Support", "since": "Welcome", "badge": "Floater", "tint": "#FFD7CC", "image": "images/sunshine-staff/5a415abc-3d6d-4d87-9f8f-e9d3e52e6fba_orig-e1740499464312.jpeg", "alt": "Ana Andrade at Sunshine Smiles Academy.", "crop": "center 30%", "note": "Helping children feel welcome throughout the school day."},
+        {"name": "Abigail Rodriguez", "role": "Floater", "room": "Classroom Support", "since": "Care", "badge": "Floater", "tint": "#E5F2FA", "image": "", "alt": "", "crop": "center", "note": "Supporting children and teachers across our classrooms."},
+        {"name": "Susan Mahoney", "role": "Floater", "room": "Classroom Support", "since": "Support", "badge": "Floater", "tint": "#FFF3D6", "image": "images/sunshine-staff/IMG_1489-scaled.jpg", "alt": "Susan Mahoney at Sunshine Smiles Academy.", "crop": "center 34%", "note": "Supporting daily care and routines across our classrooms."},
 
       ];
-    const activeStaff = this.state.activeStaff;
+    const withPortrait = (person) => ({
+      ...person,
+      hasPhoto: Boolean(person.image),
+      noPhoto: !person.image,
+      initials: person.name.split(" ").map(part => part[0]).join(""),
+    });
+    const activeStaff = this.state.activeStaff ? withPortrait(this.state.activeStaff) : null;
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
@@ -253,7 +265,7 @@ class Component extends DCLogic {
       closeStaff: this.closeStaff,
       stopClick: this.stopClick,
       team: teamData.map((person) => ({
-        ...person,
+        ...withPortrait(person),
         actionLabel: `View ${person.name}'s profile`,
         open: () => this.openStaff(person),
       }))

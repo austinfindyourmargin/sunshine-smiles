@@ -109,7 +109,6 @@
 	  .ss-visit-moment .ss-cta-panel::before{ content:"Tour this way"; position:absolute; left:28px; top:28px; background:#fff; color:#2E2A24; font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:9px 12px; border-radius:8px; }
 	  .ss-front-desk::before{ content:""; position:absolute; right:-120px; top:40px; width:380px; height:380px; border-radius:210px 210px 24px 24px; background:rgba(255,178,62,.12); z-index:0; pointer-events:none; }
 	  .ss-tour-form{ position:relative; overflow:hidden; }
-	  .ss-tour-form::before{ content:"Schedule"; position:absolute; right:22px; top:22px; background:#EAF4EC; color:#356C46; font-size:11px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 10px; border-radius:8px; }
 	  #mobilecta{ display:none; }
 	  #hamburger{ display:none; }
 	  @media (max-width:860px){
@@ -144,8 +143,7 @@
 	      mask-image:linear-gradient(to bottom,#000 0 68%,transparent 100%);
 	    }
 	    .ss-hero-shell::before{ width:96%; height:300px; top:18px; }
-	    .ss-finder-panel::before, .ss-learning-portal::before, .ss-staff-card::before, .ss-tour-form::before{ font-size:10px; }
-	    .ss-tour-form::before{ position:relative; right:auto; top:auto; display:inline-flex; margin-bottom:14px; }
+	    .ss-finder-panel::before, .ss-learning-portal::before, .ss-staff-card::before{ font-size:10px; }
 	    .ss-visit-moment .ss-cta-panel{ padding:48px 24px !important; }
 	    .ss-visit-moment .ss-cta-panel h2{ font-size:32px !important; }
 	    .ss-visit-moment .ss-cta-panel::before{ position:relative; left:auto; top:auto; display:inline-flex; margin-bottom:20px; }
@@ -188,7 +186,7 @@
         <a href="contact.html" style="text-decoration:none; color:inherit;">Contact</a>
         <a href="tel:9193171500" style="text-decoration:none; color:#356C46; font-weight:700;">919.317.1500</a>
       </div>
-      <a id="navcta" href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
+      <a id="navcta" href="contact.html#tour" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:14px; padding:12px 22px; border-radius:7px;">Schedule a Tour</a>
       <button id="hamburger" type="button" onClick="{{ toggleMenu }}" aria-label="Toggle navigation" aria-expanded="{{ menuOpen }}" aria-controls="mobilemenu" style="display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid #E7DCC6; background:#fff; border-radius:9px; cursor:pointer;">
         <span style="display:block; width:20px; height:2px; background:#2E2A24; box-shadow:0 6px 0 #2E2A24,0 -6px 0 #2E2A24;"></span>
       </button>
@@ -200,7 +198,7 @@
       <a href="forms.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Forms &amp; Handbook</a>
       <a href="enrollment.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Enrollment</a>
       <a href="contact.html" style="text-decoration:none; color:#2E2A24; font-weight:700; padding:12px 4px;">Contact</a>
-      <a href="contact.html" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
+      <a href="contact.html#tour" style="text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:700; padding:14px; border-radius:8px; margin-top:8px;">Schedule a Tour</a>
     </div>
   </nav>
 <main id="main-content" tabindex="-1">
@@ -212,7 +210,7 @@
         <h1 class="ss-h1" style="font-family:Spectral,serif; font-weight:400; font-size:62px; line-height:1.04; letter-spacing:-.02em; margin:18px 0 0; color:#2E2A24;">A warm start for <span style="color:#9D4026;">bright</span> futures.</h1>
         <p style="font-size:18px; line-height:1.65; color:#625A51; max-width:27em; margin:22px 0 0;">Care that feels personal from the very first hello. At Sunshine Smiles Academy we nurture curiosity, confidence, and little milestones every single day &mdash; a place where your child is known, loved, and encouraged.</p>
         <div style="display:flex; gap:16px; align-items:center; margin-top:32px; flex-wrap:wrap;">
-          <a href="contact.html" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:16px; padding:16px 30px; border-radius:8px;">Schedule a Guided Tour</a>
+          <a href="contact.html#tour" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:700; font-size:16px; padding:16px 30px; border-radius:8px;">Schedule a Guided Tour</a>
           <a href="#programs" style="text-decoration:none; font-weight:700; font-size:16px; color:#2E2A24; display:flex; align-items:center; gap:8px;">Explore Programs <span style="color:#356C46;">&rarr;</span></a>
         </div>
         <div class="ss-herostat" style="display:flex; gap:0; margin-top:44px; border-top:1px solid #EAE3D4; padding-top:22px;">
@@ -326,7 +324,7 @@
 	            <p style="font-size:15px; line-height:1.6; color:#625A51; margin:12px 0 0;">{{ activeProgram.finderCopy }}</p>
 	            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:18px;">
 	              <a class="ss-softlink" href="{{ activeProgram.anchor }}" style="text-decoration:none; background:#2E2A24; color:#fff; font-weight:800; font-size:14px; padding:12px 18px; border-radius:8px;">See this room</a>
-	              <a href="contact.html" style="text-decoration:none; font-weight:800; font-size:14px; color:#9D4026;">Schedule a tour &rarr;</a>
+	              <a href="contact.html#tour" style="text-decoration:none; font-weight:800; font-size:14px; color:#9D4026;">Schedule a tour &rarr;</a>
 	            </div>
 	          </div>
 	        </div>
@@ -443,7 +441,7 @@
       <h2 style="font-family:Spectral,serif; font-weight:500; font-size:40px; line-height:1.12; color:#fff; margin:0; position:relative;">Ready to see if Sunshine Smiles<br>is the right fit for your family?</h2>
       <p style="font-size:18px; color:rgba(255,255,255,.92); margin:16px 0 0; position:relative;">The best way to know is to visit. Come see the classrooms, meet the team, and feel the warmth for yourself.</p>
       <div style="display:flex; gap:14px; justify-content:center; margin-top:30px; flex-wrap:wrap; position:relative;">
-        <a href="contact.html" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; box-shadow:0 16px 30px -14px rgba(0,0,0,.3);">Schedule a Guided Tour</a>
+        <a href="contact.html#tour" style="text-decoration:none; background:#fff; color:#2E2A24; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; box-shadow:0 16px 30px -14px rgba(0,0,0,.3);">Schedule a Guided Tour</a>
 	        <a href="tel:9193171500" style="text-decoration:none; background:rgba(255,255,255,.18); color:#fff; font-weight:800; font-size:16px; padding:16px 32px; border-radius:34px; border:1.5px solid rgba(255,255,255,.6); display:inline-flex; align-items:center; gap:9px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call 919.317.1500</a>
       </div>
     </div>
@@ -461,28 +459,8 @@
         </div>
         <div style="margin-top:24px; height:200px; border-radius:18px; overflow:hidden; border:1px solid #4A463E;"><iframe title="Map to Sunshine Smiles Academy at 2611 Broad St., Durham, NC 27704" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=2611%20Broad%20St.%20Durham%20NC%2027704&output=embed" style="width:100%; height:200px; border:0; border-radius:18px;"></iframe></div>
       </div>
-      <div class="ss-tour-form" style="background:#FCFBF6; border-radius:24px; padding:34px;">
-        <h3 style="font-family:Spectral,serif; font-weight:500; font-size:24px; margin:0 0 4px; color:#2E2A24;">Request a tour</h3>
-        <p style="font-size:14px; color:#625A51; margin:0 0 20px;">Tell us a little about your family to start planning a visit.</p>
-	        <sc-if value="{{ formSent }}" hint-placeholder-val="{{ false }}">
-	          <div role="status" style="background:#EAF4EC; border-radius:16px; padding:30px; text-align:center;">
-	            <div style="width:46px; height:46px; border-radius:50%; background:#FFF3D6; color:#795108; display:flex; align-items:center; justify-content:center; font-size:26px; margin:0 auto;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-sun"></use></svg></div>
-	            <div style="font-family:Spectral,serif; font-size:22px; color:#2E2A24; margin-top:8px;">Your email draft is ready</div>
-            <p style="font-size:14px; color:#625A51; margin:6px 0 0;">Please press Send in your email app to deliver your message. Nothing has been sent by this website. If your email app did not open, email <a href="mailto:erika.byrd3@gmail.com">erika.byrd3@gmail.com</a> or call <a href="tel:9193171500">919.317.1500</a>.</p>
-          </div>
-        </sc-if>
-        <sc-if value="{{ formOpen }}" hint-placeholder-val="{{ true }}">
-          <form data-inquiry="tour" onSubmit="{{ submitForm }}" style="display:flex; flex-direction:column; gap:16px;">
-<p class="ss-email-note">Prepare an email to our team. Your email app will open so you can review and send it. Required fields are marked *.</p>
-            <div class="ss-formrow" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Parent name *<input type="text" name="parent-name" autocomplete="name" required="required" maxlength="150" placeholder="Your name" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-              <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Phone<input type="tel" name="phone" autocomplete="tel" maxlength="40" placeholder="(919) 000-0000" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-            </div>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Email *<input type="email" name="email" autocomplete="email" required="required" maxlength="254" placeholder="you@email.com" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-            <label style="display:flex; flex-direction:column; gap:6px; font-weight:700; font-size:13px; color:#5C544B;">Child&rsquo;s age<input type="text" placeholder="e.g. 18 months" style="font-family:inherit; font-size:15px; padding:12px 14px; border:1.5px solid #E7DCC6; border-radius:10px; background:#fff;"></label>
-            <button type="submit" style="font-family:inherit; cursor:pointer; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:16px; padding:15px; border:none; border-radius:12px; box-shadow:0 14px 28px -12px rgba(255,110,80,.8);">Prepare Email</button>
-          </form>
-        </sc-if>
+      <div class="ss-tour-form ss-playground-panel" style="background:#FCFBF6; border-radius:24px; padding:24px;">
+	        <div class="ss-playground-embed"><iframe class="ss-playground-form" src="https://app.tryplayground.com/form/LQAItkOwPffVVntPiWNd/Y2r5YYAuvUPxoPi2drqF" title="Sunshine Smiles Academy tour inquiry form" loading="lazy" onLoad="{{ fitPlaygroundForm }}"></iframe></div>
       </div>
     </div>
   </section>
@@ -512,7 +490,7 @@
 
 	  <div id="mobilecta" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:60; background:#fff; border-top:1px solid #EAE3D4; padding:10px 14px; gap:10px; box-shadow:0 -8px 24px -12px rgba(0,0,0,.2);">
 	    <a href="tel:9193171500" style="flex:1; text-decoration:none; text-align:center; background:#EAF4EC; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:7px;"><svg class="ss-svg" aria-hidden="true"><use href="images/site-icons.svg#icon-phone"></use></svg>Call</a>
-    <a href="contact.html" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
+    <a href="contact.html#tour" style="flex:1.4; text-decoration:none; text-align:center; background:#FF8E72; color:#2E2A24; font-weight:800; font-size:15px; padding:14px; border-radius:12px;">Schedule a Tour</a>
   </div>
 
 </div>
@@ -520,12 +498,9 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { menuOpen: false, formSent: false, activeProgram: "twos" };
+  state = { menuOpen: false, activeProgram: "twos" };
   toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
   selectProgram = (id) => this.setState({ activeProgram: id });
-  submitForm = (event) => {
-    if (window.sunshine.openEmailDraft(event)) this.setState({ formSent: true });
-  };
   renderVals() {
     const programData = [
       { id:"infants", anchor:"programs.html#infants", name: "Infants", place: "Lullaby Lane", agesShort: "6wk-12mo", ages: "6 weeks - 12 months", icon: "baby", tint: "#CDE9F7", deep: "#286387", accent: "#286387", image: "images/classrooms/infant-room-4.jpg", alt: "The Lullaby Lane infant classroom at Sunshine Smiles Academy.", blurb: "Gentle, attentive care in a calm room designed around your baby's feeding, sleeping, and snuggle rhythms.", finderCopy: "A calm, nurturing room for babies who need personal routines, soft voices, and steady communication with home.", spaceNote: "A soft first stop with calm routines, cozy care, and gentle sensory moments for Sunshine Smiles' smallest learners.", spaceCues: ["Quiet rhythms", "Soft play", "Family updates"] },
@@ -548,9 +523,7 @@ class Component extends DCLogic {
     return {
       menuOpen: this.state.menuOpen,
       toggleMenu: this.toggleMenu,
-      formSent: this.state.formSent,
-      formOpen: true,
-      submitForm: this.submitForm,
+      fitPlaygroundForm: window.sunshine.fitPlaygroundForm,
       reasons: [
         { icon: "heart", title: "Loving, experienced teachers", blurb: "Warm, background-checked educators who stay for years — so your child builds a real, lasting bond.", tint: "#FFD7CC", accent: "#9D4026" },
         { icon: "shield", title: "Safe, clean & secure", blurb: "Secure keypad entry, daily-sanitized rooms, and careful sign-in keep every child protected.", tint: "#CDE9F7", accent: "#286387" },
