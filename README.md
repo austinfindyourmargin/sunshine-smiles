@@ -73,4 +73,4 @@ The website stores only rate-limit counters in `private_html/sunshine-form-limit
 
 ## Staff roster
 
-The staff page reflects the October 13, 2026 roster corrections: Tara Mangum is a Waddler Teacher; Ana Andrade, Abigail Rodriguez, and Susan Mahoney are Floaters; and Carleigh Franks is Assistant Director. Tara, Ana, and Susan use their original staff-page portraits. Abigail uses an initials card until a photo is available. Each tour form panel contains only the Playground inquiry embed. The public contact email is `sunshinesmilesacademy2611@gmail.com`.
+The staff page includes the November 4, 2026 roster updates: Sandra Benites has been removed, Julia Hernandez has been added as a Waddler Teacher, and Ana's name is Ana Batallas Andrade. Tara Mangum is a Waddler Teacher; Ana, Abigail Rodriguez, and Susan Mahoney are Floaters; and Carleigh Franks is Assistant Director. Tara, Ana, and Susan use their original staff-page portraits. Julia and Abigail use initials cards until photos are available. Each tour form panel contains only the Playground inquiry embed. The public contact email is `sunshinesmilesacademy2611@gmail.com`.

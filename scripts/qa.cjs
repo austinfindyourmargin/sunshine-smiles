@@ -89,8 +89,8 @@ async function main() {
               'June Wall': 'Twos Teacher', 'Hailey Hicks': 'Floater', 'Ruby Mills': 'Fours Teacher',
               'Mica Bryant': 'Fours Teacher', 'Kylie Boney': 'Infant Teacher',
               'Carleigh Franks': 'Assistant Director', 'Kristi Brewer': 'Floater', 'Gale Rhodes': 'Floater',
-              'Hilda Rodriguez': 'Cook', 'Sandra Benites': 'Waddler Teacher',
-              'Tara Mangum': 'Waddler Teacher', 'Ana Andrade': 'Floater',
+              'Hilda Rodriguez': 'Cook', 'Julia Hernandez': 'Waddler Teacher',
+              'Tara Mangum': 'Waddler Teacher', 'Ana Batallas Andrade': 'Floater',
               'Abigail Rodriguez': 'Floater', 'Susan Mahoney': 'Floater'
             };
             assert.equal(await page.locator('.ss-staffcard').count(), 21);
@@ -99,7 +99,7 @@ async function main() {
               assert.equal(await card.count(), 1, `Missing or duplicate staff member: ${name}`);
               assert.ok((await card.innerText()).includes(role), `Incorrect role: ${name}`);
             }
-            assert.doesNotMatch(await page.locator('main').innerText(), /Alina Mena|Ana Batallas Andrade|Carleigh Byrd/);
+            assert.doesNotMatch(await page.locator('main').innerText(), /Alina Mena|Ana Andrade|Carleigh Byrd|Sandra Benites/);
             await page.getByRole('button', { name: "View Abigail Rodriguez's profile", exact: true }).click();
             await page.getByRole('dialog', { name: 'Abigail Rodriguez, Floater' }).waitFor();
             assert.equal(await page.locator('.ss-profile-modal img').count(), 0);
